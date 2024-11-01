@@ -1,0 +1,75 @@
+.admin-container {
+	max-width: 600px;
+	height: auto;
+	margin: auto;
+	display: flex;
+	/*	border: 10px solid red;*/
+	color: white;
+	font-weight: bolder;
+}
+
+.admin-sub-container {
+	width: 100%;
+	min-height: auto;
+	/*	background: #071952;*/
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.editpencil {
+	width: 20px;
+	height: 20px;
+}
+
+.edit {
+	display: flex;
+	justify-content: space-between;
+	background-color: #092635;
+	border-radius: 10px;
+	padding: 5px;
+	align-items: center;
+}
+
+.showinfo {
+	display: flex;
+	justify-content: center;
+}
+
+.editProfilePhoto {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.editInfo {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#home-link {
+	text-decoration: none;
+	color: white;
+}
+
+#home-link:active {
+	text-decoration: underline;
+}
+
+.add-section {
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	background: rgba(0, 22, 0, 0.4);
+	margin-top: 10px;
+	align-items: center;
+	padding: 10px;
+}
+
+.add-button {
+	width: 30px;
+	height: 30px;
+}
+
+#home-route {
+	max-width: 30px;
+	height: 30px;
+}
