@@ -1,0 +1,8 @@
+.upload-container {
+	z-index: 1000;
+}
+
+.upload-sub-container {
+	margin-top: 20px;
+	z-index: 1000;
+}

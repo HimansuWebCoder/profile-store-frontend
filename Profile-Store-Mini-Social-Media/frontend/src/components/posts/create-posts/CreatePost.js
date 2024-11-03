@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { apiUrl } from "../../../utils/utils";
 import PopupEdit from "../../Popup-edit/PopupEdit";
+import "./CreatePost.css";
 
 function CreatePost() {
 	const [selectedFile, setSelectedFile] = useState(null);
@@ -50,9 +51,13 @@ function CreatePost() {
 						name="avatar"
 						onChange={handleFileChange}
 					/>
-					<button type="submit">Upload</button>
-					<button>
-						<Link to="/admin">Back</Link>
+					<button className="upload-btn" type="submit">
+						Upload
+					</button>
+					<button className="upload-btn">
+						<Link className="upload-back-link" to="/admin">
+							Back
+						</Link>
 					</button>
 					{popupMessage && (
 						<PopupEdit msg={popupMessage} redirect="/posts" />

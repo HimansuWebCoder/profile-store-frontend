@@ -68,7 +68,7 @@ function Upload() {
 						Upload
 					</button>
 					<button className="upload-btn">
-						<Link id="upload-back-link" to="/admin">
+						<Link className="upload-back-link" to="/admin">
 							Back
 						</Link>
 					</button>
