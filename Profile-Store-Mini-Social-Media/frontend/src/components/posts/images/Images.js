@@ -38,7 +38,7 @@ function Images() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoader2(false);
-		}, 4000);
+		}, 8000);
 	});
 
 	// function shareHandler() {
@@ -133,13 +133,13 @@ function Images() {
 									<Skeleton
 										animation="wave"
 										variant="rectangular"
-										width={400}
+										maxWidth={400}
 										height={400}
 										sx={{
 											borderRadius: "10px",
 											background: isDarkMode
 												? "primary"
-												: "#F5EFFF",
+												: "#ECDFCC",
 										}}
 									/>
 								</Stack>
