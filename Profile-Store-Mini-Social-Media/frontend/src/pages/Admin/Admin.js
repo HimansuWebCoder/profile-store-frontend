@@ -4,6 +4,8 @@ import ProfilePhoto from "../../components/Profile-photo/ProfilePhoto";
 import ProfileInfo from "../../components/Profile-info/ProfileInfo";
 import About from "../../components/add-sections/About/About";
 import Skills from "../../components/add-sections/Skills/Skills";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import { apiUrl } from "../../utils/utils";
 import { ThemeContext } from "../../ThemeContext";
 import "./Admin.css";
@@ -49,15 +51,18 @@ function Admin() {
 				</div>
 				{/*Profile Photo Component*/}
 				{loading ? (
-					<h2
-						style={{
-							margin: "auto",
-							maxWidth: "100px",
-							height: "auto",
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: "center",
 						}}
 					>
-						Loading...
-					</h2>
+						<CircularProgress
+							sx={{
+								color: "primary", // Set the desired color here
+							}}
+						/>
+					</Box>
 				) : (
 					<ProfilePhoto
 						imgSrc={profileImg}

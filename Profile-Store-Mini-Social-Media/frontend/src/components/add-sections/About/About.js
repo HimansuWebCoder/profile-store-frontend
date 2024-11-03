@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { apiUrl } from "../../../utils/utils";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./About.css";
 
 function About() {
@@ -37,8 +39,20 @@ function About() {
 					</Link>
 				</div>
 				{/*<p>{about}</p>*/}
+
 				{loading ? (
-					<p style={{ color: "white" }}>Loading...</p>
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: "center",
+						}}
+					>
+						<CircularProgress
+							sx={{
+								color: "primary", // Set the desired color here
+							}}
+						/>
+					</Box>
 				) : (
 					<p style={{ color: "white", wordBreak: "break-word" }}>
 						{about}

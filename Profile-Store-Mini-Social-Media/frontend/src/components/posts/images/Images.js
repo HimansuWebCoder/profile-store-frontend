@@ -5,6 +5,10 @@ import ProfilePhoto from "../../Profile-photo/ProfilePhoto";
 import PopupEdit from "../../Popup-edit/PopupEdit";
 import CommentBox from "../comments/CommentBox";
 import { ThemeContext } from "../../../ThemeContext";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./Images.css";
 
 const shareData = {
@@ -17,6 +21,7 @@ function Images() {
 	const [like, setLike] = useState("");
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const [loader, setLoader] = useState(true);
+	const [loader2, setLoader2] = useState(true);
 	const location = useLocation();
 	useEffect(() => {
 		fetch(`${apiUrl}/api/posts/images`)
@@ -29,6 +34,12 @@ function Images() {
 				}, 1000);
 			});
 	}, [location]);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoader2(false);
+		}, 4000);
+	});
 
 	// function shareHandler() {
 	// 	navigator.share(shareData);
@@ -93,7 +104,18 @@ function Images() {
 			</div>
 
 			{loader ? (
-				<h2 style={{ textAlign: "center" }}>Loading...</h2>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
 			) : (
 				<>
 					{postImages.map((img) => (
@@ -106,84 +128,105 @@ function Images() {
 							className="post-sub-container"
 							key={img.id}
 						>
-							<div
-								style={{
-									background: isDarkMode ? "white" : "white",
-									color: isDarkMode ? "black" : "black",
-								}}
-								className="posted-image-container"
-							>
-								<div
-									// style={{
-									// 	background: isDarkMode ? "#31363F" : "#87A2FF",
-									// }}
-									className="post-logo-edit-container"
-								>
-									<div className="profile-posted-img-main-container">
-										<ProfilePhoto
-											imgSrc="/assets/images/user.png"
-											className="profile-main-img-posted-container"
-										/>
-									</div>
-									<div>
-										<Link to={`/posts/${img.id}`}>
-											<img
-												className="posted-image-logo"
-												src="/assets/images/menu.png"
-												alt="triple dot"
-											/>
-										</Link>
-										<Outlet />
-									</div>
-								</div>
-								<hr />
-								<div id="image-post-box-container">
-									<img
-										id="posted-img"
-										src={img.image_url}
-										alt="posted image"
+							{loader2 ? (
+								<Stack spacing={1}>
+									<Skeleton
+										animation="wave"
+										variant="rectangular"
+										width={400}
+										height={400}
+										sx={{
+											borderRadius: "10px",
+											background: isDarkMode
+												? "primary"
+												: "#F5EFFF",
+										}}
 									/>
-								</div>
-								<hr />
+								</Stack>
+							) : (
 								<div
-									// style={{
-									// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",
-									// }}
-									className="like-comment-share-container"
+									style={{
+										background: isDarkMode
+											? "white"
+											: "white",
+										color: isDarkMode ? "black" : "black",
+									}}
+									className="posted-image-container"
 								>
-									<div className="user-response-container">
-										<div>
-											<img
-												onClick={likebtn}
-												className="posted-image-emojis"
-												src="/assets/images/like.png"
-												alt="like"
+									<div
+										// style={{
+										// 	background: isDarkMode ? "#31363F" : "#87A2FF",
+										// }}
+										className="post-logo-edit-container"
+									>
+										<div className="profile-posted-img-main-container">
+											<ProfilePhoto
+												imgSrc="/assets/images/user.png"
+												className="profile-main-img-posted-container"
 											/>
-											<span id="like-count">{like}</span>
 										</div>
-										<h4>Like</h4>
+										<div>
+											<Link to={`/posts/${img.id}`}>
+												<img
+													className="posted-image-logo"
+													src="/assets/images/menu.png"
+													alt="triple dot"
+												/>
+											</Link>
+											<Outlet />
+										</div>
 									</div>
-									<div className="user-response-container">
-										<Link to="/posts/comments">
-											<img
-												className="posted-image-emojis"
-												src="/assets/images/comment.png"
-												alt="comment"
-											/>
-										</Link>
-										<h4>Comment</h4>
-									</div>
-									<div className="user-response-container">
+									<hr />
+									<div id="image-post-box-container">
 										<img
-											onClick={handleShare}
-											className="posted-image-emojis"
-											src="/assets/images/share.png"
-											alt="share"
+											id="posted-img"
+											src={img.image_url}
+											alt="posted image"
 										/>
-										<h4>Share</h4>
+									</div>
+									<hr />
+									<div
+										// style={{
+										// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",
+										// }}
+										className="like-comment-share-container"
+									>
+										<div className="user-response-container">
+											<div>
+												<img
+													onClick={likebtn}
+													className="posted-image-emojis"
+													src="/assets/images/like.png"
+													alt="like"
+												/>
+												<span id="like-count">
+													{like}
+												</span>
+											</div>
+											<h4>Like</h4>
+										</div>
+										<div className="user-response-container">
+											<Link to="/posts/comments">
+												<img
+													className="posted-image-emojis"
+													src="/assets/images/comment.png"
+													alt="comment"
+												/>
+											</Link>
+											<h4>Comment</h4>
+										</div>
+										<div className="user-response-container">
+											<img
+												onClick={handleShare}
+												className="posted-image-emojis"
+												src="/assets/images/share.png"
+												alt="share"
+											/>
+											<h4>Share</h4>
+										</div>
 									</div>
 								</div>
-							</div>
+							)}
 						</div>
 					))}
 				</>

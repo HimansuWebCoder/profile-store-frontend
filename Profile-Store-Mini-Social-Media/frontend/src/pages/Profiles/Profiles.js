@@ -4,6 +4,7 @@ import { apiUrl } from "../../utils/utils";
 import { ThemeContext } from "../../ThemeContext";
 import "./Profiles.css";
 import ProfilePhoto from "../../components/Profile-photo/ProfilePhoto";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Profiles({ mode, setMode }) {
 	const [profileName, setProfileName] = useState("");
@@ -27,9 +28,7 @@ function Profiles({ mode, setMode }) {
 	return (
 		<div className="profiles-container">
 			{loading ? (
-				<p style={{ color: isDarkMode ? "black" : "white" }}>
-					Loading...
-				</p>
+				<CircularProgress />
 			) : (
 				<div
 					style={{

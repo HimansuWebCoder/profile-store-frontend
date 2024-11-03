@@ -3,11 +3,13 @@ import { useLocation, Link } from "react-router-dom";
 import "./ProfileInfo.css";
 import { apiUrl } from "../../utils/utils";
 import ProfileLinks from "../Profile-links/ProfileLinks";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 function ProfileInfo() {
 	const [name, setName] = useState("");
 	const [headline, setHeadline] = useState("");
-	const [loading, setLoading] = useState(true);
+	const [loader, setLoader] = useState(true);
 
 	const [profileId, setProfileId] = useState(null);
 	const location = useLocation();
@@ -24,7 +26,7 @@ function ProfileInfo() {
 					setName(profileInfoData[0].name);
 					setHeadline(profileInfoData[0].headline);
 					setProfileId(profileInfoData[0].id);
-					setLoading(false);
+					setLoader(false);
 				}, 1000);
 			} catch (error) {
 				console.error("Error fetching profile-info:", error);
@@ -42,8 +44,19 @@ function ProfileInfo() {
 					alt="editinfo"
 				/>
 			</Link>
-			{loading ? (
-				<p>Loading....</p>
+			{loader ? (
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
 			) : (
 				<>
 					<h1 className="header">{name}</h1>

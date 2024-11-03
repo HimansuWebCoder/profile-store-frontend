@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { apiUrl } from "../../../utils/utils";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 import "./Skills.css";
 
 function Skills() {
@@ -39,8 +42,20 @@ function Skills() {
 					</Link>
 				</div>
 			</div>
+
 			{loading ? (
-				<p style={{ color: "white" }}>Loading....</p>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
 			) : (
 				<div className="skills-container">
 					{skills.length === 0 ? (

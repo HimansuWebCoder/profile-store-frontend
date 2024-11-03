@@ -9,20 +9,6 @@ function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
 	// const [profileImg, setProfileImg] = useState("");
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const { profilePhoto, loading } = useContext(ProfilePhotoContext);
-	// const [loading, setLoading] = useState(true);
-	// const location = useLocation();
-
-	// const profileImg = profilePhoto;
-	// useEffect(() => {
-	// 	fetch(`${apiUrl}/api/profile-photo`)
-	// 		.then((res) => res.json())
-	// 		.then((photo) => {
-	// 			setProfileImg(photo[photo.length - 1].image);
-	// 			setLoading(false);
-	// 		});
-	// 	setProfileImg(profilePhoto);
-	// 	setLoading(false);
-	// }, [location]);
 
 	return (
 		<div
@@ -35,30 +21,12 @@ function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
 					id="admin-link-profile"
 					to="/admin"
 				>
-					{/*{loading ? (
-						<p style={{ color: isDarkMode ? "black" : "white" }}>
-							Loading...
-						</p>
-					) : (
-						<img
-							className={`${className}`}
-							src={profileImg}
-							alt={alt}
-							// style={{ width: size, height: size }}
-						/>
-					)}*/}
-					{loading ? (
-						<p style={{ color: isDarkMode ? "black" : "white" }}>
-							Loading...
-						</p>
-					) : (
-						<img
-							className={`${className}`}
-							src={profilePhoto}
-							alt={alt}
-							// style={{ width: size, height: size }}
-						/>
-					)}
+					<img
+						className={`${className}`}
+						src={profilePhoto}
+						alt={alt}
+						// style={{ width: size, height: size }}
+					/>
 				</Link>
 			</div>
 		</div>
