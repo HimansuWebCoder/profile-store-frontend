@@ -18,6 +18,8 @@ function Layout({ mode, setMode }) {
 					background: isDarkMode ? "#F7F9F2" : "#433D8B",
 					border: isDarkMode ? "1px solid #F5F7F8" : "none",
 				}}
+				// className="max-w-full h-auto border-2 border-white flex justify-center"
+				// className="flex max-w-max justify-evenly h-auto"
 				className="layout-block-box"
 			>
 				<Link
