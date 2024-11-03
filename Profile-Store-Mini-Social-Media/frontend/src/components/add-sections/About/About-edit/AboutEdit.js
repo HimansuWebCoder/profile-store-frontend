@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { apiUrl } from "../../../../utils/utils";
 import PopupEdit from "../../../Popup-edit/PopupEdit";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./AboutEdit.css";
 
 // Loading should be in util file it uses almost every component I will do it later DRY
@@ -46,7 +48,19 @@ function AboutEdit() {
 	return (
 		<div className="about-edit-main-container">
 			{loading ? (
-				<h2 id="about-loading-header">loading...</h2>
+				<Box
+					id="about-loading-header"
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
 			) : (
 				<div className="about-edit-container">
 					<textarea
@@ -60,7 +74,7 @@ function AboutEdit() {
 					<button onClick={() => navigate("/admin")}>Exit</button>
 				</div>
 			)}
-			{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin"/>}
+			{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin" />}
 		</div>
 	);
 }

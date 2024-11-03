@@ -11,7 +11,7 @@
 	border-radius: 10px;
 	color: white;
 	position: absolute;
-	top: 600px;
+	top: 200px;
 	padding: 10px;
 	text-align: center;
 }
@@ -32,5 +32,5 @@
 
 #about-loading-header {
 	position: absolute;
-	top: 620px;
+	top: 250px;
 }

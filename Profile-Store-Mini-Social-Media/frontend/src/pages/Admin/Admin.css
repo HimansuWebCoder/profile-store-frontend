@@ -1,6 +1,6 @@
 .admin-container {
 	max-width: 600px;
-	height: auto;
+	height: 100vh;
 	margin: auto;
 	display: flex;
 	/*	border: 10px solid red;*/
@@ -11,6 +11,7 @@
 .admin-sub-container {
 	width: 100%;
 	min-height: auto;
+	overflow: auto;
 	/*	background: #071952;*/
 	border: 1px solid black;
 	padding: 5px;

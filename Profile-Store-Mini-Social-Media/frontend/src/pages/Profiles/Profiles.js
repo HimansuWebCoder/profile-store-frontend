@@ -33,7 +33,14 @@ function Profiles({ mode, setMode }) {
 				<div
 					style={{
 						color: isDarkMode ? "white" : "white",
-						background: isDarkMode ? "#1e3e62" : "#1F2544",
+						// background: isDarkMode ? "#1e3e62" : "#1F2544",
+						background: isDarkMode ? "#393646" : "#31363F",
+						borderTop: isDarkMode
+							? "5px solid white"
+							: "1px solid white",
+						borderBottom: isDarkMode
+							? "5px solid white"
+							: "1px solid white",
 					}}
 					className="profiles-info-container"
 				>

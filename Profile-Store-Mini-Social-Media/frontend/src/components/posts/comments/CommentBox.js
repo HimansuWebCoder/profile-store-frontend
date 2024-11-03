@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import { apiUrl } from "../../../utils/utils";
 import "./CommentBox.css";
 function CommentBox() {
@@ -49,8 +51,20 @@ function CommentBox() {
 				</div>
 				<div>
 					<h1>Comment box</h1>
+
 					{loader ? (
-						<p>Loading...</p>
+						<Box
+							sx={{
+								display: "flex",
+								justifyContent: "center",
+							}}
+						>
+							<CircularProgress
+								sx={{
+									color: "primary", // Set the desired color here
+								}}
+							/>
+						</Box>
 					) : (
 						<ul>
 							{comments.map((comment) => (

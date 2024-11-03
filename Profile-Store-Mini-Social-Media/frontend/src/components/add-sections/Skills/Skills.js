@@ -3,7 +3,6 @@ import { useLocation, Link } from "react-router-dom";
 import { apiUrl } from "../../../utils/utils";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-
 import "./Skills.css";
 
 function Skills() {

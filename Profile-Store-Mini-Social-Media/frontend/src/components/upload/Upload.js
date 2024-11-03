@@ -64,9 +64,13 @@ function Upload() {
 						name="avatar"
 						onChange={handleFileChange}
 					/>
-					<button type="submit">Upload</button>
-					<button>
-						<Link to="/admin">Back</Link>
+					<button className="upload-btn" type="submit">
+						Upload
+					</button>
+					<button className="upload-btn">
+						<Link id="upload-back-link" to="/admin">
+							Back
+						</Link>
 					</button>
 					{popupMessage && (
 						<PopupEdit msg={popupMessage} redirect="/admin" />

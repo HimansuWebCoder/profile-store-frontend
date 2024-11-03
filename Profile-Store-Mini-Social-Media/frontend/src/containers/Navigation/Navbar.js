@@ -18,7 +18,7 @@ function NavContainer({ mode, setMode }) {
 		>
 			<Logo />
 			<Search />
-			<Mode mode={mode} setMode={setMode} />
+			{/*<Mode mode={mode} setMode={setMode} />*/}
 			<Setting />
 		</div>
 	);

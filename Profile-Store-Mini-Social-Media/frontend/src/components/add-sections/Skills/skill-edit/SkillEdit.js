@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { apiUrl } from "../../../../utils/utils";
 import { useLocation, useNavigate } from "react-router-dom";
 import PopupEdit from "../../../Popup-edit/PopupEdit";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./SkillEdit.css";
 
 function SkillEdit() {
@@ -38,7 +40,18 @@ function SkillEdit() {
 	return (
 		<div className="skill-edit-container">
 			{loading ? (
-				<h2>Loading....</h2>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
 			) : (
 				<div className="skill-edit-sub-container">
 					<h1>Edit your skills</h1>
@@ -69,7 +82,9 @@ function SkillEdit() {
 							</button>
 						</>
 					))}
-					{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin" />}
+					{popupMessage && (
+						<PopupEdit msg={popupMessage} redirect="/admin" />
+					)}
 				</div>
 			)}
 		</div>

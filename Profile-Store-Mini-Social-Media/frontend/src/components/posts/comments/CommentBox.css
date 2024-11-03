@@ -15,7 +15,7 @@
 	margin: auto;
 	margin-top: 300px;
 	padding: 10px;
-	background: black;
+	background: #1a1a1d;
 	color: white;
 	overflow-y: auto;
 	border-radius: 10px;
@@ -25,10 +25,10 @@
 	width: 100%;
 	height: auto;
 	/*	background: rgba(0, 0, 220, 0.5);*/
-	background: black;
+	background: #1a1a1d;
 	padding: 10px;
-	top: 0;
-	position: sticky;
+	/*	top: 0;*/
+	/*	position: sticky;*/
 	font-size: 1.5rem;
 }
 

@@ -38,7 +38,7 @@ function Images() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoader2(false);
-		}, 8000);
+		}, 5000);
 	});
 
 	// function shareHandler() {
@@ -139,7 +139,7 @@ function Images() {
 											borderRadius: "10px",
 											background: isDarkMode
 												? "primary"
-												: "#ECDFCC",
+												: "#E4E0E1",
 										}}
 									/>
 								</Stack>
