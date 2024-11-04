@@ -19,8 +19,8 @@ function Layout({ mode, setMode }) {
 					border: isDarkMode ? "1px solid #F5F7F8" : "none",
 				}}
 				// className="max-w-full h-auto border-2 border-white flex justify-center"
-				// className="flex max-w-max justify-evenly h-auto"
-				className="layout-block-box"
+				className="flex max-w-[100vw] justify-evenly h-auto"
+				// className="layout-block-box"
 			>
 				<Link
 					style={{

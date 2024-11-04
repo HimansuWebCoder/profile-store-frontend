@@ -67,9 +67,13 @@ function EditImagePost() {
 						name="avatar"
 						onChange={handleFileChange}
 					/>
-					<button type="submit">Upload</button>
-					<button>
-						<Link to="/posts">Back</Link>
+					<button className="upload-btn" type="submit">
+						Upload
+					</button>
+					<button className="upload-btn">
+						<Link className="upload-back-link" to="/posts">
+							Back
+						</Link>
 					</button>
 					{popupMessage && (
 						<PopupEdit msg={popupMessage} redirect="/posts" />

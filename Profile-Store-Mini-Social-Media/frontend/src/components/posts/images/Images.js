@@ -176,7 +176,7 @@ function Images() {
 											<Outlet />
 										</div>
 									</div>
-									<hr />
+									<hr className="horizontal-post-card-line" />
 									<div id="image-post-box-container">
 										<img
 											id="posted-img"

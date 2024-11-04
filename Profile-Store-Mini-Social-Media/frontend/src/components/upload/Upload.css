@@ -23,6 +23,7 @@
 	align-items: center;
 	border-radius: 20px;
 	text-align: center;
+	color: white;
 }
 
 .upload-btn {
@@ -30,6 +31,8 @@
 	height: 30px;
 	margin: 5px;
 	color: blue;
+	background-color: white;
+	border-radius: 5px;
 }
 
 .upload-back-link {

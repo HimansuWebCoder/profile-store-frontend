@@ -52,8 +52,8 @@ function Profiles({ mode, setMode }) {
 						className="profile-main-img-container"
 					/>
 					<div>
-						<h2>{profileName}</h2>
-						<h3>{profileIntro}</h3>
+						<h2 className="profile-info-name">{profileName}</h2>
+						<h3 className="profile-info-name">{profileIntro}</h3>
 					</div>
 				</div>
 			)}

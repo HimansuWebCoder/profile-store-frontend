@@ -88,4 +88,8 @@
 		height: auto;
 		max-height: 80px;
 	}
+
+	.profile-info-name {
+		font-size: 2rem;
+	}
 }
