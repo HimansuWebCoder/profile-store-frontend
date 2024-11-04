@@ -12,7 +12,7 @@ import "./AppLayout.css";
 
 function AppLayout({ mode, setMode }) {
 	return (
-		<div id="color" className="app_container">
+		<div className="text-black" className="app_container">
 			<Routes>
 				<Route
 					path="/"

@@ -15,7 +15,7 @@ import "./AdminLayout.css";
 
 function AdminLayout() {
 	return (
-		<div className="app-container">
+		<div className="min-h-screen overflow-auto">
 			<Routes>
 				<Route path="/" element={<Admin />}>
 					<Route

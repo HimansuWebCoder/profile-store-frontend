@@ -17,12 +17,21 @@ function SystemMode({ mode, setMode }) {
 	// }
 
 	return (
-		<div className="mode-container">
-			<button onClick={toggleTheme}>
+		<div className="max-w-[50px] h-[50px]">
+			<button
+				className="w-[50px] h-[50px] cursor-pointer bg-transparent border-none"
+				onClick={toggleTheme}
+			>
 				{isDarkMode ? (
-					<img className="toggle-img" src="/assets/images/sun.png" />
+					<img
+						className="w-full h-full"
+						src="/assets/images/sun.png"
+					/>
 				) : (
-					<img className="toggle-img" src="/assets/images/moon.png" />
+					<img
+						className="w-full h-full"
+						src="/assets/images/moon.png"
+					/>
 				)}
 			</button>
 		</div>

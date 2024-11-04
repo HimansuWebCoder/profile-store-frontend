@@ -1,4 +1,4 @@
-.comment-box-container {
+/*.comment-box-container {
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
@@ -20,7 +20,7 @@
 	overflow-y: auto;
 	border-radius: 10px;
 }
-
+*/
 #cancel-comment-box {
 	width: 100%;
 	height: auto;
@@ -32,7 +32,8 @@
 	font-size: 1.5rem;
 }
 
-#cancel-comment {
+/*#cancel-comment {
 	color: white;
 	text-decoration: none;
 }
+*/

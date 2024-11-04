@@ -36,7 +36,7 @@ function ProfileInfo() {
 	}, [setProfileId, location]);
 
 	return (
-		<div id="profile-info-container">
+		<div className="max-w-[400px] h-auto text-center text-[1.5rem] text-white break-words flex justify-center flex-col">
 			<Link to={`/admin/profile-info/${profileId}/edit`}>
 				<img
 					className="editpencil"
@@ -59,8 +59,8 @@ function ProfileInfo() {
 				</Box>
 			) : (
 				<>
-					<h1 className="header">{name}</h1>
-					<h3 className="header">{headline}</h3>
+					<h1 className="leading-[0.1]">{name}</h1>
+					<h3 className="leading-[0.1]">{headline}</h3>
 					<ProfileLinks />
 				</>
 			)}

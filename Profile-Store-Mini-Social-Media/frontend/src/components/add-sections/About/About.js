@@ -27,10 +27,13 @@ function About() {
 
 	return (
 		<div>
-			<div className="sub-admin-container aboutSection">
-				<div className="about-container">
+			<div className="sub-admin-container flex flex-col">
+				<div className="flex justify-between items-center bg-[#092635] p-[5px] mt-[10px] rounded-[10px]">
 					<h3>About</h3>
-					<Link to={`/admin/about/${aboutId}`}>
+					<Link
+						className="cursor-pointer"
+						to={`/admin/about/${aboutId}`}
+					>
 						<img
 							className="editpencil"
 							src="/assets/images/pencil.png"

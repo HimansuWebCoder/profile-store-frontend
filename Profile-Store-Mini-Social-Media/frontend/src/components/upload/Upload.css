@@ -1,4 +1,4 @@
-.upload-container {
+/*.upload-container {
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.4);
@@ -10,13 +10,13 @@
 	justify-content: center;
 	justify-items: center;
 	align-content: center;
-}
-
+}*/
+/*
 .upload-sub-container {
 	width: 500px;
 	height: 500px;
 	background: rgba(10, 0, 0, 0.3);
-	/*	margin-top: 100px;*/
+	margin-top: 100px;
 	padding: 10px;
 	display: flex;
 	justify-content: center;
@@ -24,9 +24,9 @@
 	border-radius: 20px;
 	text-align: center;
 	color: white;
-}
+}*/
 
-.upload-btn {
+/*.upload-btn {
 	width: 100px;
 	height: 30px;
 	margin: 5px;
@@ -39,3 +39,4 @@
 	color: blue;
 	text-decoration: none;
 }
+*/

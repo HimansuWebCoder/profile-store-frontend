@@ -42,20 +42,26 @@ function ProfileInfoEdit() {
 	};
 
 	return (
-		<div className="profile-info-edit-container">
+		<div className="w-screen bg-black bg-opacity-40 text-white h-screen z-100 fixed top-0 left-0">
 			{isUpdated ? (
 				<PopupEdit msg={message} redirect="/admin" />
 			) : (
-				<div className="edit-sub-container">
-					<div className="redirect-btn-container">
-						<button id="redirect-root-btn" onClick={handleNavigate}>
+				<div className="max-w-[400px] h-[400px] mx-auto mt-[50px] bg-[#31363f] p-2 rounded-2xl flex flex-col">
+					<div className="w-full flex justify-end">
+						<button
+							className="w-[80px] h-[30px] text-lg text-white cursor-pointer rounded-lg border-none bg-transparent color-white hover:bg-gray-700"
+							onClick={handleNavigate}
+						>
 							Back
 						</button>
 					</div>
-					<form className="form" onSubmit={handleSubmit}>
-						<label>Name:</label>
+					<form
+						className="flex justify-center flex-col"
+						onSubmit={handleSubmit}
+					>
+						<label className="block w-[100px]">Name:</label>
 						<input
-							className="input-form"
+							className="max-w-[250px] h-[30px] m-1 border border-gray-300 rounded"
 							type="text"
 							value={name || ""}
 							onChange={(e) => setName(e.target.value)}
@@ -63,12 +69,15 @@ function ProfileInfoEdit() {
 						<br />
 						<label>Headline:</label>
 						<input
-							className="input-form"
+							className="max-w-[250px] h-[30px] m-1 border border-gray-300 rounded"
 							type="text"
 							value={headline || ""}
 							onChange={(e) => setHeadline(e.target.value)}
 						/>
-						<button id="submit-btn" type="submit">
+						<button
+							className="max-w-[100px] h-[30px] rounded border-none m-1 bg-blue-600 text-white hover:bg-blue-700 "
+							type="submit"
+						>
 							Update Profile
 						</button>
 					</form>

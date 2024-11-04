@@ -1,7 +1,7 @@
-.post-container {
+/*.post-container {
 	max-width: 400px;
 	height: auto;
-	/*	border: 1px solid black;*/
+		border: 1px solid black;
 	margin: auto;
 	margin-top: 20px;
 	padding: 10px;
@@ -10,7 +10,7 @@
 .post-sub-container {
 	max-width: 100%;
 	height: 100%;
-	/*	border: 1px solid black;*/
+		border: 1px solid black;
 	padding: 10px;
 	margin-top: 20px;
 	border-radius: 20px;
@@ -18,7 +18,7 @@
 .posted-image-container {
 	max-width: 100%;
 	height: auto;
-	/*	border: 1px solid blue;*/
+		border: 1px solid blue;
 	margin-top: 20px;
 	border-radius: 10px;
 	box-shadow: 0.5px 0.5px 0.8px 0.5px black;
@@ -40,7 +40,7 @@
 .post-logo-edit-container {
 	max-width: 100%;
 	height: 50px;
-	/*	border: 1px solid black;*/
+		border: 1px solid black;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
@@ -50,7 +50,7 @@
 .like-comment-share-container {
 	max-width: 100%;
 	height: auto;
-	/*	border: 1px solid black;*/
+		border: 1px solid black;
 	display: flex;
 	justify-content: space-around;
 }
@@ -74,7 +74,7 @@
 	justify-content: space-around;
 	align-items: center;
 	margin-bottom: 10px;
-	/*	background: rgba(0, 12, 222, 0.4);*/
+		background: rgba(0, 12, 222, 0.4);
 }
 
 .create-post-link {
@@ -85,10 +85,10 @@
 .profile-posted-img-main-container {
 	max-width: 60px;
 	height: auto;
-	/*	border: 1px solid white;*/
+		border: 1px solid white;
 }
-
-.profile-main-img-posted-container {
+*/
+/*.profile-main-img-posted-container {
 	max-width: 100%;
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
@@ -113,3 +113,4 @@ hr {
 	border-top: 1px solid black;
 	height: 5px;
 }
+*/

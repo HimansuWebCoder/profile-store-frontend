@@ -1,7 +1,7 @@
-.links-parent-container {
+/*.links-parent-container {
 	width: 100%;
 	height: auto;
-	/*	border: 1px solid yellow;*/
+			border: 1px solid yellow;
 	margin: auto;
 }
 
@@ -13,7 +13,7 @@
 
 .links-child-container {
 	display: flex;
-	/*	flex-direction: column;*/
+		flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
@@ -44,12 +44,8 @@
 	outline: none;
 }
 
-/*.links-container > li:active {
-	background: red;
-}
-*/
-
 .link-icons {
 	width: 2rem;
 	height: 1.4rem;
 }
+*/

@@ -25,7 +25,7 @@ function ProfileLinks() {
 	}, []);
 
 	return (
-		<div className="links-parent-container">
+		<div className="w-full h-auto mx-auto">
 			<div
 				style={{
 					maxWidth: "20px",
@@ -43,17 +43,24 @@ function ProfileLinks() {
 				</Link>
 			</div>
 			{links.map((linkData, index) => (
-				<ul className="links-child-container" key={index}>
+				<ul
+					className="flex flex-wrap justify-center items-center w-full h-auto bg-[#fcf5ed] rounded-[10px] m-0 p-0 text-center"
+					key={index}
+				>
 					{socialMediaLinks.map((socialmedia) => (
-						<li key={socialmedia.name} tabIndex="0">
+						<li
+							className="list-none p-1"
+							key={socialmedia.name}
+							tabIndex="0"
+						>
 							<a
-								className="links"
+								className="inline-block text-center text-white no-underline"
 								href={linkData[`${socialmedia.name}_url`]}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<img
-									className="link-icons"
+									className="w-[2rem] h-[1.4rem]"
 									src={socialmedia.icon}
 									alt={`${socialmedia.name} icon`}
 								/>

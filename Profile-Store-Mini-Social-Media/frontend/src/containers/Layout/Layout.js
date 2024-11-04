@@ -11,7 +11,7 @@ function Layout({ mode, setMode }) {
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
 	return (
-		<div className="layout-container">
+		<div className="h-auto">
 			<Navbar mode={mode} setMode={setMode} />
 			<div
 				style={{

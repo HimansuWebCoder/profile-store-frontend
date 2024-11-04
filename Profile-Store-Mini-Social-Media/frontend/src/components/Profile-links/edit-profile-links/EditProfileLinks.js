@@ -82,11 +82,11 @@ function EditProfileLinks() {
 	}
 
 	return (
-		<div className="profileLinks-container">
-			<div className="profileLinks-sub-container">
-				<div className="edit-profile-links-header">
+		<div className="fixed top-0 left-0 w-screen h-screen bg-[rgba(0,0,0,0.1)] flex justify-center z-1000">
+			<div className="w-[400px] h-[600px] overflow-auto mx-auto border border-white bg-black text-white p-2 text-center">
+				<div className="w-full h-auto bg-[rgba(200,22,250,0.5)] flex justify-around items-center">
 					<h1>Edit profile links</h1>
-					<Link to="/admin" id="cancel-edit-links">
+					<Link to="/admin" className="text-white no-underline">
 						<h3>Cancel</h3>
 					</Link>
 				</div>

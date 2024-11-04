@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function ProfileLogo() {
 	return (
-		<div className="profile_logo_container">
+		<div className="w-[50px] h-[50px]">
 			<Link to="/">
 				<img
-					id="logo-image"
+					className="max-w-[60px] h-[50px] rounded-[20px]"
 					src="/assets/images/Profile_Logo.png"
 					alt="Profile_logo"
 				/>

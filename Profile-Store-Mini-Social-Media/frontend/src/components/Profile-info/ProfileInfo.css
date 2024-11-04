@@ -1,4 +1,4 @@
-#profile-info-container {
+/*#profile-info-container {
 	max-width: 400px;
 	height: auto;
 	text-align: center;
@@ -9,3 +9,9 @@
 	justify-content: center;
 	flex-direction: column;
 }
+*/
+
+/*.header {
+	line-height: 0.1;
+}
+*/

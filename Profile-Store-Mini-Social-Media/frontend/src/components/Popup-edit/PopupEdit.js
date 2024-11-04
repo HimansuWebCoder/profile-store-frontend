@@ -17,20 +17,23 @@ function PopupEdit({ msg, redirect }) {
 	// }, 1000);
 
 	return (
-		<div className="popup-edit-container">
+		<div className="w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.4)] text-white fixed top-0 left-0 text-center">
 			{loader ? (
 				<h2 id="popup-edit-header-loader">Loading...</h2>
 			) : (
-				<div>
+				<div className="max-w-[400px] h-auto bg-black text-white m-auto p-[10px] rounded-[20px] mt-[80px] flex items-center justify-between">
 					<img
-						id="popup-edit-img"
+						className="max-w-[40px] h-[40px]"
 						src="/assets/images/check.png"
 						alt="check"
 					/>
 					<p>{msg}</p>
-					<Link id="link" to={redirect}>
+					<Link
+						className="text-white no-underline bg-red-500 rounded-[50px]"
+						to={redirect}
+					>
 						<img
-							id="popup-cancel-img"
+							className="max-w-[40px] h-[40px]"
 							src="/assets/images/cancel.png"
 							alt="cancel popup"
 						/>

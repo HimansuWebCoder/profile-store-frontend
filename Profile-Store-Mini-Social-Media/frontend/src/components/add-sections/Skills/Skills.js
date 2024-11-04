@@ -29,14 +29,20 @@ function Skills() {
 			});
 	}, [location]);
 	return (
-		<div className="skills-main-container">
-			<div className="skills-view-container">
+		<div className="flex flex-col">
+			<div className="flex justify-between items-center mt-[10px] bg-[#092635] rounded-[10px] p-[5px]">
 				<h3>Skills</h3>
 				<div>
-					<Link className="skill-links " to="/admin/skill/post">
+					<Link
+						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[10px] no-underline "
+						to="/admin/skill/post"
+					>
 						Post
 					</Link>
-					<Link className="skill-links " to="/admin/skill/edit">
+					<Link
+						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[10px] no-underline"
+						to="/admin/skill/edit"
+					>
 						Edit
 					</Link>
 				</div>
@@ -56,14 +62,14 @@ function Skills() {
 					/>
 				</Box>
 			) : (
-				<div className="skills-container">
+				<div className="h-[200px] overflow-auto mt-[20px] bg-[#092635] p-[5px]">
 					{skills.length === 0 ? (
 						<p>{error}</p>
 					) : (
 						<>
 							{skills.map((skill) => (
 								<div
-									className="skill-sub-container"
+									className="w-full h-auto overflow-auto m-auto bg-[#232d3f] rounded-[10px] text-white text-center text-[1.5rem] font-bold mb-[10px]"
 									key={skill.id}
 								>
 									<p>{skill.skill}</p>

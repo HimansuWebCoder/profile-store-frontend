@@ -1,9 +1,9 @@
-.aboutSection {
+/*.aboutSection {
 	display: flex;
 	flex-direction: column;
 }
-
-.about-container {
+*/
+/*.about-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -16,3 +16,4 @@
 .about-container > Link {
 	cursor: pointer;
 }
+*/

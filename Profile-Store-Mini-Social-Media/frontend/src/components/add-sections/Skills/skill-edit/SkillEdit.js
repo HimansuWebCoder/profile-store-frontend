@@ -38,7 +38,7 @@ function SkillEdit() {
 	}
 
 	return (
-		<div className="skill-edit-container">
+		<div className="fixed top-0 left-0 w-screen h-screen z-[100] rounded-[10px] bg-[rgba(0,20,50,0.4)] text-white flex justify-center items-center">
 			{loading ? (
 				<Box
 					sx={{
@@ -53,29 +53,29 @@ function SkillEdit() {
 					/>
 				</Box>
 			) : (
-				<div className="skill-edit-sub-container">
+				<div className="w-[500px] h-[400px] overflow-auto text-[1rem] text-center bg-[rgba(0,0,0,0.7)] p-[10px] rounded-[10px]">
 					<h1>Edit your skills</h1>
 					{skills.map((skill) => (
 						<>
-							<p id="skills-name" key={skill.id}>
+							<p className="text-[1.5rem]" key={skill.id}>
 								{skill.skill}
 							</p>
 							<button
-								id="skill-edit-deleteBtn"
+								className="w-[50px] h-[30px] ml-[10px] cursor-pointer rounded-[5px] border-none"
 								onClick={() => DeleteSkill(skill.id)}
 							>
 								<img
-									className="skill-edit-img"
+									className="w-full h-full"
 									src="/assets/images/delete.png"
 									alt="delete skills"
 								/>
 							</button>
 							<button
-								id="skill-edit-cancelBtn"
+								className="w-[50px] h-[30px] ml-[10px] cursor-pointer rounded-[5px] border-none"
 								onClick={() => navigate("/admin")}
 							>
 								<img
-									className="skill-edit-img"
+									className="w-full h-full"
 									src="/assets/images/cancel1.png"
 									alt="cancel"
 								/>

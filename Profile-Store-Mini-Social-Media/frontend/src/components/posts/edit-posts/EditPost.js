@@ -30,27 +30,27 @@ function EditPost({ redirectTo }) {
 	}
 
 	return (
-		<div className="editpost-container">
-			<div className="editpost-sub-container">
-				<div id="cancel-img-edit">
-					<Link class="edit-img-cancel-link" to="/posts">
+		<div className="w-[200px] h-auto border border-black rounded-[10px] fixed top-[100px] bg-white text-black right-[10px]">
+			<div className="flex flex-col justify-center items-around">
+				<div className="m-auto">
+					<Link className="no-underline" to="/posts">
 						Cancel
 					</Link>
 				</div>
-				<div className="editpost-popup-container">
+				<div className="flex justify-around items-center">
 					<Link to={`/posts/edit/${id}`}>
 						<img
-							className="editPostedImages"
+							className="w-[40px] h-[40px]"
 							src="/assets/images/pencil.png"
 							alt="edit.png"
 						/>
 					</Link>
 					<h4>Edit</h4>
 				</div>
-				<div className="editpost-popup-container">
+				<div className="flex justify-around items-center">
 					<img
 						onClick={deletePost}
-						className="editPostedImages"
+						className="w-[40px] h-[40px]"
 						src="/assets/images/delete.png"
 						alt="delete.png"
 					/>

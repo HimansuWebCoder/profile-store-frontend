@@ -32,19 +32,32 @@ function SkillPost() {
 	}
 
 	return (
-		<div className="post-skill-container">
-			<div className="post-skill-sub-container">
+		<div className="fixed top-0 left-0 w-screen h-screen bg-[rgba(0,0,0,0.4)] flex justify-center">
+			<div className="w-[600px] h-[300px] bg-[rgba(0,0,30,1)] mt-[50px] text-center rounded-[20px]">
 				<h1 style={{ color: "white" }}>Post Skills</h1>
 				<input
+					className="w-[200px] h-[30px] rounded-[10px] text-[1.2rem]"
 					type="text"
 					value={skillInput}
 					placeholder="Add your skills"
 					ref={inputRef}
 					onChange={(e) => setSkillInput(e.target.value)}
 				/>
-				<button onClick={handleSubmit}>add</button>
-				<button onClick={() => navigate("/admin")}>Cancel</button>
-				{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin" />}
+				<button
+					className="w-[100px] h-[30px] rounded-[5px] ml-[5px] text-[1.3rem]"
+					onClick={handleSubmit}
+				>
+					add
+				</button>
+				<button
+					className="w-[100px] h-[30px] rounded-[5px] ml-[5px] text-[1.3rem]"
+					onClick={() => navigate("/admin")}
+				>
+					Cancel
+				</button>
+				{popupMessage && (
+					<PopupEdit msg={popupMessage} redirect="/admin" />
+				)}
 			</div>
 		</div>
 	);

@@ -83,18 +83,21 @@ function Images() {
 	return (
 		<div
 			style={{ color: isDarkMode ? "black" : "white" }}
-			className="post-container"
+			className="max-w-[400px] h-auto m-auto mt-[20px] p-[10px]"
 		>
 			<div
 				style={{
 					background: isDarkMode ? "#2C4E80" : "#00215E",
 				}}
-				className="create-post-container"
+				className="max-w-full h-auto border border-white rounded-[10px] flex justify-around items-center mb-[10px]"
 			>
 				<h1 style={{ color: isDarkMode ? "white" : "white" }}>
 					Create Posts
 				</h1>
-				<Link className="create-post-link" to="/posts/create-post">
+				<Link
+					className="text-white no-underline"
+					to="/posts/create-post"
+				>
 					<img
 						className="add-button"
 						src="/assets/images/add-button.png"
@@ -125,7 +128,7 @@ function Images() {
 							// 		? "1px solid black"
 							// 		: "1px solid white",
 							// }}
-							className="post-sub-container"
+							className="max-w-full h-full p-[10px] mt-[20px] rounded-[20px]"
 							key={img.id}
 						>
 							{loader2 ? (
@@ -151,24 +154,24 @@ function Images() {
 											: "white",
 										color: isDarkMode ? "black" : "black",
 									}}
-									className="posted-image-container"
+									className="max-w-full h-auto mt-[20px] rounded-[10px] shadow-[0.5px_0.5px_0.8px_0.5px_black] p-[10px]"
 								>
 									<div
 										// style={{
 										// 	background: isDarkMode ? "#31363F" : "#87A2FF",
 										// }}
-										className="post-logo-edit-container"
+										className="max-w-full h-[50px] flex justify-between p-[10px] mb-[20px]"
 									>
-										<div className="profile-posted-img-main-container">
+										<div className="max-w-[60px] h-auto">
 											<ProfilePhoto
 												imgSrc="/assets/images/user.png"
-												className="profile-main-img-posted-container"
+												className="max-w-full aspect-[1/1] rounded-full h-auto"
 											/>
 										</div>
 										<div>
 											<Link to={`/posts/${img.id}`}>
 												<img
-													className="posted-image-logo"
+													className="w-[50px] max-h-[50px]"
 													src="/assets/images/menu.png"
 													alt="triple dot"
 												/>
@@ -176,49 +179,49 @@ function Images() {
 											<Outlet />
 										</div>
 									</div>
-									<hr className="horizontal-post-card-line" />
-									<div id="image-post-box-container">
+									<hr className="border border-black-900" />
+									<div className="max-w-full h-auto">
 										<img
-											id="posted-img"
+											className="w-full h-[300px] border border-white rounded-[10px]"
 											src={img.image_url}
 											alt="posted image"
 										/>
 									</div>
-									<hr />
+									<hr className="border border-black-900" />
 									<div
 										// style={{
 										// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",
 										// }}
-										className="like-comment-share-container"
+										className="max-w-full h-auto flex justify-around"
 									>
-										<div className="user-response-container">
+										<div className="flex justify-center flex-col items-center">
 											<div>
 												<img
 													onClick={likebtn}
-													className="posted-image-emojis"
+													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like.png"
 													alt="like"
 												/>
-												<span id="like-count">
+												<span className="ml-[10px] text-[1.4rem] text-shadow-[1px_5px_1px_yellow]">
 													{like}
 												</span>
 											</div>
 											<h4>Like</h4>
 										</div>
-										<div className="user-response-container">
+										<div className="flex justify-center flex-col items-center">
 											<Link to="/posts/comments">
 												<img
-													className="posted-image-emojis"
+													className="max-w-[30px] h-[30px]"
 													src="/assets/images/comment.png"
 													alt="comment"
 												/>
 											</Link>
 											<h4>Comment</h4>
 										</div>
-										<div className="user-response-container">
+										<div className="flex justify-center flex-col items-center">
 											<img
 												onClick={handleShare}
-												className="posted-image-emojis"
+												className="max-w-[30px] h-[30px]"
 												src="/assets/images/share.png"
 												alt="share"
 											/>

@@ -46,10 +46,10 @@ function AboutEdit() {
 	};
 
 	return (
-		<div className="about-edit-main-container">
+		<div className="flex justify-center items-center">
 			{loading ? (
 				<Box
-					id="about-loading-header"
+					className="absolute top-[250px]"
 					sx={{
 						display: "flex",
 						justifyContent: "center",
@@ -62,16 +62,26 @@ function AboutEdit() {
 					/>
 				</Box>
 			) : (
-				<div className="about-edit-container">
+				<div className="max-w-[500px] h-[200px] bg-[rgba(0,100,200,1)] rounded-[10px] text-white absolute top-[200px] p-[10px] text-center">
 					<textarea
-						className="textarea"
+						className="w-[90%] h-[80%] text-white text-2xl bg-[rgba(0,20,50,1)]"
 						value={input}
 						onChange={(e) => setInput(e.target.value)}
 					>
 						{description}
 					</textarea>
-					<button onClick={editAboutHandler}>Submit</button>
-					<button onClick={() => navigate("/admin")}>Exit</button>
+					<button
+						className="w-[20%] h-[30px] rounded-[5px]"
+						onClick={editAboutHandler}
+					>
+						Submit
+					</button>
+					<button
+						className="w-[20%] h-[30px] rounded-[5px]"
+						onClick={() => navigate("/admin")}
+					>
+						Exit
+					</button>
 				</div>
 			)}
 			{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin" />}

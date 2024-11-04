@@ -56,19 +56,25 @@ function Upload() {
 	};
 
 	return (
-		<div className="upload-container">
-			<div className="upload-sub-container">
+		<div className="w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.4)] fixed top-0 left-0 z-[100] flex justify-center items-center">
+			<div className="w-[500px] h-[500px] bg-[rgba(10,0,0,0.3)] p-[10px] flex justify-center items-center rounded-[20px] text-center text-white">
 				<form onSubmit={handleSubmit}>
 					<input
 						type="file"
 						name="avatar"
 						onChange={handleFileChange}
 					/>
-					<button className="upload-btn" type="submit">
+					<button
+						className="w-[100px] h-[30px] m-[5px] text-blue-500 bg-white rounded-[5px]"
+						type="submit"
+					>
 						Upload
 					</button>
-					<button className="upload-btn">
-						<Link className="upload-back-link" to="/admin">
+					<button className="w-[100px] h-[30px] m-[5px] text-blue-500 bg-white rounded-[5px]">
+						<Link
+							className="text-blue-500 no-underline"
+							to="/admin"
+						>
 							Back
 						</Link>
 					</button>
