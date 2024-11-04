@@ -3,7 +3,6 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	color: white;
 	height: 100vh;
-	z-index: 1000;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -18,7 +17,7 @@
 	margin: auto;
 	padding: 10px;
 	border-radius: 20px;
-	margin-top: 50px;
+	margin-top: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
