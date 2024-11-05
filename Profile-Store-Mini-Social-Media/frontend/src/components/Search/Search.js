@@ -10,7 +10,6 @@ function Search() {
 				backgroundPosition: "10px center",
 				backgroundSize: "20px 20px",
 				backgroundRepeat: "no-repeat",
-				color: "white",
 			}}
 		/>
 	);
