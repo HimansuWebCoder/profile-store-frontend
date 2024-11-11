@@ -19,7 +19,7 @@ function AppLayout({ mode, setMode }) {
 					element={<Layout mode={mode} setMode={setMode} />}
 				>
 					<Route path="profiles" element={<Profiles />} />
-					<Route path="posts" element={<ImagePosts />}>
+					<Route path="posts/*" element={<ImagePosts />}>
 						<Route path=":id" element={<EditPost />} />
 						<Route path="edit/:id" element={<EditImagePost />} />
 						<Route path="create-post" element={<CreatePost />} />

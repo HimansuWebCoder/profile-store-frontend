@@ -89,11 +89,13 @@ function Images() {
 				style={{
 					background: isDarkMode ? "#2C4E80" : "#00215E",
 				}}
-				className="max-w-full h-auto border border-white rounded-[10px] flex justify-around items-center mb-[10px]"
+				className="max-w-full h-auto z-15000 border border-white rounded-[10px] flex justify-around items-center mb-[10px]"
 			>
 				<h1 style={{ color: isDarkMode ? "white" : "white" }}>
 					Create Posts
 				</h1>
+
+
 				<Link
 					className="text-white no-underline"
 					to="/posts/create-post"
@@ -176,7 +178,7 @@ function Images() {
 													alt="triple dot"
 												/>
 											</Link>
-											<Outlet />
+											
 										</div>
 									</div>
 									<hr className="border border-black-900" />
@@ -234,6 +236,7 @@ function Images() {
 					))}
 				</>
 			)}
+			<Outlet />
 		</div>
 	);
 }
