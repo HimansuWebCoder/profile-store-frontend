@@ -28,7 +28,7 @@ function ProfileInfo() {
 				setTimeout(() => {
 					setName(profileInfoData[0].name);
 					setHeadline(profileInfoData[0].headline);
-					setProfileId(profileInfoData[0].id);
+					setProfileId(profileInfoData[0].profile_id);
 					setLoader(false);
 				}, 1000);
 			} catch (error) {
