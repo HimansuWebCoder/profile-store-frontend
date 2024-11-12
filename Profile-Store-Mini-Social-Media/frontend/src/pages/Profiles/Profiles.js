@@ -48,11 +48,10 @@ function Profiles({ mode, setMode }) {
 					className="profiles-info-container"
 				>
 				
-					<UsersPhoto />
+					<UsersPhoto img={user.image} />
 					<div>
                       <h2 >{user.name}</h2>
                       <h2 >{user.headline}</h2>
-                      <img src={user.image} alt="not found" />      
 					</div>
 				</div>
 				))}
