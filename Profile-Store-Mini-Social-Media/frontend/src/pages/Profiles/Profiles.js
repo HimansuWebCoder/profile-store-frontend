@@ -16,7 +16,7 @@ function Profiles({ mode, setMode }) {
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/profile-info`, {
+		fetch(`${apiUrl}/all-users`, {
 			method: "get",
 			credentials: "include"
 		})
