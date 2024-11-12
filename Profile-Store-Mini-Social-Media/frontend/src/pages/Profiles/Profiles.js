@@ -7,19 +7,24 @@ import ProfilePhoto from "../../components/Profile-photo/ProfilePhoto";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function Profiles({ mode, setMode }) {
-	const [profileName, setProfileName] = useState("");
-	const [profileIntro, setProfileIntro] = useState("");
+	// const [profileName, setProfileName] = useState("");
+	// const [profileIntro, setProfileIntro] = useState("");
+		const [users, setUsers] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/profile-info`)
+		fetch(`${apiUrl}/api/profile-info`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((profilesData) => {
 				console.log(profilesData);
 				setTimeout(() => {
-					setProfileName(profilesData[0].name);
-					setProfileIntro(profilesData[0].headline);
+					// setProfileName(profilesData[0].name);
+					// setProfileIntro(profilesData[0].headline);
+					setUsers(profilesData);
 					setLoading(false);
 				}, 1000);
 			});
@@ -30,32 +35,32 @@ function Profiles({ mode, setMode }) {
 			{loading ? (
 				<CircularProgress />
 			) : (
+				<>
+			{users.map(user => (
 				<div
 					style={{
 						color: isDarkMode ? "white" : "white",
-						// background: isDarkMode ? "#1e3e62" : "#1F2544",
-						background: isDarkMode ? "#393646" : "#31363F",
-						borderTop: isDarkMode
-							? "5px solid white"
-							: "1px solid white",
-						borderBottom: isDarkMode
-							? "5px solid white"
-							: "1px solid white",
+						background: isDarkMode ? "#1e3e62" : "#1F2544",
+						marginTop: "10px"
 					}}
 					className="profiles-info-container"
 				>
 					<ProfilePhoto
-						imgSrc="/assets/images/user.png"
+						imgSrc={user.image} 
 						alt="profile image"
 						size="auto"
 						bg="none"
 						className="profile-main-img-container"
 					/>
+					<UsersPhoto />
 					<div>
-						<h2 className="profile-info-name">{profileName}</h2>
-						<h3 className="profile-info-name">{profileIntro}</h3>
+                      <h2 >{user.name}</h2>
+                      <h2 >{user.headline}</h2>
+                      <img src={user.image} alt="not found" />      
 					</div>
 				</div>
+				))}
+		  </>
 			)}
 		</div>
 	);

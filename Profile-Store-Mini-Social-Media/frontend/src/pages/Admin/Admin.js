@@ -19,7 +19,10 @@ function Admin() {
 	const location = useLocation();
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/profile-photo`)
+		fetch(`${apiUrl}/api/profile-photo`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((photo) => {
 				console.log("my profile", photo[0].id);

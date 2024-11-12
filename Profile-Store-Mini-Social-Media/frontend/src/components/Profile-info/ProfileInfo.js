@@ -17,7 +17,10 @@ function ProfileInfo() {
 	useEffect(() => {
 		const fetchProfileInfo = async () => {
 			try {
-				const profileInfo = await fetch(`${apiUrl}/api/profile-info`);
+				const profileInfo = await fetch(`${apiUrl}/api/profile-info`, {
+					method: "get",
+					credentials: "include"
+				});
 				const profileInfoData = await profileInfo.json();
 				// if (!profileInfoData.ok) {
 				// 	alert("You are Offline");
