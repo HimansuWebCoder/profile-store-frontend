@@ -33,10 +33,10 @@ function submitHandler() {
 
 	return (
 		<div className="login-container">
-			<h1>login testing phase now please use existing email. Use any to see result</h1>
+			<h1 style={{color: "white"}}>login testing phase now please use existing email. Use any to see result</h1>
 			<h3 style={{color: "white"}}>himansu@gmail.com</h3>
 			<h3 style={{color: "white"}}>h@gmail.com</h3>
-            <input type="text" value={loginInput} onChange={inputHandler} placeholder="himansu@gmail.com" />
+            <input  type="text" value={loginInput} onChange={inputHandler} placeholder="himansu@gmail.com" />
             <button onClick={submitHandler}>submit</button>
 		</div>
 	);
