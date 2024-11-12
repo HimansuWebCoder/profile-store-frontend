@@ -5,6 +5,8 @@ import { ThemeContext } from "../../ThemeContext";
 import "./Profiles.css";
 import ProfilePhoto from "../../components/Profile-photo/ProfilePhoto";
 import CircularProgress from "@mui/material/CircularProgress";
+import UsersPhoto from "../../components/users-photos/UsersPhoto";
+
 
 function Profiles({ mode, setMode }) {
 	// const [profileName, setProfileName] = useState("");
