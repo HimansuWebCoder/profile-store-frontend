@@ -63,7 +63,7 @@ function ProfileInfoEdit() {
 					>
 						<label className="block w-[100px]">Name:</label>
 						<input
-							className="max-w-[250px] h-[30px] m-1 border border-gray-300 rounded"
+							className="max-w-[250px] text-black h-[30px] m-1 border border-gray-300 rounded"
 							type="text"
 							value={name || ""}
 							onChange={(e) => setName(e.target.value)}
@@ -71,7 +71,7 @@ function ProfileInfoEdit() {
 						<br />
 						<label>Headline:</label>
 						<input
-							className="max-w-[250px] h-[30px] m-1 border border-gray-300 rounded"
+							className="max-w-[250px] text-black h-[30px] m-1 border border-gray-300 rounded"
 							type="text"
 							value={headline || ""}
 							onChange={(e) => setHeadline(e.target.value)}
