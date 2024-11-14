@@ -43,7 +43,9 @@ function Profiles({ mode, setMode }) {
 					style={{
 						color: isDarkMode ? "white" : "white",
 						background: isDarkMode ? "#1e3e62" : "#1F2544",
-						marginTop: "10px"
+						marginTop: "10px", 
+						borderTop: "1px solid white",
+						borderBottom: "1px solid white"
 					}}
 					className="profiles-info-container"
 				>

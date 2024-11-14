@@ -18,7 +18,8 @@ function SkillPost() {
 		fetch(`${apiUrl}/api/skills`, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ skill: skillInput }),
+			body: JSON.stringify({ skillName: skillInput }),
+			credentials: "include"
 		})
 			.then((res) => res.json())
 			.then((skillData) => {
@@ -36,7 +37,7 @@ function SkillPost() {
 			<div className="w-[600px] h-[300px] bg-[rgba(0,0,30,1)] mt-[50px] text-center rounded-[20px]">
 				<h1 style={{ color: "white" }}>Post Skills</h1>
 				<input
-					className="w-[200px] h-[30px] rounded-[10px] text-[1.2rem]"
+					className="w-[200px] text-black h-[30px] rounded-[10px] text-[1.2rem]"
 					type="text"
 					value={skillInput}
 					placeholder="Add your skills"

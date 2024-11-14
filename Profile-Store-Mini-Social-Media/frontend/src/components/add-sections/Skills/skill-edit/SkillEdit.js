@@ -16,7 +16,10 @@ function SkillEdit() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/skills`)
+		fetch(`${apiUrl}/api/skills`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((skillsData) => {
 				console.log("skills data:", skillsData);
@@ -30,6 +33,7 @@ function SkillEdit() {
 	function DeleteSkill(id) {
 		fetch(`${apiUrl}/api/skills/${id}`, {
 			method: "delete",
+			credentials: "include"
 		})
 			.then((res) => res.json())
 			.then((deletedSkillData) => {
@@ -54,31 +58,33 @@ function SkillEdit() {
 				</Box>
 			) : (
 				<div className="w-[500px] h-[400px] overflow-auto text-[1rem] text-center bg-[rgba(0,0,0,0.7)] p-[10px] rounded-[10px]">
-					<h1>Edit your skills</h1>
+					<h1 className="text-[40px]">Edit your skills</h1>
 					{skills.map((skill) => (
 						<>
-							<p className="text-[1.5rem]" key={skill.id}>
+							<p className="text-[1.5rem]" key={skill.skill_id}>
 								{skill.skill}
 							</p>
 							<button
-								className="w-[50px] h-[30px] ml-[10px] cursor-pointer rounded-[5px] border-none"
-								onClick={() => DeleteSkill(skill.id)}
+								className="w-auto bg-blue-500 p-2 h-auto ml-[10px] cursor-pointer rounded-[5px] border-none"
+								onClick={() => DeleteSkill(skill.skill_id)}
 							>
-								<img
+								{/*<img
 									className="w-full h-full"
 									src="/assets/images/delete.png"
 									alt="delete skills"
-								/>
+								/>*/}
+							Delete
 							</button>
 							<button
-								className="w-[50px] h-[30px] ml-[10px] cursor-pointer rounded-[5px] border-none"
+								className="w-auto bg-blue-500 p-2 h-auto ml-[10px] cursor-pointer rounded-[5px] border-none"
 								onClick={() => navigate("/admin")}
 							>
-								<img
+								{/*<img
 									className="w-full h-full"
 									src="/assets/images/cancel1.png"
 									alt="cancel"
-								/>
+								/>*/}
+							Cancel
 							</button>
 						</>
 					))}

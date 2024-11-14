@@ -17,7 +17,10 @@ function AboutEdit() {
 	const id = location.pathname.split("/")[3];
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/about`)
+		fetch(`${apiUrl}/api/about`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((aboutData) => {
 				setTimeout(() => {
@@ -33,6 +36,7 @@ function AboutEdit() {
 			method: "put",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ description: input }),
+			credentials: "include"
 		})
 			.then((res) => res.json())
 			.then((data) => {

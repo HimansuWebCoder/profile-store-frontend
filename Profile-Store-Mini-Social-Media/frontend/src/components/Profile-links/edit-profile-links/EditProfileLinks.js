@@ -24,7 +24,10 @@ function EditProfileLinks() {
 	const location = useLocation();
 	useEffect(() => {
 		console.log("my edit location", location);
-		fetch(`${apiUrl}/api/profile-links`)
+		fetch(`${apiUrl}/api/profile-links`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((profileLinks) => {
 				setTimeout(() => {

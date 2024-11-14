@@ -29,7 +29,7 @@ function Admin() {
 				console.log("profile-image", photo[photo.length - 1].image);
 				setProfilePhotoId(photo[0].id);
 				setTimeout(() => {
-					setProfileImg(photo[photo.length - 1].image);
+					setProfileImg(photo[0].image);
 					setLoading(false);
 				}, 2000);
 			});
