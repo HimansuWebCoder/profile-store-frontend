@@ -49,8 +49,9 @@ function Profiles({ mode, setMode }) {
 					}}
 					className="profiles-info-container"
 				>
-				
+				<Link to={`/user/${user.profile_id}`}>
 					<UsersPhoto img={user.image} />
+				</Link>
 					<div>
                       <h2 >{user.name}</h2>
                       <h2 >{user.headline}</h2>
