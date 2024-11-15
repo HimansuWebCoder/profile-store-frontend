@@ -23,6 +23,7 @@ function ProfileLinks() {
 		})
 			.then((res) => res.json())
 			.then((profileLinks) => {
+				console.log(profileLinks)
 				setLinks(profileLinks);
 			});
 	}, []);

@@ -64,7 +64,7 @@ function ProfileInfo() {
 				<>
 					<h1 className="leading-[0.1] pt-7 text-4xl">{name}</h1>
 					<h3 className="leading-[3]">{headline}</h3>
-					<ProfileLinks />
+					{/*<ProfileLinks />*/}
 				</>
 			)}
 		</div>
