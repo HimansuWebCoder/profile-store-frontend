@@ -42,13 +42,13 @@ function UserCard() {
 				  <CircularProgress size={64} />
 				</div>
 				) : (
-			<div className="max-w-[500px] h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
+			<div className="max-w-[500px] border rounded-xl h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
 				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="rounded-full aspect-square" />
-				<h1 className="text-[2rem] bg-black">{users?.user?.[0]?.name}</h1>
-				<h1 className="text-[1.5rem] bg-black mt-[5px]">{users?.user?.[0]?.headline}</h1>
-				<h1 className="text-[1.2rem] bg-blue-500">{users?.about?.[0]?.description}</h1>
+				<h1 className="text-[2rem] w-[100%] bg-black">{users?.user?.[0]?.name}</h1>
+				<h1 className="text-[1.5rem] w-[100%] bg-black mt-[5px]">{users?.user?.[0]?.headline}</h1>
+				<h1 className="text-[1.2rem] w-[100%] mt-2 bg-blue-500">{users?.about?.[0]?.description}</h1>
 				{/*<p>Skills: {users?.skill?.[1]?.skill || "No skills available"}</p>*/}
-				<p className="text-[1.2rem] bg-green-500 mt-[10px]">
+				<p className="text-[1.2rem] w-[100%] bg-green-500 mt-[10px]">
 				  Skills: {users?.skill?.length > 0 ? users.skill.map((item, index) => (
 				    <span key={index}>{item.skill}{index < users.skill.length - 1 && ', '}</span>
 				  )) : "No skills available"}
