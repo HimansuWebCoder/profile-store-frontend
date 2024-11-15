@@ -42,7 +42,7 @@ function Images() {
 		setTimeout(() => {
 			setLoader2(false);
 		}, 5000);
-	});
+	}, []);
 
 	// function shareHandler() {
 	// 	navigator.share(shareData);
