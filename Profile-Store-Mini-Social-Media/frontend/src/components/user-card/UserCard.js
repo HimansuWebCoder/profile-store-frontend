@@ -37,7 +37,11 @@ function UserCard() {
 
 	return (
 	       
-	       	loading ? <CircularProgress /> : (
+	       	loading ? (
+	       		<div className="flex justify-center items-center h-screen">
+				  <CircularProgress size={64} />
+				</div>
+				) : (
 			<div className="max-w-[500px] h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
 				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="rounded-full aspect-square" />
 				<h1 className="text-[2rem] bg-black">{users?.user?.[0]?.name}</h1>
