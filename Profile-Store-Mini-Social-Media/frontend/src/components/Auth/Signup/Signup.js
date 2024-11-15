@@ -32,10 +32,10 @@ function submitHandler() {
 	}
 
 	return (
-		<div className="login-container">
-			<h1>Signup testing phase now. for now you can only edit name and headline</h1>
-            <input style={{color: "black", marginRight: "5px"}} type="text" value={signupInput} onChange={inputHandler} placeholder="himansu@gmail.com" />
-            <button onClick={submitHandler}>submit</button>
+		<div className="w-[500px] m-auto mt-5 p-5 h-auto bg-blue-500 flex justify-center flex-col text-center ">
+		    <h1 className="text-white text-[2rem]">Signup</h1>
+            <input className="text-black w-[50%] m-auto p-2 rounded-full text-[1.2rem]" type="text" value={signupInput} onChange={inputHandler} placeholder="Signup here" />
+            <button className="text-white text-[2rem] bg-black w-[120px] p-2 rounded-full m-auto mt-4" onClick={submitHandler}>submit</button>
 		</div>
 	);
 }

@@ -20,6 +20,7 @@ function submitHandler() {
 		        navigate("/admin");
 		      } else {
 		        console.error("Login failed");
+		        alert("email incorrect or Login failed")
 		      }
 		})
 		 .catch((error) => {
@@ -32,12 +33,10 @@ function submitHandler() {
 	}
 
 	return (
-		<div className="login-container">
-			<h1 style={{color: "white"}}>login testing phase now please use existing email. Use any to see result</h1>
-			<h3 style={{color: "white"}}>himansu@gmail.com</h3>
-			<h3 style={{color: "white"}}>h@gmail.com</h3>
-            <input style={{color: "black"}}  type="text" value={loginInput} onChange={inputHandler} placeholder="himansu@gmail.com" />
-            <button onClick={submitHandler}>submit</button>
+		<div className="w-[500px] m-auto mt-5 p-5 h-auto bg-blue-500 flex justify-center flex-col text-center">
+			<h1 className="text-white text-[2rem]">Login</h1>
+            <input className="text-black w-[50%] m-auto p-2 rounded-full text-[1.2rem]"  type="text" value={loginInput} onChange={inputHandler} placeholder="Login here" />
+            <button className="text-white text-[2rem] bg-black w-[120px] p-2 rounded-full m-auto mt-4" onClick={submitHandler}>submit</button>
 		</div>
 	);
 }
