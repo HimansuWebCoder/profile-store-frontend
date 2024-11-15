@@ -41,7 +41,7 @@ function Images() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoader2(false);
-		}, 5000);
+		}, 1000);
 	}, []);
 
 	// function shareHandler() {
