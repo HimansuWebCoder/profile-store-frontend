@@ -24,7 +24,10 @@ function Images() {
 	const [loader2, setLoader2] = useState(true);
 	const location = useLocation();
 	useEffect(() => {
-		fetch(`${apiUrl}/api/posts/images`)
+		fetch(`${apiUrl}/api/posts/images`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((images) => {
 				console.log(images);
@@ -57,7 +60,10 @@ function Images() {
 	}
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/profiles`)
+		fetch(`${apiUrl}/api/profiles`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((peopleLikes) => {
 				setLike(peopleLikes[3].likes_count);
@@ -69,10 +75,14 @@ function Images() {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ profile_id: 1 }),
+			credentials: "include"
 		})
 			.then((res) => res.json())
 			.then(() => {
-				fetch(`${apiUrl}/api/profiles`)
+				fetch(`${apiUrl}/api/profiles`, {
+					method: "get",
+					credentials: "include"
+				})
 					.then((res) => res.json())
 					.then((peopleLikes) => {
 						setLike(peopleLikes[3].likes_count);
@@ -165,13 +175,14 @@ function Images() {
 										className="max-w-full h-[50px] flex justify-between p-[10px] mb-[20px]"
 									>
 										<div className="max-w-[60px] h-auto">
-											<ProfilePhoto
-												imgSrc="/assets/images/user.png"
-												className="max-w-full aspect-[1/1] rounded-full h-auto"
-											/>
+											<img style={{maxWidth: "50px", aspectRatio: "1 / 1", borderRadius: "50%"}} src={img.image} />
+										</div>
+										<div style={{width:"60%"}}>
+										<h3 style={{fontSize: "1rem"}}>{img.name}</h3>
+										<p style={{fontSize: "0.9rem"}}>{img.headline}</p>
 										</div>
 										<div>
-											<Link to={`/posts/${img.id}`}>
+											<Link to={`/posts/${img.image_id}`}>
 												<img
 													className="w-[50px] max-h-[50px]"
 													src="/assets/images/menu.png"
