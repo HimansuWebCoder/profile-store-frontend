@@ -2,8 +2,9 @@
 	height: auto;
 }
 
-.users-photo-container > img {
-	width: 80px;
-	height: 80px;
+.user-image {
+	width: 200px;
+	height: auto;
 	border-radius: 50px;
+	aspect-ratio: 1 / 1;
 }

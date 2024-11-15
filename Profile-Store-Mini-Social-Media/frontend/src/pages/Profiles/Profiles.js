@@ -52,8 +52,8 @@ function Profiles({ mode, setMode }) {
 				<Link to={`/user/${user.profile_id}`}>
 					<UsersPhoto img={user.image} />
 				</Link>
-					<div>
-                      <h2 >{user.name}</h2>
+					<div className="w-[300px] mr-[100]">
+                      <h2 className="sm:text-[2rem]">{user.name}</h2>
                       <h2 >{user.headline}</h2>
 					</div>
 				</div>
