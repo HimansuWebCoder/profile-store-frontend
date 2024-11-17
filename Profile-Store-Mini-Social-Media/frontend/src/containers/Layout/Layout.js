@@ -22,16 +22,6 @@ function Layout({ mode, setMode }) {
 				className="flex max-w-[100vw] justify-evenly h-auto"
 				// className="layout-block-box"
 			>
-				<Link
-					style={{
-						color: isDarkMode ? "red" : "white",
-						// background: isDarkMode ? "white" : "white",
-						textDecoration: "none",
-					}}
-					to="/admin"
-				>
-					Your Profile Admin
-				</Link>
 				{/*<Profiles mode={mode} setMode={setMode} />*/}
 				<Link
 					style={{
