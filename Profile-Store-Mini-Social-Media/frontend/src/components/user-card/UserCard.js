@@ -5,16 +5,16 @@ import CircularProgress from "@mui/material/CircularProgress";
 import "./UserCard.css";
 
 function UserCard() {
-	const location = useLocation();
-	const id = location.pathname.split("/")[4]
-	// const { id } = useParams();
+	// const location = useLocation();
+	// const id = location.pathname.split("/")[4]
+	const { id } = useParams();
 	const [ userCardInfo, setUserCardInfo ] = useState("");
 	const [ users, setUsers ] = useState({});
 	const [ loading, setLoading ] = useState(true);
     console.log("user id", id)
 
 	useEffect(() => {
-		console.log("user id: ", id)
+		console.log("individual user id: ", id)
 	},[])
 
 	useEffect(() => {
