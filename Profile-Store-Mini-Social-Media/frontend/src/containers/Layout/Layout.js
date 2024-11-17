@@ -28,7 +28,7 @@ function Layout({ mode, setMode }) {
 						// background: isDarkMode ? "white" : "yellow",
 						textDecoration: "none",
 					}}
-					to="/signup"
+					to="/home/signup"
 				>
 					Signup
 				</Link>
@@ -38,7 +38,7 @@ function Layout({ mode, setMode }) {
 						// background: isDarkMode ? "white" : "yellow",
 						textDecoration: "none",
 					}}
-					to="/login"
+					to="/home/login"
 				>
 					Login
 				</Link>
@@ -59,7 +59,7 @@ function Layout({ mode, setMode }) {
 						// background: isDarkMode ? "white" : "yellow",
 						textDecoration: "none",
 					}}
-					to="/profiles"
+					to="/home/profiles"
 				>
 					Profiles
 				</Link>
@@ -69,7 +69,7 @@ function Layout({ mode, setMode }) {
 						// background: isDarkMode ? "white" : "yellow",
 						textDecoration: "none",
 					}}
-					to="/posts"
+					to="/home/posts"
 				>
 					Posts
 				</Link>

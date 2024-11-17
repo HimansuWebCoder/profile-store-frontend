@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ProfileLogo() {
 	return (
 		<div className="w-[50px] h-[50px]">
-			<Link to="/">
+			<Link to="/home">
 				<img
 					className="max-w-[40px] h-[50px] rounded-[20px]"
 					src="/assets/images/Profile_Logo.png"

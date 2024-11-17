@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams, Outlet } from "react-router-dom";
 import { apiUrl } from "../../utils/utils";
 import CircularProgress from "@mui/material/CircularProgress";
 import "./UserCard.css";
@@ -9,21 +9,23 @@ function UserCard() {
 	const [ users, setUsers ] = useState({});
 	const [ loading, setLoading ] = useState(true);
 	const location = useLocation();
-	const userId = location.pathname.split("/")[2]
+	// const userId = location.pathname.split("/")[3]
+	const {id} = useParams();
 
 
 	useEffect(() => {
-		console.log(userId)
+		console.log(id)
 	},[])
 
 	useEffect(() => {
-		fetch(`${apiUrl}/all-users/${userId}`, {
+		fetch(`${apiUrl}/all-users/${id}`, {
 			method: "get",
 			credentials: "include",
 		})
 		.then(res => res.json())
 		.then(user => {
 			setUsers(user)
+			console.log(user)
 			setLoading(false)
 			// console.log(user)
 			// if (user.length > 0) {

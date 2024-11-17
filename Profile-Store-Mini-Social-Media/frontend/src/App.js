@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import AppLayout from "./routes/app-layout-route/AppLayout";
 import AdminLayout from "./routes/admin-route/AdminLayout";
 import { ThemeContext } from "./ThemeContext";
+import Welcome from "./containers/WelcomePage/Welcome";
 
 function App() {
   const [mode, setMode] = useState("white");
@@ -17,8 +18,9 @@ function App() {
       }}
     >
       <Routes>
+      <Route path="/" element={<Welcome />} />
         <Route
-          path="/*"
+          path="/home/*"
           element={<AppLayout mode={mode} setMode={setMode} />}
         />
         <Route path="/admin/*" element={<AdminLayout />} />

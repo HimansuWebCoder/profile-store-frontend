@@ -45,7 +45,7 @@ function Admin() {
 			className="admin-container"
 		>
 			<div className="admin-sub-container">
-				<Link id="home-link" to="/">
+				<Link id="home-link" to="/home">
 					<img id="home-route" src="/assets/images/home.png" />
 				</Link>
 				<div className="sub-admin-container editProfilePhoto">

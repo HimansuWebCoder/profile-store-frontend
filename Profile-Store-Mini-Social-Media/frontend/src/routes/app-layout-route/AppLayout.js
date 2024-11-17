@@ -24,7 +24,7 @@ function AppLayout({ mode, setMode }) {
 					<Route path="profiles" element={<Profiles />} />
 					<Route path="login" element={<Login />} />
 					<Route path="signup" element={<Signup />} />
-					<Route path="user/:id" element={<UserCard />} />
+					<Route path="user/photo/:id" element={<UserCard />} />
 					<Route path="posts" element={<ImagePosts />}>
 						<Route path=":id" element={<EditPost />} />
 						<Route path="edit/:id" element={<EditImagePost />} />
