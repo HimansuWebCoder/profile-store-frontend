@@ -40,7 +40,7 @@ function EditPost({ redirectTo }) {
 					</Link>
 				</div>
 				<div className="flex justify-around items-center">
-					<Link to={`/posts/edit/${id}`}>
+					<Link to={`/home/posts/edit/${id}`}>
 						<img
 							className="w-[40px] h-[40px]"
 							src="/assets/images/pencil.png"

@@ -182,7 +182,7 @@ function Images() {
 										<p style={{fontSize: "0.9rem"}}>{img.headline}</p>
 										</div>
 										<div>
-											<Link to={`/posts/${img.image_id}`}>
+											<Link to={`/home/posts/${img.image_id}`}>
 												<img
 													className="w-[50px] max-h-[50px]"
 													src="/assets/images/menu.png"

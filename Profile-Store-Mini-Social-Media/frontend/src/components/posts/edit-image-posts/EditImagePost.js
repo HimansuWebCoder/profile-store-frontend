@@ -78,7 +78,7 @@ function EditImagePost() {
 					<button className="w-[100px] h-[30px] m-[5px] text-blue-500 bg-white rounded-[5px]">
 						<Link
 							className="text-blue-500 no-underline"
-							to="/posts"
+							to="/home/posts"
 						>
 							Back
 						</Link>

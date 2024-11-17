@@ -22,7 +22,7 @@ function Profiles({ mode, setMode }) {
 		})
 			.then((res) => res.json())
 			.then((profilesData) => {
-				console.log(profilesData);
+				console.log("all users data: ", profilesData);
 				setTimeout(() => {
 					// setProfileName(profilesData[0].name);
 					// setProfileIntro(profilesData[0].headline);
@@ -49,7 +49,7 @@ function Profiles({ mode, setMode }) {
 					}}
 					className="profiles-info-container"
 				>
-				<Link to={`/user/photo/${user.profile_id}`}>
+				<Link to={`/home/user/photo/${user.profile_id}`}>
 					<UsersPhoto img={user.image} />
 				</Link>
 					<div className="w-[300px] mr-[100]">
