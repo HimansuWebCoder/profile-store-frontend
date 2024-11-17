@@ -19,7 +19,7 @@ function submitHandler() {
 		})
 		.then((response) => {
            if (response.ok) {
-		        navigate("/admin");
+		        navigate("/home/profiles");
 		      } else {
 		        console.error("Login failed");
 		      }
