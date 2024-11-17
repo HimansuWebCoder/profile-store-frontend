@@ -84,7 +84,7 @@ function EditImagePost() {
 						</Link>
 					</button>
 					{popupMessage && (
-						<PopupEdit msg={popupMessage} redirect="/posts" />
+						<PopupEdit msg={popupMessage} redirect="/home/posts" />
 					)}
 				</form>
 			</div>

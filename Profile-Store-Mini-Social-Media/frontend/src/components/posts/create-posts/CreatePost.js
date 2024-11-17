@@ -61,13 +61,13 @@ function CreatePost() {
 					<button className="w-[100px] h-[30px] m-[5px] text-blue-500 bg-white rounded-[5px]">
 						<Link
 							className="text-blue-500 no-underline"
-							to="/admin"
+							to="/home/posts"
 						>
 							Back
 						</Link>
 					</button>
 					{popupMessage && (
-						<PopupEdit msg={popupMessage} redirect="/posts" />
+						<PopupEdit msg={popupMessage} redirect="/home/posts" />
 					)}
 				</form>
 			</div>
