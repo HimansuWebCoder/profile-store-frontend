@@ -35,7 +35,7 @@ function EditPost({ redirectTo }) {
 		<div className="w-[200px] h-auto border border-black rounded-[10px] fixed top-[100px] bg-white text-black right-[10px]">
 			<div className="flex flex-col justify-center items-around">
 				<div className="m-auto">
-					<Link className="no-underline" to="/posts">
+					<Link className="no-underline" to="/home/posts">
 						Cancel
 					</Link>
 				</div>

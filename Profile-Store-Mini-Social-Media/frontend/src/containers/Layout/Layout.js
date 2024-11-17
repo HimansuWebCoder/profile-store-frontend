@@ -25,32 +25,12 @@ function Layout({ mode, setMode }) {
 				<Link
 					style={{
 						color: isDarkMode ? "red" : "white",
-						// background: isDarkMode ? "white" : "yellow",
-						textDecoration: "none",
-					}}
-					to="/home/signup"
-				>
-					Signup
-				</Link>
-				<Link
-					style={{
-						color: isDarkMode ? "red" : "white",
-						// background: isDarkMode ? "white" : "yellow",
-						textDecoration: "none",
-					}}
-					to="/home/login"
-				>
-					Login
-				</Link>
-				<Link
-					style={{
-						color: isDarkMode ? "red" : "white",
 						// background: isDarkMode ? "white" : "white",
 						textDecoration: "none",
 					}}
 					to="/admin"
 				>
-					Admin
+					Your Profile Admin
 				</Link>
 				{/*<Profiles mode={mode} setMode={setMode} />*/}
 				<Link
