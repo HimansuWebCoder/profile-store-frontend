@@ -108,7 +108,7 @@ function Images() {
 
 				<Link
 					className="text-white no-underline"
-					to="/posts/create-post"
+					to="/home/posts/create-post"
 				>
 					<img
 						className="add-button"
