@@ -94,15 +94,16 @@ function Images() {
 	return (
 		<div
 			style={{ color: isDarkMode ? "black" : "white" }}
-			className="max-w-[400px] h-auto m-auto mt-[20px] p-[10px]"
+			// className="max-w-[400px] h-auto sm:max-w-[100%] sm:w-auto m-auto mt-[20px] p-[10px]"
+			className="w-full sm:max-w-[400px] h-auto m-auto mt-[20px] p-[10px]"
 		>
 			<div
 				style={{
 					background: isDarkMode ? "#2C4E80" : "#00215E",
 				}}
-				className="max-w-full h-auto z-15000 border border-white rounded-[10px] flex justify-around items-center mb-[10px]"
+				className="max-w-full p-2 h-auto z-15000 border border-white rounded-[10px] flex justify-around items-center mb-[10px]"
 			>
-				<h1 style={{ color: isDarkMode ? "white" : "white" }}>
+				<h1 className="text-[1.4rem]" style={{ color: isDarkMode ? "white" : "white" }}>
 					Create Posts
 				</h1>
 
@@ -141,7 +142,7 @@ function Images() {
 							// 		? "1px solid black"
 							// 		: "1px solid white",
 							// }}
-							className="max-w-full h-full p-[10px] mt-[20px] rounded-[20px]"
+							className="max-w-full h-full  mt-[20px]"
 							key={img.image_id}
 						>
 							{loader2 ? (
@@ -167,7 +168,7 @@ function Images() {
 											: "white",
 										color: isDarkMode ? "black" : "black",
 									}}
-									className="max-w-full h-auto mt-[20px] rounded-[10px] shadow-[0.5px_0.5px_0.8px_0.5px_black] p-[10px]"
+									className="max-w-full h-auto mt-[20px]  shadow-[0.5px_0.5px_0.8px_0.5px_black] p-[10px]"
 								>
 									<div
 										// style={{
@@ -212,16 +213,16 @@ function Images() {
 										className="max-w-full h-auto flex justify-around"
 									>
 										<div className="flex justify-center flex-col items-center">
-											<div>
+											<div className="flex justify-center items-center">
 												<img
 													onClick={() => likebtn(img.image_id)}
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like.png"
 													alt="like"
 												/>
-												<span className="ml-[10px] text-[1.4rem] text-shadow-[1px_5px_1px_yellow]">
+												<p className="ml-[10px] text-[1.3rem] text-shadow-[1px_5px_1px_yellow]">
 													{img.likes_count}
-												</span>
+												</p>
 											</div>
 											<h4>Like</h4>
 										</div>
