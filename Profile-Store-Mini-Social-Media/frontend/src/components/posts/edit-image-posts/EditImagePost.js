@@ -11,10 +11,10 @@ function EditImagePost() {
 	const navigate = useNavigate();
 	const imgPostId = location.pathname.split("/")[3];
 	const { id } = useParams();
-	useEffect(() => {
-		console.log(imgPostId);
-		console.log("my editimage edit image id: ", id);
-	}, []);
+	// useEffect(() => {
+	// 	console.log(imgPostId);
+	// 	console.log("my editimage edit image id: ", id);
+	// }, []);
 
 	// function editImgPostHandler() {
 	// 	fetch(`${apiUrl}/api/posts/images/${imgPostId}`, {
