@@ -30,7 +30,7 @@ function Images() {
 		})
 			.then((res) => res.json())
 			.then((images) => {
-				console.log(images);
+				console.log("image posted", images);
 				setTimeout(() => {
 					setPostImages(images);
 					setLoader(false);
@@ -67,6 +67,7 @@ function Images() {
 			.then((res) => res.json())
 			.then((peopleLikes) => {
 				setLike(peopleLikes[1].likes_count);
+				console.log("peoples likes", peopleLikes)
 			});
 	}, []);
 
@@ -84,8 +85,11 @@ function Images() {
 					credentials: "include"
 				})
 					.then((res) => res.json())
-					.then((peopleLikes) => {
-						setLike(peopleLikes[1].likes_count);
+					.then((updatedPostImages) => {
+						// setLike(peopleLikes[1].likes_count);
+						setPostImages(updatedPostImages)
+						console.log(updatedPostImages)
+						// setLike(prevLike => prevLike.likes_count)
 					});
 			});
 	}
@@ -216,7 +220,7 @@ function Images() {
 													alt="like"
 												/>
 												<span className="ml-[10px] text-[1.4rem] text-shadow-[1px_5px_1px_yellow]">
-													{like}
+													{img.likes_count}
 												</span>
 											</div>
 											<h4>Like</h4>

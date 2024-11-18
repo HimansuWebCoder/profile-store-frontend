@@ -17,7 +17,7 @@ function ProfilePhotoProvider({ children }) {
 			.then((photo) => {
 				setTimeout(() => {
 					setProfilePhoto(photo[0].image);
-					console.log(photo[0].image);
+					// console.log(photo[0].image);
 					setLoading(false);
 				}, 2000);
 			});
