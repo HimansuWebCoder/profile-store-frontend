@@ -18,7 +18,6 @@ const shareData = {
 
 function Images() {
 	const [postImages, setPostImages] = useState([]);
-	const [like, setLike] = useState("");
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const [loader, setLoader] = useState(true);
 	const [loader2, setLoader2] = useState(true);
@@ -59,40 +58,39 @@ function Images() {
 		}
 	}
 
-	useEffect(() => {
-		fetch(`${apiUrl}/api/profiles`, {
-			method: "get",
-			credentials: "include"
-		})
-			.then((res) => res.json())
-			.then((peopleLikes) => {
-				setLike(peopleLikes[1].likes_count);
-				console.log("peoples likes", peopleLikes)
-			});
-	}, []);
+	// useEffect(() => {
+	// 	fetch(`${apiUrl}/api/profiles`, {
+	// 		method: "get",
+	// 		credentials: "include"
+	// 	})
+	// 		.then((res) => res.json())
+	// 		.then((peopleLikes) => {
+	// 			setLike(peopleLikes[1].likes_count);
+	// 			console.log("peoples likes", peopleLikes)
+	// 		});
+	// }, []);
 
-	function likebtn() {
+	const likebtn = (id) => {
 		fetch(`${apiUrl}/api/posts/likes`, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ like: 1 }),
+			body: JSON.stringify({ like: 1, image_id: id }),
 			credentials: "include"
 		})
-			.then((res) => res.json())
-			.then(() => {
-				fetch(`${apiUrl}/api/profiles`, {
-					method: "get",
-					credentials: "include"
-				})
-					.then((res) => res.json())
-					.then((updatedPostImages) => {
-						// setLike(peopleLikes[1].likes_count);
-						setPostImages(updatedPostImages)
-						console.log(updatedPostImages)
-						// setLike(prevLike => prevLike.likes_count)
-					});
-			});
+		.then(() => {
+			fetch(`${apiUrl}/api/posts/images`, {
+				method: "get",
+				credentials: "include",
+			})
+			.then(res => res.json())
+			.then(images => setPostImages(images))
+		})
+			
 	}
+
+	useEffect(() => {
+         likebtn()
+	}, [location])
 
 	return (
 		<div
@@ -214,7 +212,7 @@ function Images() {
 										<div className="flex justify-center flex-col items-center">
 											<div>
 												<img
-													onClick={likebtn}
+													onClick={() => likebtn(img.image_id)}
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like.png"
 													alt="like"
