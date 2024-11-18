@@ -66,7 +66,7 @@ function Images() {
 		})
 			.then((res) => res.json())
 			.then((peopleLikes) => {
-				setLike(peopleLikes[3].likes_count);
+				setLike(peopleLikes[].likes_count);
 			});
 	}, []);
 
@@ -74,7 +74,7 @@ function Images() {
 		fetch(`${apiUrl}/api/posts/likes`, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ profile_id: 1 }),
+			body: JSON.stringify({ like: 1 }),
 			credentials: "include"
 		})
 			.then((res) => res.json())
@@ -85,7 +85,7 @@ function Images() {
 				})
 					.then((res) => res.json())
 					.then((peopleLikes) => {
-						setLike(peopleLikes[3].likes_count);
+						setLike(peopleLikes[1].likes_count);
 					});
 			});
 	}
@@ -222,7 +222,7 @@ function Images() {
 											<h4>Like</h4>
 										</div>
 										<div className="flex justify-center flex-col items-center">
-											<Link to="/posts/comments">
+											<Link to="/home/posts/comments">
 												<img
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/comment.png"

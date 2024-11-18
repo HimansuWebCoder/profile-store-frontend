@@ -12,7 +12,10 @@ function CommentBox() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch(`${apiUrl}/api/posts/comments`)
+		fetch(`${apiUrl}/api/posts/comments`, {
+			method: "get",
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((comments) => {
 				setComments(comments);
@@ -29,6 +32,7 @@ function CommentBox() {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ comment: postComments }),
+			credentials: "include"
 		})
 			.then((res) => res.json())
 			.then(() => {
