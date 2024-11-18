@@ -1,6 +1,7 @@
 import Logo from "../../components/Logo/Logo"
 import Signup from "../../components/Auth/Signup/Signup"
 import Login from "../../components/Auth/Login/Login"
+import { Link } from "react-router-dom";
 import "./Welcome.css";
 
 function Welcome() {
@@ -8,7 +9,8 @@ function Welcome() {
      <div className="max-w-[100%] h-auto p-1 text-white bg-black ">
      	<nav className="flex justify-between items-center bg-red-500 h-auto w-[100%]">
      	<div className='ml-5 w-[50%]'>
-     		<Logo />
+     		{/*<Logo />*/}
+     	    <img src="/assets/images/Profile_Logo.png" className="max-w-[50px] h-auto m-2" />
      	</div>
      		<div className="w-[100%]">
      			<ul className="flex justify-center flex-wrap items-center w-[100%]">
@@ -18,7 +20,7 @@ function Welcome() {
      				<button className="bg-blue-500 max-w-[auto] h-auto p-1 rounded">Signup</button>
      				</li>
      				<li className="mr-5">
-     				<button className="bg-blue-500 max-w-[auto] p-1 rounded">Login</button>
+     				<button className="bg-blue-500 max-w-[auto] p-1 rounded"><Link to="/home">Login</Link></button>
      				</li>
      			</ul>
 
@@ -30,7 +32,7 @@ function Welcome() {
 	     			</div>*/}
      			<div>
      				<Signup/>
-     				<div className="m-auto w-[50px]">Or</div>
+     				<div className="m-auto w-[50px]">OR</div>
      				<Login/>
      			</div>
      </div>

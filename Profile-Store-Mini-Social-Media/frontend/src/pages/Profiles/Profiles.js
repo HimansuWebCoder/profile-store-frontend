@@ -11,7 +11,7 @@ import UsersPhoto from "../../components/users-photos/UsersPhoto";
 function Profiles({ mode, setMode }) {
 	// const [profileName, setProfileName] = useState("");
 	// const [profileIntro, setProfileIntro] = useState("");
-		const [users, setUsers] = useState([]);
+	const [users, setUsers] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 

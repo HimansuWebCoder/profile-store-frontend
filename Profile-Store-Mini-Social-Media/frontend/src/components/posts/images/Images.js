@@ -22,6 +22,7 @@ function Images() {
 	const [loader, setLoader] = useState(true);
 	const [loader2, setLoader2] = useState(true);
 	const location = useLocation();
+
 	useEffect(() => {
 		fetch(`${apiUrl}/api/posts/images`, {
 			method: "get",
@@ -70,7 +71,8 @@ function Images() {
 	// 		});
 	// }, []);
 
-	const likebtn = (id) => {
+	function likebtn(id) {
+
 		fetch(`${apiUrl}/api/posts/likes`, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
@@ -78,19 +80,16 @@ function Images() {
 			credentials: "include"
 		})
 		.then(() => {
-			fetch(`${apiUrl}/api/posts/images`, {
-				method: "get",
-				credentials: "include",
-			})
-			.then(res => res.json())
-			.then(images => setPostImages(images))
-		})
-			
+      // Refetch images to update likes_count from the database
+      fetch(`${apiUrl}/api/posts/images`, {
+        method: "get",
+        credentials: "include",
+      })
+        .then((res) => res.json())
+        .then((images) => setPostImages(images));
+     });
 	}
 
-	useEffect(() => {
-         likebtn()
-	}, [location])
 
 	return (
 		<div
@@ -177,7 +176,10 @@ function Images() {
 										className="max-w-full h-[50px] flex justify-between p-[10px] mb-[20px]"
 									>
 										<div className="max-w-[60px] h-auto">
+										<Link to={`/home/user/photo/${img.profile_id}`}>
 											<img style={{maxWidth: "50px", aspectRatio: "1 / 1", borderRadius: "50%"}} src={img.image} />
+											{/*<UsersPhoto img={user.image} />*/}
+										</Link>
 										</div>
 										<div style={{width:"60%"}}>
 										<h3 style={{fontSize: "1rem"}}>{img.name}</h3>
