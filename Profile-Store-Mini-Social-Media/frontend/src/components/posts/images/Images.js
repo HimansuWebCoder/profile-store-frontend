@@ -143,7 +143,7 @@ function Images() {
 							// 		: "1px solid white",
 							// }}
 							className="max-w-full h-full p-[10px] mt-[20px] rounded-[20px]"
-							key={img.id}
+							key={img.image_id}
 						>
 							{loader2 ? (
 								<Stack spacing={1}>
