@@ -23,7 +23,7 @@ function Images() {
 	const [loader2, setLoader2] = useState(true);
 	const location = useLocation();
 	useEffect(() => {
-		fetch(`api/posts/images`, {
+		fetch(`${apiUrl}/api/posts/images`, {
 			method: "get",
 			credentials: "include"
 		})
@@ -71,7 +71,7 @@ function Images() {
 	// }, []);
 
 	const likebtn = (id) => {
-		fetch(`/api/posts/likes`, {
+		fetch(`${apiUrl}/api/posts/likes`, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ like: 1, image_id: id }),
