@@ -66,7 +66,7 @@ function Images() {
 		})
 			.then((res) => res.json())
 			.then((peopleLikes) => {
-				setLike(peopleLikes[].likes_count);
+				setLike(peopleLikes[1].likes_count);
 			});
 	}, []);
 
