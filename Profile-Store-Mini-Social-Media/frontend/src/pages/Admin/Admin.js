@@ -129,11 +129,11 @@ function Admin() {
 						/>
 					</Link>
 				</div>
-				<div style={{width:"100%", height: "200px", display: "flex", overflowX: "auto", overflowY: "hidden", alignItems: "center"}}>
+				<div className="w-full flex overflow-auto">
 					{
 						images.map(img => (
-                             <div>
-                             	<img style={{width:"200px"}} src={img.image_url} alt="images" />
+                             <div className="w-[200px] h-auto flex items-center flex-row overflow-auto space-x-1 mr-2 bg-white flex-shrink-0 ">
+                             	<img className="w-[800px] h-[200px]" src={img.image_url} alt="images" />
                              </div>
 							))
 					}
