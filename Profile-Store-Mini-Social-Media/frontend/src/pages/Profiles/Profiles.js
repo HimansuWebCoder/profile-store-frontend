@@ -42,7 +42,8 @@ function Profiles({ mode, setMode }) {
 				<div
 					style={{
 						color: isDarkMode ? "white" : "white",
-						background: isDarkMode ? "#1e3e62" : "#1F2544",
+						// background: isDarkMode ? "#1e3e62" : "#243642",
+						background: isDarkMode ? "#1e3e62" : "#2F3645",
 						marginTop: "10px", 
 						borderTop: "1px solid white",
 						borderBottom: "1px solid white"
