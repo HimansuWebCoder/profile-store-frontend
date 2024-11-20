@@ -7,6 +7,7 @@ import "./EditImagePost.css";
 function EditImagePost() {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [popupMessage, setPopupMessage] = useState(null);
+	const [imgPublicId, setImgPublicId] = useState("");
 	const location = useLocation();
 	const navigate = useNavigate();
 	// const imgPostId = location.pathname.split("/")[3];
@@ -24,6 +25,18 @@ function EditImagePost() {
 	// 	});
 	// }
 
+	useEffect(() => {
+		fetch(`${apiUrl}/images/${id}`, {
+			method: "get"
+		})
+		.then(res => res.json())
+		.then(img => {
+			console.log(img);
+			console.log("image public id:", img[0].public_id)
+			setImgPublicId(img[0].public_id)
+		})
+	}, [])
+
 	const handleFileChange = (e) => {
 		setSelectedFile(e.target.files[0]);
 	};
@@ -38,6 +51,7 @@ function EditImagePost() {
 
 		const formData = new FormData();
 		formData.append("avatar", selectedFile);
+		formData.append("imagePublicId", imgPublicId); 
 
 		try {
 			const response = await fetch(`${apiUrl}/api/posts/images/${id}`, {
