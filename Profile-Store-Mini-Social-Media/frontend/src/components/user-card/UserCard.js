@@ -75,6 +75,7 @@ function UserCard() {
 				<h1 className="text-[2rem] w-[100%] bg-black">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-black mt-[5px]">{users?.user?.[0]?.headline}</h1>
 				<h1 className="text-[1.2rem] w-[100%] mt-2 bg-blue-500">{users?.about?.[0]?.description}</h1>
+				<h1 className="text-[1.2rem] w-[100%] m-2 font-bold bg-white text-black">My Posts</h1>
 				{/*<p>Skills: {users?.skill?.[1]?.skill || "No skills available"}</p>*/}
 				<div className="w-full flex overflow-auto">
 				  {
