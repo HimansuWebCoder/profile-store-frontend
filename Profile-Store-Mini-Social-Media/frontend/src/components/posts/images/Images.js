@@ -93,7 +93,7 @@ function Images() {
 
 	return (
 		<div
-			style={{ color: isDarkMode ? "black" : "white" }}
+			style={{ color: isDarkMode ? "black" : "white", background: isDarkMode ? "#344955" : "#31363F" }}
 			// className="max-w-[400px] h-auto sm:max-w-[100%] sm:w-auto m-auto mt-[20px] p-[10px]"
 			className="w-full sm:max-w-[400px] h-auto m-auto mt-[20px] p-[10px]"
 		>
@@ -165,10 +165,10 @@ function Images() {
 									style={{
 										background: isDarkMode
 											? "white"
-											: "white",
-										color: isDarkMode ? "black" : "black",
+											: "#45474B",
+										color: isDarkMode ? "black" : "white",
 									}}
-									className="max-w-full h-auto mt-[20px]  shadow-[0.5px_0.5px_0.8px_0.5px_black] p-[10px]"
+									className="max-w-full h-auto mt-[20px]  p-[10px]"
 								>
 									<div
 										// style={{
@@ -176,10 +176,9 @@ function Images() {
 										// }}
 										className="max-w-full h-[50px] flex justify-between p-[10px] mb-[20px]"
 									>
-										<div className="max-w-[60px] h-auto">
+										<div className="max-w-[60px] h-auto ">
 										<Link to={`/home/user/photo/${img.profile_id}`}>
-											<img style={{maxWidth: "50px", aspectRatio: "1 / 1", borderRadius: "50%"}} src={img.image} />
-											{/*<UsersPhoto img={user.image} />*/}
+											<img className="max-w-[50px] aspect-square rounded-full border-3 border-white" src={img.image} />
 										</Link>
 										</div>
 										<div style={{width:"60%"}}>
@@ -200,7 +199,7 @@ function Images() {
 									<hr className="border border-black-900" />
 									<div className="max-w-full h-auto">
 										<img
-											className="w-full h-[300px] border border-white rounded-[10px]"
+											className="w-full h-[300px] border border-white"
 											src={img.image_url}
 											alt="posted image"
 										/>
