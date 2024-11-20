@@ -120,7 +120,7 @@ function Admin() {
 				</div>*/}
 				<About />
 				<div className="sub-admin-container edit">
-					<h3>Posts</h3>
+					<h3>My Posts</h3>
 					<Link to="/admin/create-post">
 						<img
 							className="add-button"
