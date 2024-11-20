@@ -14,9 +14,35 @@ function Admin() {
 	const [profileImg, setProfileImg] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [profilePhotoId, setProfilePhotoId] = useState("");
+	const [images, setImages] = useState([]);
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const navigate = useNavigate();
 	const location = useLocation();
+
+			useEffect(() => {
+		const fetchProfileInfo = async () => {
+			try {
+				const profileInfo = await fetch(`${apiUrl}/api/profile-info`, {
+					method: "get",
+			        credentials: "include"
+				});
+				const profileInfoData = await profileInfo.json();
+				// if (!profileInfoData.ok) {
+				// 	alert("You are Offline");
+				// }
+
+				console.log("profile info data", profileInfoData)
+				console.log("profile info id ", location)
+				setTimeout(() => {
+					setImages(profileInfoData)
+					console.log("all my info data", profileInfoData)
+				}, 1000);
+			} catch (error) {
+				console.error("Error fetching profile-info:", error);
+			}
+		};
+		fetchProfileInfo();
+	}, [location]);
 
 	useEffect(() => {
 		fetch(`${apiUrl}/api/profile-photo`, {
@@ -102,6 +128,15 @@ function Admin() {
 							alt="post"
 						/>
 					</Link>
+				</div>
+				<div style={{width:"100%", height: "200px", display: "flex", overflowX: "auto", overflowY: "hidden", alignItems: "center"}}>
+					{
+						images.map(img => (
+                             <div>
+                             	<img style={{width:"200px"}} src={img.image_url} alt="images" />
+                             </div>
+							))
+					}
 				</div>
 				<Skills />
 			</div>
