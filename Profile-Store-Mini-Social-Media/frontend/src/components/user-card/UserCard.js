@@ -1,9 +1,10 @@
-import { useState,useEffect } from "react";
+import {useContext, useState,useEffect } from "react";
 import { Link, useLocation, useParams, Outlet } from "react-router-dom";
 import { apiUrl } from "../../utils/utils";
 import CircularProgress from "@mui/material/CircularProgress";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { ThemeContext } from "../../ThemeContext";
 import "./UserCard.css";
 
 function UserCard() {
@@ -15,6 +16,7 @@ function UserCard() {
 	const [userImage, setUserImage] = useState([]);
 	const [images, setImages] = useState([]);
 	const [ loading, setLoading ] = useState(true);
+	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
     console.log("user id", id)
 
 	useEffect(() => {
@@ -100,11 +102,11 @@ function UserCard() {
 				  <CircularProgress size={64} />
 				</div>
 				) : (
-			<div className="max-w-[500px]  rounded-xl h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
+			<div style={{background: isDarkMode ? "#F4F6FF" : ""}} className="max-w-[500px]  rounded-xl h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
 				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="max-w-[180px] rounded-full border border-white aspect-square" />
 				<h1 className="text-[2rem] w-[100%] bg-[#222831]">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-[#222831] mt-[5px]">{users?.user?.[0]?.headline}</h1>
-				<h1 className="text-[1.2rem] w-[100%] mt-2 bg-[#222831]-500 text-white font-[Caveat] text-[2rem] break-words">{users?.about?.[0]?.description}</h1>
+				<h1 style={{color: isDarkMode ? "black" : "", border: isDarkMode ? "1px solid black" : "1px solid white"}} className="text-[2rem] w-[100%] mt-2 bg-[#222831]-500 text-white font-[Caveat] break-words">{users?.about?.[0]?.description}</h1>
 				<h1 className="text-[1.2rem] w-[100%] m-2 font-bold bg-[#222831] text-white">My Posts</h1>
 				{/*<p>Skills: {users?.skill?.[1]?.skill || "No skills available"}</p>*/}
 				 <div className="w-full m-auto flex justify-center">
