@@ -39,11 +39,11 @@ function ProfileInfo() {
 	}, [setProfileId, location]);
 
 	return (
-		<div className="max-w-[400px] h-auto text-center text-[1.5rem] text-white break-words flex justify-center flex-col">
+		<div className="w-full h-auto mt-2  text-center  text-[1.5rem] text-white break-words flex justify-center flex-col">
 			<Link to={`/admin/profile-info/${profileId}/edit`}>
 				<img
-					className="editpencil"
-					src="/assets/images/pencil.png"
+					className="max-w-[25px] m-auto "
+					src="/assets/images/edit1.png"
 					alt="editinfo"
 				/>
 			</Link>

@@ -78,7 +78,7 @@ function Admin() {
 					<Link to={`/admin/file/${profilePhotoId}`}>
 						<img
 							className="editpencil"
-							src="/assets/images/pencil.png"
+							src="/assets/images/edit1.png"
 							alt="Edit Profile Photo"
 						/>
 					</Link>

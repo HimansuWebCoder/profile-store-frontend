@@ -39,7 +39,7 @@ function About() {
 					>
 						<img
 							className="editpencil"
-							src="/assets/images/pencil.png"
+							src="/assets/images/edit1.png"
 							alt="editinfo"
 						/>
 					</Link>
