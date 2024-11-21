@@ -51,7 +51,7 @@ function ProfileInfoEdit() {
 				<div className="max-w-[400px] h-[400px] mx-auto mt-[50px] bg-[#31363f] p-2 rounded-2xl flex flex-col">
 					<div className="w-full flex justify-end">
 						<button
-							className="w-[80px] h-[30px] text-lg text-white cursor-pointer rounded-lg border-none bg-transparent color-white hover:bg-gray-700"
+							className="w-[80px] h-[30px] text-lg text-white cursor-pointer rounded-lg border-none bg-[#222831] color-white hover:bg-gray-700"
 							onClick={handleNavigate}
 						>
 							Back
@@ -66,6 +66,7 @@ function ProfileInfoEdit() {
 							className="max-w-[250px] text-black h-[30px] m-1 border border-gray-300 rounded"
 							type="text"
 							value={name || ""}
+							placeholder="Your Name"
 							onChange={(e) => setName(e.target.value)}
 						/>
 						<br />
@@ -74,10 +75,11 @@ function ProfileInfoEdit() {
 							className="max-w-[250px] text-black h-[30px] m-1 border border-gray-300 rounded"
 							type="text"
 							value={headline || ""}
+							placeholder="Your Headline Intro"
 							onChange={(e) => setHeadline(e.target.value)}
 						/>
 						<button
-							className="max-w-[100px] h-auto rounded border-none m-1 bg-blue-600 text-white hover:bg-blue-700 "
+							className="max-w-[100px] h-auto rounded border-none m-1 bg-[#222831] text-white hover:bg-blue-700 "
 							type="submit"
 						>
 							Update Profile
