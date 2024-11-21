@@ -107,7 +107,7 @@ function Images() {
 					borderTop: isDarkMode ? "1px solid #222831" : "#222831",
 					borderBottom: isDarkMode ? "1px solid #222831" : "#222831",
 				}}
-				className="max-w-full p-2 h-auto z-15000 border-r border-l border-white  flex justify-around items-center mb-[10px]"
+				className="max-w-full p-2 h-auto z-15000 border-r border-1 border-l border-white-500  flex justify-around items-center mb-[10px]"
 			>
 				<h1 className="text-[1.4rem] font-bold" style={{ color: isDarkMode ? "black" : "white" }}>
 					Create Posts
@@ -208,7 +208,7 @@ function Images() {
 											
 										</div>
 									</div>
-									<hr className="border border-black-900" />
+									<hr className="border-1 border-white-500" />
 									<div className="max-w-full h-auto">
 										<img
 											className="w-full h-[300px]"
@@ -216,7 +216,7 @@ function Images() {
 											alt="posted image"
 										/>
 									</div>
-									<hr className="border border-black-900" />
+									<hr className="border-1 border-white-500" />
 									<div
 										// style={{
 										// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",

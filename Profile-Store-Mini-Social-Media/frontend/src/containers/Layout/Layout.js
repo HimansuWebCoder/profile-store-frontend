@@ -26,6 +26,8 @@ function Layout({ mode, setMode }) {
 					style={{
 						color: isDarkMode ? "red" : "white",
 						background: isDarkMode ? "white" : "#31363F",
+						borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
+						borderRight: isDarkMode ? "1px solid white" : "1px solid white",
 						textDecoration: "none",
 					}}
 					to="/home/profiles"
@@ -38,6 +40,8 @@ function Layout({ mode, setMode }) {
 						color: isDarkMode ? "red" : "white",
 						background: isDarkMode ? "white" : "#31363F",
 						textDecoration: "none",
+						borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
+						borderRight: isDarkMode ? "1px solid white" : "1px solid white"
 					}}
 					to="/home/posts"
 				>
