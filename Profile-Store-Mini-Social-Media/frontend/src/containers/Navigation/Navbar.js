@@ -12,7 +12,7 @@ function NavContainer({ mode, setMode }) {
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	return (
 		<div
-			style={{ backgroundColor: isDarkMode ? "#1F2544" : "#35374B" }}
+			style={{ backgroundColor: isDarkMode ? "#35374B" : "#31363F" }}
 			// style={{ backgroundColor: isDarkMode ? "#E2F1E7" : "#35374B" }}
 			className=" p-[20px] max-w-full h-20 flex justify-around items-center p-4 sticky top-0 z-800"
 		>
