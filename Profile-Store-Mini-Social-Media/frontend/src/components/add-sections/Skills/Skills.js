@@ -72,7 +72,7 @@ function Skills() {
 						<>
 							{skills.map((skill) => (
 								<div
-									className="w-full h-auto overflow-auto m-auto bg-[#222831] rounded-[10px] text-white text-center text-[1.5rem] font-bold mb-[10px]"
+									className="w-full h-auto overflow-auto m-auto bg-[#222831] text-white text-center text-[1.5rem] font-bold mb-[10px]"
 									key={skill.id}
 								>
 									<p>{skill.skill}</p>
