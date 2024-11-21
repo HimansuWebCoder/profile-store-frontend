@@ -8,6 +8,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { apiUrl } from "../../utils/utils";
 import { ThemeContext } from "../../ThemeContext";
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
 import "./Admin.css";
 
 function Admin() {
@@ -130,7 +132,7 @@ function Admin() {
 						/>
 					</Link>
 				</div>
-				<div className="w-full flex overflow-auto">
+				{/*<div className="w-full flex overflow-auto">
 					{
 						images.map(img => (
                              <div className="w-[200px] h-auto flex items-center flex-row overflow-auto space-x-1 mr-2 bg-white flex-shrink-0 ">
@@ -138,7 +140,20 @@ function Admin() {
                              </div>
 							))
 					}
-				</div>
+				</div>*/}
+
+				<ImageList sx={{ width: 500, height: 300 }} cols={3} rowHeight={164}>
+			      {images.map((img) => (
+			        <ImageListItem key={img.image_id}>
+			          <img
+			            srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+			            src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
+			            alt="image"
+			            loading="lazy"
+			          />
+			        </ImageListItem>
+			      ))}
+			    </ImageList>
 				<Skills />
 			</div>
 		</div>
