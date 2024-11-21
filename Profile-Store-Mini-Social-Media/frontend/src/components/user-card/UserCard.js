@@ -5,7 +5,24 @@ import CircularProgress from "@mui/material/CircularProgress";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { ThemeContext } from "../../ThemeContext";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import "./UserCard.css";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  maxWidth: "370px",
+  bgcolor: 'background.paper',
+  border: '1px solid #000',
+  borderRadius: "10px",
+  boxShadow: 24,
+  p: 4,
+};
 
 function UserCard() {
 	// const location = useLocation();
@@ -17,6 +34,10 @@ function UserCard() {
 	const [images, setImages] = useState([]);
 	const [ loading, setLoading ] = useState(true);
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+
+	 const [open, setOpen] = useState(false);
+  	 const handleOpen = () => setOpen(true);
+	 const handleClose = () => setOpen(false);
     console.log("user id", id)
 
 	useEffect(() => {
@@ -103,7 +124,7 @@ function UserCard() {
 				</div>
 				) : (
 			<div style={{background: isDarkMode ? "#ECF9FF" : ""}} className="max-w-[500px]  rounded-xl h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
-				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="max-w-[180px] rounded-full border border-white aspect-square" />
+				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" onClick={handleOpen} className="max-w-[180px] rounded-full border border-white aspect-square" />
 				<h1 className="text-[2rem] w-[100%] bg-[#222831]">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-[#222831] mt-[5px]">{users?.user?.[0]?.headline}</h1>
 				<h1 style={{color: isDarkMode ? "black" : "",}} className="text-[2rem] w-[100%] mt-2 bg-[#222831]-500 text-white font-[Caveat] break-words">{users?.about?.[0]?.description}</h1>
@@ -135,6 +156,19 @@ function UserCard() {
 			         }
 				
            </div>
+
+            <div>
+				      <Modal
+				        open={open}
+				        onClose={handleClose}
+				        aria-labelledby="modal-modal-title"
+				        aria-describedby="modal-modal-description"
+				      >
+				        <Box sx={style}>
+				        <img src={users?.profilePhoto?.[0]?.image} alt="profile image" onClick={handleOpen} className="max-w-[300px] rounded-[10px] border border-white aspect-square" />
+				        </Box>
+				      </Modal>
+				    </div>
 
                 <div className="w-full h-[200px] overflow-auto mt-[20px] bg-[#222831] p-[5px]">
                 
