@@ -21,7 +21,7 @@ function Admin() {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-			useEffect(() => {
+	useEffect(() => {
 		const fetchProfileInfo = async () => {
 			try {
 				const profileInfo = await fetch(`${apiUrl}/api/profile-info`, {
@@ -34,13 +34,18 @@ function Admin() {
 				// }
 
 				console.log("profile info data", profileInfoData)
-				console.log("profile info id ", location)
-				setTimeout(() => {
-					setImages(profileInfoData)
-					console.log("all my info data", profileInfoData)
-				}, 1000);
+				if (profileInfoData.length > 0) {
+						setImages(profileInfoData.userImages)
+						console.log("all my info data", profileInfoData)
+				} else {
+					setImages(profileInfoData.userImages)
+					// console.log("not found")
+					// setImages([])
+				}
+				
 			} catch (error) {
 				console.error("Error fetching profile-info:", error);
+				setImages([])
 			}
 		};
 		fetchProfileInfo();
@@ -67,6 +72,7 @@ function Admin() {
 			  }
 			});
 	}, [location]);
+
 	return (
 		<div
 			style={{ backgroundColor: isDarkMode ? "#395B64" : "#222831" }}
@@ -132,28 +138,51 @@ function Admin() {
 						/>
 					</Link>
 				</div>
-				{/*<div className="w-full flex overflow-auto">
-					{
-						images.map(img => (
-                             <div className="w-[200px] h-auto flex items-center flex-row overflow-auto space-x-1 mr-2 bg-white flex-shrink-0 ">
-                             	<img className="w-[800px] h-[200px]" src={img.image_url} alt="images" />
-                             </div>
-							))
-					}
-				</div>*/}
+				{/*<div className="w-full flex overflow-auto">*/}
+{/*				{
+  images.length > 0 ? (
+    images.map((img, index) => (
+      <div key={index} className="w-[200px] h-auto flex items-center flex-row overflow-auto space-x-1 mr-2 bg-white flex-shrink-0">
+        {img?.image_url ? (
+          <img className="w-[800px] h-[200px]" src={img.image_url} alt="Image" />
+        ) : (
+          <p>{img?.Status || "Image not yet posted"}</p>  
+        )}
+      </div>
+    ))
+  ) : (
+    <p>No images found</p> 
+  )
+}
+*/}
+					
 
+				
+				{/*</div>*/}
+
+              
+
+               	{images.length > 0 ? (
 				<ImageList sx={{ width: 500, height: 300 }} cols={3} rowHeight={164}>
 			      {images.map((img) => (
 			        <ImageListItem key={img.image_id}>
+			        {img?.image_url ? (
 			          <img
 			            srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
 			            src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
 			            alt="image"
 			            loading="lazy"
 			          />
+			        	) : (
+                         <p>{img?.Status || "Image not yet posted"}</p>
+			        	)}
 			        </ImageListItem>
 			      ))}
 			    </ImageList>
+			    ) : (
+                 <p>Not posted yet!</p>
+			    )
+               }
 				<Skills />
 			</div>
 		</div>

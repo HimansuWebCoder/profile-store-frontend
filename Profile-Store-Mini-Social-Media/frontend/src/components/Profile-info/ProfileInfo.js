@@ -26,9 +26,9 @@ function ProfileInfo() {
 				// 	alert("You are Offline");
 				// }
 				setTimeout(() => {
-					setName(profileInfoData[0].name);
-					setHeadline(profileInfoData[0].headline);
-					setProfileId(profileInfoData[0].profile_id);
+					setName(profileInfoData.userinfo[0].name);
+					setHeadline(profileInfoData.userinfo[0].headline);
+					setProfileId(profileInfoData.userinfo[0].profile_id);
 					setLoader(false);
 				}, 1000);
 			} catch (error) {
