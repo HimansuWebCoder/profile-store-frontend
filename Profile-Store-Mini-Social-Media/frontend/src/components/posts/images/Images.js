@@ -101,7 +101,7 @@ function Images() {
 				style={{
 					background: isDarkMode ? "#2C4E80" : "#222831",
 				}}
-				className="max-w-full p-2 h-auto z-15000 border border-white  flex justify-around items-center mb-[10px]"
+				className="max-w-full p-2 h-auto z-15000 border-r border-l border-white  flex justify-around items-center mb-[10px]"
 			>
 				<h1 className="text-[1.4rem]" style={{ color: isDarkMode ? "white" : "white" }}>
 					Create Posts
@@ -178,7 +178,7 @@ function Images() {
 									>
 										<div className="max-w-[60px] h-auto ">
 										<Link to={`/home/user/photo/${img.profile_id}`}>
-											<img className="max-w-[50px] aspect-square rounded-full border-3 border-white" src={img.image} />
+											<img className="max-w-[50px] aspect-square rounded-full border border-white" src={img.image} />
 										</Link>
 										</div>
 										<div style={{width:"60%"}}>
@@ -191,6 +191,7 @@ function Images() {
 													className="w-[25px] max-h-[50px]"
 													src="/assets/images/dot.png"
 													alt="triple dot"
+													style={{background: isDarkMode ? "black" : "", height:"20px"}}
 												/>
 											</Link>
 											
@@ -199,7 +200,7 @@ function Images() {
 									<hr className="border border-black-900" />
 									<div className="max-w-full h-auto">
 										<img
-											className="w-full h-[300px] border border-white"
+											className="w-full h-[300px]"
 											src={img.image_url}
 											alt="posted image"
 										/>
@@ -216,6 +217,7 @@ function Images() {
 												<img
 													onClick={() => likebtn(img.image_id)}
 													className="max-w-[30px] h-[30px]"
+													style={{background: isDarkMode ? "#222831" : ""}}
 													src="/assets/images/like4.png"
 													alt="like"
 												/>
@@ -229,6 +231,7 @@ function Images() {
 											<Link to="/home/posts/comments">
 												<img
 													className="max-w-[30px] h-[30px]"
+													style={{background: isDarkMode ? "#222831" : ""}}
 													src="/assets/images/comment4.png"
 													alt="comment"
 												/>
@@ -239,6 +242,7 @@ function Images() {
 											<img
 												onClick={handleShare}
 												className="max-w-[30px] h-[30px]"
+												style={{background: isDarkMode ? "#222831" : ""}}
 												src="/assets/images/share3.png"
 												alt="share"
 											/>
