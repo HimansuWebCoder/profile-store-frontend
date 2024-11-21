@@ -46,8 +46,8 @@ function Profiles({ mode, setMode }) {
 						// background: isDarkMode ? "#2C3333" : "#2F3645",
 						background: isDarkMode ? "#31363F" : "#31363F",
 						// marginTop: "0px", 
-						// borderTop: "1px solid white",
-						borderBottom: "1px solid white"
+						borderTop: "1px solid white",
+						// borderBottom: "1px solid white"
 					}}
 					className="profiles-info-container"
 				>
