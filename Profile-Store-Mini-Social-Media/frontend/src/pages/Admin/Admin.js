@@ -75,7 +75,7 @@ function Admin() {
 			className="admin-container"
 		>
 			<div className="admin-sub-container">
-				<Link id="home-link" to="/home">
+				<Link id="home-link" to="/home/posts">
 					<img id="home-route" src="/assets/images/home2.png" />
 				</Link>
 				<div className="sub-admin-container editProfilePhoto">
@@ -125,7 +125,7 @@ function Admin() {
 				<About />
 
 				<div className="flex items-center justify-between bg-[#31363F] p-[5px] mt-[5px] mb-[5px]">
-					<h3 className="text-[1.5rem]">My Posts</h3>
+					<h3 className="text-[1.5rem]">Your Posts</h3>
 					<Link to="/admin/create-post">
 						<img
 							className="add-button"
