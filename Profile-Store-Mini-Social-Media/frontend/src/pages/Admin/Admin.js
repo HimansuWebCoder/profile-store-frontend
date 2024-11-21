@@ -76,7 +76,7 @@ function Admin() {
 		>
 			<div className="admin-sub-container">
 				<Link id="home-link" to="/home">
-					<img id="home-route" src="/assets/images/home.png" />
+					<img id="home-route" src="/assets/images/home2.png" />
 				</Link>
 				<div className="sub-admin-container editProfilePhoto">
 					<Link to={`/admin/file/${profilePhotoId}`}>

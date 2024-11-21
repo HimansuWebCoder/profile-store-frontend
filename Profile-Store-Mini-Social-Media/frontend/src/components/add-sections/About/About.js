@@ -60,7 +60,7 @@ function About() {
 						/>
 					</Box>
 				) : (
-					<p style={{ color: "white", wordBreak: "break-word" }}>
+					<p className="text-white font-[Caveat] text-[2rem] break-words">
 						{about}
 					</p>
 				)}

@@ -62,8 +62,8 @@ function ProfileInfo() {
 				</Box>
 			) : (
 				<>
-					<h1 className="leading-[0.1] pt-7 text-4xl">{name}</h1>
-					<h3 className="leading-[3]">{headline}</h3>
+					<h1 className="leading-[0.8] pt-7 text-4xl font-[Lobster, sans-serif] font-bold">{name}</h1>
+					<h3 className="leading-[3] font-[Lobster, sans-serif] font-bold">{headline}</h3>
 					{/*<ProfileLinks />*/}
 				</>
 			)}
