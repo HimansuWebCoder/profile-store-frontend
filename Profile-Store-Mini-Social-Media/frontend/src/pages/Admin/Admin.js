@@ -71,7 +71,7 @@ function Admin() {
 
 	return (
 		<div
-			style={{ backgroundColor: isDarkMode ? "#395B64" : "#222831" }}
+			style={{ backgroundColor: isDarkMode ? "#2D4356" : "#222831" }}
 			className="admin-container"
 		>
 			<div className="admin-sub-container">

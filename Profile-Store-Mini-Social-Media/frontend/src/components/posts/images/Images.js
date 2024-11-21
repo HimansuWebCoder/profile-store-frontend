@@ -93,13 +93,16 @@ function Images() {
 
 	return (
 		<div
-			style={{ color: isDarkMode ? "black" : "white", background: isDarkMode ? "#344955" : "#31363F" }}
+			style={{
+			  color: isDarkMode ? "black" : "white",
+			  background: isDarkMode ? "white" : "#31363F", 
+			}}
 			// className="max-w-[400px] h-auto sm:max-w-[100%] sm:w-auto m-auto mt-[20px] p-[10px]"
 			className="w-full sm:max-w-[400px] h-auto m-auto mt-[20px] p-[10px]"
 		>
 			<div
 				style={{
-					background: isDarkMode ? "#2C4E80" : "#222831",
+					background: isDarkMode ? "#021526" : "#222831",
 				}}
 				className="max-w-full p-2 h-auto z-15000 border-r border-l border-white  flex justify-around items-center mb-[10px]"
 			>
@@ -167,6 +170,7 @@ function Images() {
 											? "white"
 											: "#222831",
 										color: isDarkMode ? "black" : "white",
+										borderTop: isDarkMode ? "1px solid black" : "",
 									}}
 									className="max-w-full h-auto mt-[20px]  p-[10px]"
 								>

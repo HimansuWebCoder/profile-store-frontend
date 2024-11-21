@@ -102,7 +102,7 @@ function UserCard() {
 				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="max-w-[180px] rounded-full aspect-square" />
 				<h1 className="text-[2rem] w-[100%] bg-[#222831]">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-[#222831] mt-[5px]">{users?.user?.[0]?.headline}</h1>
-				<h1 className="text-[1.2rem] w-[100%] mt-2 bg-[#222831]-500">{users?.about?.[0]?.description}</h1>
+				<h1 className="text-[1.2rem] w-[100%] mt-2 bg-[#222831]-500 text-white font-[Caveat] text-[2rem] break-words">{users?.about?.[0]?.description}</h1>
 				<h1 className="text-[1.2rem] w-[100%] m-2 font-bold bg-[#222831] text-white">My Posts</h1>
 				{/*<p>Skills: {users?.skill?.[1]?.skill || "No skills available"}</p>*/}
 				 <div className="w-full m-auto flex justify-center">
