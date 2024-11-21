@@ -125,7 +125,7 @@ function UserCard() {
 			                   </ImageListItem>
 			                	))
 						      	) : (
-			                <h1 className="align-middle m-auto">No images uploaded yet. Add an image to make your post stand out!</h1>
+			                <h1 className="align-middle m-auto">No images uploaded yet.</h1>
 						      	)}
 
 						    </ImageList>
