@@ -33,8 +33,8 @@ function EditPost({ redirectTo }) {
 	}
 
 	return (
-		<div className="w-[200px] h-auto border  rounded-[4px] fixed top-[100px] bg-[#222831] text-black right-[10px] p-2">
-			<div className="flex flex-col justify-center items-center">
+		<div className="w-[100px] h-auto border  rounded-[4px] fixed top-[100px] bg-[#222831] text-black right-[10px] p-2">
+			<div className="flex flex-col justify-center items-between">
 				<div className="m-auto text-white mr-2">
 					<Link className="no-underline" to="/home/posts">
 						<img src="/assets/images/cancel.png" className="max-w-[20px]" />
