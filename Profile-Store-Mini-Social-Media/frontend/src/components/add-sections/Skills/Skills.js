@@ -33,17 +33,17 @@ function Skills() {
 	}, [location]);
 	return (
 		<div className="flex flex-col">
-			<div className="flex justify-between items-center mt-[10px] bg-[#31363F] rounded-[10px] p-[5px]">
+			<div className="flex justify-between items-center mt-[10px] bg-[#31363F]  p-[10px]">
 				<h3>Skills</h3>
 				<div>
 					<Link
-						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[10px] no-underline "
+						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[5px] no-underline "
 						to="/admin/skill/post"
 					>
 						Post
 					</Link>
 					<Link
-						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[10px] no-underline"
+						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[5px] no-underline"
 						to="/admin/skill/edit"
 					>
 						Edit

@@ -31,7 +31,7 @@ function About() {
 	return (
 		<div>
 			<div className="sub-admin-container flex flex-col">
-				<div className="flex justify-between items-center bg-[#31363F] p-[5px] mt-[10px] rounded-[10px]">
+				<div className="flex justify-between items-center bg-[#31363F] p-[5px] mt-[10px]">
 					<h3>About</h3>
 					<Link
 						className="cursor-pointer"
