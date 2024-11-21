@@ -188,7 +188,7 @@ function Images() {
 										<div>
 											<Link to={`/home/posts/${img.image_id}`}>
 												<img
-													className="w-[50px] max-h-[50px]"
+													className="w-[25px] max-h-[50px]"
 													src="/assets/images/dot.png"
 													alt="triple dot"
 												/>
@@ -209,14 +209,14 @@ function Images() {
 										// style={{
 										// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",
 										// }}
-										className="max-w-full h-auto flex justify-around"
+										className="max-w-full h-auto flex justify-around  mt-2"
 									>
 										<div className="flex justify-center flex-col items-center">
 											<div className="flex justify-center items-center">
 												<img
 													onClick={() => likebtn(img.image_id)}
-													className="max-w-[30px] h-[30px] "
-													src="/assets/images/like.png"
+													className="max-w-[30px] h-[30px]"
+													src="/assets/images/like4.png"
 													alt="like"
 												/>
 												<p className="ml-[10px] text-[1.3rem] text-shadow-[1px_5px_1px_yellow]">
