@@ -137,11 +137,12 @@ function UserCard() {
                 <div className="w-full h-[200px] overflow-auto mt-[20px] bg-[#222831] p-[5px]">
                 
 				    	<h1 className="text-[1.5rem] w-full bg-[#222831] mb-2 font-bold">My skills</h1>
+				    	
 				    {users?.skill?.length > 0 ? users.skill.map((item, index) => (
 				    	<div className="w-full h-auto overflow-auto m-auto bg-[#232d3f] rounded-[10px] text-white text-center text-[1.5rem] font-bold mb-[10px]">
 				        <h1 className="m-1" key={index}>{item.skill}</h1>
 				       </div>
-				  )) : "No skills available"}
+				  )) : <p>No skills available</p>}
                 </div>
 			</div>
 	       		)
