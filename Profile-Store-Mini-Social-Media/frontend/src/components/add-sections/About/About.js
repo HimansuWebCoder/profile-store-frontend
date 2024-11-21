@@ -38,7 +38,7 @@ function About() {
 						to={`/admin/about/${aboutId}`}
 					>
 						<img
-							className="editpencil"
+							className="max-w-[25px]"
 							src="/assets/images/edit1.png"
 							alt="editinfo"
 						/>

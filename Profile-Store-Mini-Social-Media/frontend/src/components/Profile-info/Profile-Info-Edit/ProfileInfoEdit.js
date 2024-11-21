@@ -77,7 +77,7 @@ function ProfileInfoEdit() {
 							onChange={(e) => setHeadline(e.target.value)}
 						/>
 						<button
-							className="max-w-[100px] h-[30px] rounded border-none m-1 bg-blue-600 text-white hover:bg-blue-700 "
+							className="max-w-[100px] h-auto rounded border-none m-1 bg-blue-600 text-white hover:bg-blue-700 "
 							type="submit"
 						>
 							Update Profile

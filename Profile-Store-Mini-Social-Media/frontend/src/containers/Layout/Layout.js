@@ -26,7 +26,7 @@ function Layout({ mode, setMode }) {
 				<Link className="border-r border-l mr-5 p-1"
 					style={{
 						color: isDarkMode ? "red" : "white",
-						// background: isDarkMode ? "white" : "yellow",
+						background: isDarkMode ? "white" : "#31363F",
 						textDecoration: "none",
 					}}
 					to="/home/profiles"
@@ -37,7 +37,7 @@ function Layout({ mode, setMode }) {
 				    className="border-l border-r p-1"
 					style={{
 						color: isDarkMode ? "red" : "white",
-						// background: isDarkMode ? "white" : "yellow",
+						background: isDarkMode ? "white" : "#31363F",
 						textDecoration: "none",
 					}}
 					to="/home/posts"

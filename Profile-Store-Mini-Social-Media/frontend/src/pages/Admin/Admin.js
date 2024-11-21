@@ -77,7 +77,7 @@ function Admin() {
 				<div className="sub-admin-container editProfilePhoto">
 					<Link to={`/admin/file/${profilePhotoId}`}>
 						<img
-							className="editpencil"
+							className="max-w-[25px]"
 							src="/assets/images/edit1.png"
 							alt="Edit Profile Photo"
 						/>
@@ -102,7 +102,7 @@ function Admin() {
 						imgSrc={profileImg}
 						alt="profile image"
 						size="100px"
-						bg="#d2e0fb"
+						bg="#31363F"
 						className="profile-photo-logo-container"
 					/>
 				)}
