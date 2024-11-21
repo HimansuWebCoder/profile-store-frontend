@@ -41,10 +41,10 @@ function Profiles({ mode, setMode }) {
 			{users.map(user => (
 				<div
 					style={{
-						color: isDarkMode ? "white" : "white",
+						color: isDarkMode ? "black" : "white",
 						// background: isDarkMode ? "#1e3e62" : "#243642",
 						// background: isDarkMode ? "#2C3333" : "#2F3645",
-						background: isDarkMode ? "#31363F" : "#31363F",
+						background: isDarkMode ? "#EEF7FF" : "#31363F",
 						// marginTop: "0px", 
 						// borderTop: "1px solid grey",
 						borderBottom: "1px solid grey"
