@@ -99,9 +99,9 @@ function Images() {
 		>
 			<div
 				style={{
-					background: isDarkMode ? "#2C4E80" : "#00215E",
+					background: isDarkMode ? "#2C4E80" : "#222831",
 				}}
-				className="max-w-full p-2 h-auto z-15000 border border-white rounded-[10px] flex justify-around items-center mb-[10px]"
+				className="max-w-full p-2 h-auto z-15000 border border-white  flex justify-around items-center mb-[10px]"
 			>
 				<h1 className="text-[1.4rem]" style={{ color: isDarkMode ? "white" : "white" }}>
 					Create Posts
@@ -165,7 +165,7 @@ function Images() {
 									style={{
 										background: isDarkMode
 											? "white"
-											: "#45474B",
+											: "#222831",
 										color: isDarkMode ? "black" : "white",
 									}}
 									className="max-w-full h-auto mt-[20px]  p-[10px]"
@@ -189,7 +189,7 @@ function Images() {
 											<Link to={`/home/posts/${img.image_id}`}>
 												<img
 													className="w-[50px] max-h-[50px]"
-													src="/assets/images/menu.png"
+													src="/assets/images/dot.png"
 													alt="triple dot"
 												/>
 											</Link>
@@ -215,7 +215,7 @@ function Images() {
 											<div className="flex justify-center items-center">
 												<img
 													onClick={() => likebtn(img.image_id)}
-													className="max-w-[30px] h-[30px]"
+													className="max-w-[30px] h-[30px] "
 													src="/assets/images/like.png"
 													alt="like"
 												/>
@@ -229,7 +229,7 @@ function Images() {
 											<Link to="/home/posts/comments">
 												<img
 													className="max-w-[30px] h-[30px]"
-													src="/assets/images/comment.png"
+													src="/assets/images/comment4.png"
 													alt="comment"
 												/>
 											</Link>
@@ -239,7 +239,7 @@ function Images() {
 											<img
 												onClick={handleShare}
 												className="max-w-[30px] h-[30px]"
-												src="/assets/images/share.png"
+												src="/assets/images/share3.png"
 												alt="share"
 											/>
 											<h4>Share</h4>
