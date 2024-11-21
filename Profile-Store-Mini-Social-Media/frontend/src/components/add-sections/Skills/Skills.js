@@ -33,7 +33,7 @@ function Skills() {
 	}, [location]);
 	return (
 		<div className="flex flex-col">
-			<div className="flex justify-between items-center mt-[10px] bg-[#092635] rounded-[10px] p-[5px]">
+			<div className="flex justify-between items-center mt-[10px] bg-[#31363F] rounded-[10px] p-[5px]">
 				<h3>Skills</h3>
 				<div>
 					<Link
@@ -65,7 +65,7 @@ function Skills() {
 					/>
 				</Box>
 			) : (
-				<div className="h-[200px] overflow-auto mt-[20px] bg-[#092635] p-[5px]">
+				<div className="h-[200px] overflow-auto mt-[20px] bg-[#31363F] p-[5px]">
 					{skills.length === 0 ? (
 						<p>{error}</p>
 					) : (
