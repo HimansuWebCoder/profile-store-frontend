@@ -34,8 +34,11 @@ function Admin() {
 				// }
 
 				console.log("profile info data", profileInfoData)
+			
 						setImages(profileInfoData.userImages)
 						console.log("all my info data", profileInfoData)
+            setLoading(false)
+				
 			} catch (error) {
 				console.error("Error fetching profile-info:", error);
 				setImages([])
@@ -147,7 +150,11 @@ function Admin() {
               
 
            <div className="w-full m-auto flex justify-center">
-				<ImageList sx={{ maxWidth: 500, height: 300 }} cols={3} rowHeight={164}>
+         {
+         	loading ? (
+               <h1>Loading....</h1>
+         		) : (
+              <ImageList sx={{ maxWidth: 500, height: 300 }} cols={3} rowHeight={164}>
 			      {images.length > 0 ? (
                 images.map(img => (
                    <ImageListItem key={img.id}>
@@ -164,6 +171,9 @@ function Admin() {
 			      	)}
 
 			    </ImageList>
+         		)
+         }
+				
            </div>
 				<Skills />
 			</div>

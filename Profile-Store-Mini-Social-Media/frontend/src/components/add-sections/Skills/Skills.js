@@ -37,13 +37,13 @@ function Skills() {
 				<h3>Skills</h3>
 				<div>
 					<Link
-						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[5px] no-underline "
+						className="text-white bg-[#222831] ml-[5px] p-[10px] rounded-[5px] no-underline "
 						to="/admin/skill/post"
 					>
 						Post
 					</Link>
 					<Link
-						className="text-white bg-[#257180] ml-[5px] p-[10px] rounded-[5px] no-underline"
+						className="text-white bg-[#222831] ml-[5px] p-[10px] rounded-[5px] no-underline"
 						to="/admin/skill/edit"
 					>
 						Edit

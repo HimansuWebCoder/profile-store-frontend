@@ -66,7 +66,7 @@ function AboutEdit() {
 					/>
 				</Box>
 			) : (
-				<div className="max-w-[500px] h-[200px] bg-[rgba(0,100,200,1)] rounded-[10px] text-white absolute top-[200px] p-[10px] text-center">
+				<div className="max-w-[500px] h-[200px] bg-[#31363F] z-2000 rounded-[10px] text-white absolute top-[200px] p-[10px] text-center">
 					<textarea
 						className="w-[90%] h-[80%] text-white text-2xl bg-[rgba(0,20,50,1)]"
 						value={input}
@@ -75,13 +75,13 @@ function AboutEdit() {
 						{description}
 					</textarea>
 					<button
-						className="w-[20%] h-[30px] rounded-[5px]"
+						className="w-[20%] h-[30px] bg-[#222831] rounded-[5px]"
 						onClick={editAboutHandler}
 					>
 						Submit
 					</button>
 					<button
-						className="w-[20%] h-[30px] rounded-[5px]"
+						className="w-[20%] h-[30px] bg-[#222831] ml-2 rounded-[5px]"
 						onClick={() => navigate("/admin")}
 					>
 						Exit
