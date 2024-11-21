@@ -102,11 +102,14 @@ function Images() {
 		>
 			<div
 				style={{
-					background: isDarkMode ? "#021526" : "#222831",
+					// background: isDarkMode ? "#021526" : "#222831",
+					background: isDarkMode ? "white" : "#222831",
+					borderTop: isDarkMode ? "1px solid #222831" : "#222831",
+					borderBottom: isDarkMode ? "1px solid #222831" : "#222831",
 				}}
 				className="max-w-full p-2 h-auto z-15000 border-r border-l border-white  flex justify-around items-center mb-[10px]"
 			>
-				<h1 className="text-[1.4rem]" style={{ color: isDarkMode ? "white" : "white" }}>
+				<h1 className="text-[1.4rem] font-bold" style={{ color: isDarkMode ? "black" : "white" }}>
 					Create Posts
 				</h1>
 
