@@ -33,31 +33,31 @@ function EditPost({ redirectTo }) {
 	}
 
 	return (
-		<div className="w-[200px] h-auto border border-black rounded-[10px] fixed top-[100px] bg-white text-black right-[10px]">
-			<div className="flex flex-col justify-center items-around">
-				<div className="m-auto">
+		<div className="w-[200px] h-auto border  rounded-[4px] fixed top-[100px] bg-[#222831] text-black right-[10px] p-2">
+			<div className="flex flex-col justify-center items-center">
+				<div className="m-auto text-white mr-2">
 					<Link className="no-underline" to="/home/posts">
-						Cancel
+						<img src="/assets/images/cancel.png" className="max-w-[20px]" />
 					</Link>
 				</div>
-				<div className="flex justify-around items-center">
+				<div className="flex justify-around items-center mb-2">
 					<Link to={`/home/posts/edit/${id}`}>
 						<img
-							className="w-[40px] h-[40px]"
-							src="/assets/images/pencil.png"
+							className="w-[30px] h-[30px] mr-1"
+							src="/assets/images/edit1.png"
 							alt="edit.png"
 						/>
 					</Link>
-					<h4>Edit</h4>
+					<h4 className="text-white">Edit</h4>
 				</div>
 				<div className="flex justify-around items-center">
 					<img
 						onClick={deletePost}
-						className="w-[40px] h-[40px]"
+						className="w-[30px] h-[30px] mr-1"
 						src="/assets/images/delete.png"
 						alt="delete.png"
 					/>
-					<h4>Delete</h4>
+					<h4 className="text-white">Delete</h4>
 				</div>
 			</div>
 			<Outlet />
