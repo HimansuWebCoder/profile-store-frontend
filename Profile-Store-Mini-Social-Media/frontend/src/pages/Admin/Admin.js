@@ -125,7 +125,7 @@ function Admin() {
 				<About />
 
 				<div className="flex items-center justify-between bg-[#31363F] p-[5px] mt-[5px] mb-[5px]">
-					<h3>My Posts</h3>
+					<h3 className="text-[1.5rem]">My Posts</h3>
 					<Link to="/admin/create-post">
 						<img
 							className="add-button"

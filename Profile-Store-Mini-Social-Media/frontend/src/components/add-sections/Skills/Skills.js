@@ -34,7 +34,7 @@ function Skills() {
 	return (
 		<div className="flex flex-col">
 			<div className="flex justify-between items-center mt-[10px] bg-[#31363F]  p-[10px]">
-				<h3>Skills</h3>
+				<h3 className="text-[1.5rem]" >Skills</h3>
 				<div>
 					<Link
 						className="text-white bg-[#222831] ml-[5px] p-[10px] rounded-[5px] no-underline "

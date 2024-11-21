@@ -32,7 +32,7 @@ function About() {
 		<div>
 			<div className="sub-admin-container flex flex-col">
 				<div className="flex justify-between items-center  bg-[#31363F] p-[5px] mt-[10px]">
-					<h3>About</h3>
+					<h3 className="text-[1.5rem]">About</h3>
 					<Link
 						className="cursor-pointer"
 						to={`/admin/about/${aboutId}`}
