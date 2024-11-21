@@ -101,7 +101,7 @@ function UserCard() {
 				</div>
 				) : (
 			<div className="max-w-[500px]  rounded-xl h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
-				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="max-w-[180px] rounded-full aspect-square" />
+				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" className="max-w-[180px] rounded-full border border-white aspect-square" />
 				<h1 className="text-[2rem] w-[100%] bg-[#222831]">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-[#222831] mt-[5px]">{users?.user?.[0]?.headline}</h1>
 				<h1 className="text-[1.2rem] w-[100%] mt-2 bg-[#222831]-500 text-white font-[Caveat] text-[2rem] break-words">{users?.about?.[0]?.description}</h1>
@@ -137,7 +137,7 @@ function UserCard() {
                 <div className="w-full h-[200px] overflow-auto mt-[20px] bg-[#222831] p-[5px]">
                 
 				    	<h1 className="text-[1.5rem] w-full bg-[#222831] mb-2 font-bold">My skills</h1>
-				    	
+
 				    {users?.skill?.length > 0 ? users.skill.map((item, index) => (
 				    	<div className="w-full h-auto overflow-auto m-auto bg-[#232d3f] rounded-[10px] text-white text-center text-[1.5rem] font-bold mb-[10px]">
 				        <h1 className="m-1" key={index}>{item.skill}</h1>
