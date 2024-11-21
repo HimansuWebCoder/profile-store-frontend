@@ -16,11 +16,11 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  maxWidth: "370px",
-  bgcolor: 'background.paper',
-  border: '1px solid #000',
-  borderRadius: "10px",
-  boxShadow: 24,
+  // maxWidth: "370px",
+  // bgcolor: 'background.paper',
+  // border: '1px solid #222831',
+  // borderRadius: "50px",
+  // boxShadow: 24,
   p: 4,
 };
 
