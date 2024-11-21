@@ -12,6 +12,7 @@ function UserCard() {
 	const { id } = useParams();
 	const [ userCardInfo, setUserCardInfo ] = useState("");
 	const [ users, setUsers ] = useState({});
+	const [userImage, setUserImage] = useState([]);
 	const [images, setImages] = useState([]);
 	const [ loading, setLoading ] = useState(true);
     console.log("user id", id)
@@ -79,6 +80,7 @@ function UserCard() {
 		.then(res => res.json())
 		.then(user => {
 			setUsers(user)
+			setUserImage(user.posteImages)
 			console.log("specific users info:", user)
 			setLoading(false)
 			// console.log(user)
@@ -111,8 +113,8 @@ function UserCard() {
 			               <h1>Loading....</h1>
 			         		) : (
 			              <ImageList sx={{ maxWidth: 500, height: 300 }} cols={3} rowHeight={164}>
-						      {images.length > 0 ? (
-			                images.map(img => (
+						      {userImage.length > 0 ? (
+			                userImage.map(img => (
 			                   <ImageListItem key={img.id}>
 			                   	<img 
 			                   	srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}

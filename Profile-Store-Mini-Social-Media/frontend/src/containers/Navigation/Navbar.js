@@ -14,7 +14,7 @@ function NavContainer({ mode, setMode }) {
 		<div
 			style={{ backgroundColor: isDarkMode ? "#35374B" : "#31363F" }}
 			// style={{ backgroundColor: isDarkMode ? "#E2F1E7" : "#35374B" }}
-			className=" p-[20px] max-w-full h-20 flex justify-around items-center p-4 sticky top-0 z-800"
+			className=" p-[20px] max-w-full h-20 flex  shadow-xl justify-around items-center p-4 sticky top-0 z-800"
 		>
 			<Logo />
 			<Search />
