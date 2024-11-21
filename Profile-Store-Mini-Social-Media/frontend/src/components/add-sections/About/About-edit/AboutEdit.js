@@ -66,9 +66,9 @@ function AboutEdit() {
 					/>
 				</Box>
 			) : (
-				<div className="max-w-[500px] h-[200px] bg-[#31363F] z-2000 rounded-[10px] text-white absolute top-[200px] p-[10px] text-center">
+				<div className="max-w-[500px] h-[200px] bg-[#31363F] border z-2000 rounded-[10px] text-white absolute top-[200px] p-[10px] text-center">
 					<textarea
-						className="w-[90%] h-[80%] text-white text-2xl bg-[rgba(0,20,50,1)]"
+						className="w-[90%] font-[Caveat] h-[80%] text-white text-2xl bg-[#021526]"
 						value={input}
 						onChange={(e) => setInput(e.target.value)}
 					>
