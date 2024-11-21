@@ -146,7 +146,7 @@ function Admin() {
 
               
 
-           
+           <div className="w-full m-auto flex justify-center">
 				<ImageList sx={{ maxWidth: 500, height: 300 }} cols={3} rowHeight={164}>
 			      {images.length > 0 ? (
                 images.map(img => (
@@ -164,6 +164,7 @@ function Admin() {
 			      	)}
 
 			    </ImageList>
+           </div>
 				<Skills />
 			</div>
 		</div>

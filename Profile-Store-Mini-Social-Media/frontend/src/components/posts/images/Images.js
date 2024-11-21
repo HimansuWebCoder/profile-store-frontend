@@ -187,12 +187,16 @@ function Images() {
 										</div>
 										<div>
 											<Link to={`/home/posts/${img.image_id}`}>
-												<img
+											{isDarkMode ? <img
+													className="max-w-[25px] "
+													src="/assets/images/dot2.png"
+													alt="triple dot"
+												/> : <img
 													className="w-[25px] max-h-[50px]"
 													src="/assets/images/dot.png"
 													alt="triple dot"
-													style={{background: isDarkMode ? "black" : "", height:"20px"}}
-												/>
+												/>}
+												
 											</Link>
 											
 										</div>
@@ -214,13 +218,20 @@ function Images() {
 									>
 										<div className="flex justify-center flex-col items-center">
 											<div className="flex justify-center items-center">
-												<img
+											{
+												isDarkMode ? <img
 													onClick={() => likebtn(img.image_id)}
 													className="max-w-[30px] h-[30px]"
-													style={{background: isDarkMode ? "#222831" : ""}}
+													src="/assets/images/like2.png"
+													alt="like"
+												/> : <img
+													onClick={() => likebtn(img.image_id)}
+													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like4.png"
 													alt="like"
 												/>
+											}
+												
 												<p className="ml-[10px] text-[1.3rem] text-shadow-[1px_5px_1px_yellow]">
 													{img.likes_count}
 												</p>
@@ -229,23 +240,36 @@ function Images() {
 										</div>
 										<div className="flex justify-center flex-col items-center">
 											<Link to="/home/posts/comments">
-												<img
+											{isDarkMode ? <img
 													className="max-w-[30px] h-[30px]"
-													style={{background: isDarkMode ? "#222831" : ""}}
+													src="/assets/images/comment2.png"
+													alt="comment"
+												/> : <img
+													className="max-w-[30px] h-[30px]"
 													src="/assets/images/comment4.png"
 													alt="comment"
 												/>
+
+										  }
+												
 											</Link>
 											<h4>Comment</h4>
 										</div>
 										<div className="flex justify-center flex-col items-center">
-											<img
+										{
+											isDarkMode ? <img
 												onClick={handleShare}
 												className="max-w-[30px] h-[30px]"
-												style={{background: isDarkMode ? "#222831" : ""}}
+												src="/assets/images/share2.png"
+												alt="share"
+											/> : <img
+												onClick={handleShare}
+												className="max-w-[30px] h-[30px]"
 												src="/assets/images/share3.png"
 												alt="share"
 											/>
+										}
+											
 											<h4>Share</h4>
 										</div>
 									</div>

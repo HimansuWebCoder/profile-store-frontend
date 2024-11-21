@@ -11,11 +11,11 @@ function ProfileSetting() {
 	}
 
 	return (
-		<div className="setting-container">
+		<div className="max-w-[80px] h-[50px]">
 			<img onClick={settingBoxOpen} src="/assets/images/setting.png" />
 			{showSettingBox && (
-				<div className="toggle-setting-box">
-					<Mode /> {/* Assuming Mode is a defined component */}
+				<div className="max-w-[150px] p-2 mt-2 flex justify-center flex-col items-center border rounded-[5px] text-white bg-[#222831]">
+					<Mode /> 
 					<h3>Feedback</h3>
 					<h3><Link to="/">Logout</Link></h3>
 				</div>

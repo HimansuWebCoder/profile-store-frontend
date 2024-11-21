@@ -25,12 +25,12 @@ function SystemMode({ mode, setMode }) {
 				{isDarkMode ? (
 					<img
 						className="w-full h-full"
-						src="/assets/images/sun.png"
+						src="/assets/images/night10.png"
 					/>
 				) : (
 					<img
 						className="w-full h-full"
-						src="/assets/images/moon.png"
+						src="/assets/images/day10.png"
 					/>
 				)}
 			</button>

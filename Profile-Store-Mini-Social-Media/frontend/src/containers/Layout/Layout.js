@@ -15,11 +15,10 @@ function Layout({ mode, setMode }) {
 			<Navbar mode={mode} setMode={setMode} />
 			<div
 				style={{
-					background: isDarkMode ? "#F7F9F2" : "#433D8B",
-					border: isDarkMode ? "1px solid #F5F7F8" : "none",
+					background: isDarkMode ? "#31363F" : "#222831",
 				}}
 				// className="max-w-full h-auto border-2 border-white flex justify-center"
-				className="flex max-w-[100vw] justify-center items-center h-auto"
+				className="flex max-w-[100vw] p-2 font-bold  justify-center items-center h-auto"
 				// className="layout-block-box"
 			>
 				{/*<Profiles mode={mode} setMode={setMode} />*/}
