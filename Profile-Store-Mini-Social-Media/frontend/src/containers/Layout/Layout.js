@@ -19,11 +19,11 @@ function Layout({ mode, setMode }) {
 					border: isDarkMode ? "1px solid #F5F7F8" : "none",
 				}}
 				// className="max-w-full h-auto border-2 border-white flex justify-center"
-				className="flex max-w-[100vw] justify-evenly h-auto"
+				className="flex max-w-[100vw] justify-center items-center h-auto"
 				// className="layout-block-box"
 			>
 				{/*<Profiles mode={mode} setMode={setMode} />*/}
-				<Link
+				<Link className="border-r border-l mr-5 p-1"
 					style={{
 						color: isDarkMode ? "red" : "white",
 						// background: isDarkMode ? "white" : "yellow",
@@ -34,6 +34,7 @@ function Layout({ mode, setMode }) {
 					Profiles
 				</Link>
 				<Link
+				    className="border-l border-r p-1"
 					style={{
 						color: isDarkMode ? "red" : "white",
 						// background: isDarkMode ? "white" : "yellow",
