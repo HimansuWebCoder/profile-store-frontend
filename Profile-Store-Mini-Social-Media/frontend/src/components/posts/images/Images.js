@@ -9,7 +9,21 @@ import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import Modal from '@mui/material/Modal';
 import "./Images.css";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  // maxWidth: "370px",
+  // bgcolor: 'background.paper',
+  // border: '1px solid #222831',
+  // borderRadius: "50px",
+  // boxShadow: 24,
+  p: 4,
+};
 
 const shareData = {
 	title: "Profile-Store",
@@ -22,6 +36,10 @@ function Images() {
 	const [loader, setLoader] = useState(true);
 	const [loader2, setLoader2] = useState(true);
 	const location = useLocation();
+
+	 const [open, setOpen] = useState(false);
+   const handleOpen = () => setOpen(true);
+	 const handleClose = () => setOpen(false);
 
 	useEffect(() => {
 		fetch(`${apiUrl}/api/posts/images`, {
@@ -211,6 +229,7 @@ function Images() {
 									<hr className="border-1 border-white-500" />
 									<div className="max-w-full h-auto">
 										<img
+										onClick={handleOpen}
 											className="w-full h-[300px]"
 											src={img.image_url}
 											alt="posted image"
@@ -223,6 +242,23 @@ function Images() {
 										// }}
 										className="max-w-full h-auto flex justify-around  mt-2"
 									>
+
+									<Modal
+						        open={open}
+						        onClose={handleClose}
+						        aria-labelledby="modal-modal-title"
+						        aria-describedby="modal-modal-description"
+						      >
+						        <Box sx={style}>
+						        <img
+											className="max-w-[300px] h-auto rounded-[10px] aspect-square"
+											src={img.image_url}
+											alt="post images"
+											// style={{ width: size, height: size }}
+										/>
+						        </Box>
+						      </Modal>
+
 										<div className="flex justify-center flex-col items-center">
 											<div className="flex justify-center items-center">
 											{
