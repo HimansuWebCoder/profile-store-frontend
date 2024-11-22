@@ -66,6 +66,10 @@ function Images() {
 	// 	navigator.share(shareData);
 	// }
 
+	const targetImg = (e) => {
+		
+	}
+
 	function handleShare() {
 		if (navigator.share) {
 			navigator
@@ -226,23 +230,6 @@ function Images() {
 											
 										</div>
 									</div>
-									<hr className="border-1 border-white-500" />
-									<div className="max-w-full h-auto">
-										<img
-										onClick={handleOpen}
-											className="w-full h-[300px]"
-											src={img.image_url}
-											alt="posted image"
-										/>
-									</div>
-									<hr className="border-1 border-white-500" />
-									<div
-										// style={{
-										// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",
-										// }}
-										className="max-w-full h-auto flex justify-around  mt-2"
-									>
-
 									<Modal
 						        open={open}
 						        onClose={handleClose}
@@ -258,6 +245,22 @@ function Images() {
 										/>
 						        </Box>
 						      </Modal>
+									{/*<hr className="border-1 border-white-500" />*/}
+									<div className="max-w-full h-auto">
+										<img
+										onClick={handleOpen}
+											className="w-full h-[300px]"
+											src={img.image_url}
+											alt="posted image"
+										/>
+									</div>
+									{/*<hr className="border-1 border-white-500" />*/}
+									<div
+										// style={{
+										// 	background: isDarkMode ? "#0B192C" : "#F5EFFF",
+										// }}
+										className="max-w-full h-auto flex justify-around  mt-2"
+									>
 
 										<div className="flex justify-center flex-col items-center">
 											<div className="flex justify-center items-center">
