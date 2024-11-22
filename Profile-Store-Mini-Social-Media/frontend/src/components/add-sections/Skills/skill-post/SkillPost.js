@@ -33,9 +33,9 @@ function SkillPost() {
 	}
 
 	return (
-		<div className="fixed top-0 left-0 w-screen h-screen bg-[rgba(0,0,0,0.4)] flex justify-center">
-			<div className="w-[600px] h-[300px] bg-[rgba(0,0,30,1)] mt-[50px] text-center rounded-[20px]">
-				<h1 style={{ color: "white" }}>Post Skills</h1>
+		<div className="fixed top-0 left-0 w-screen h-screen z-[100] rounded-[10px] bg-[rgba(0,20,50,0.4)] text-white flex justify-center items-center">
+			<div className="w-[600px] h-[300px] bg-[#31363F] mt-[50px] text-center rounded-[20px]">
+				<h1 className="text-white text-[1.5rem]">Post Skills</h1>
 				<input
 					className="w-[200px] text-black h-[30px] rounded-[10px] text-[1.2rem]"
 					type="text"
@@ -45,13 +45,13 @@ function SkillPost() {
 					onChange={(e) => setSkillInput(e.target.value)}
 				/>
 				<button
-					className="w-[100px] h-[30px] rounded-[5px] ml-[5px] text-[1.3rem]"
+					className="w-[60px] h-[30px] bg-[#222831] rounded-[5px] ml-[5px] text-[1.3rem]"
 					onClick={handleSubmit}
 				>
 					add
 				</button>
 				<button
-					className="w-[100px] h-[30px] rounded-[5px] ml-[5px] text-[1.3rem]"
+					className="w-[80px] h-[30px] bg-[#222831] rounded-[5px] ml-[5px] text-[1.3rem]"
 					onClick={() => navigate("/admin")}
 				>
 					Cancel

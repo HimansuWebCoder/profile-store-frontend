@@ -57,7 +57,7 @@ function SkillEdit() {
 					/>
 				</Box>
 			) : (
-				<div className="w-[500px] h-[400px] overflow-auto text-[1rem] text-center bg-[rgba(0,0,0,0.7)] p-[10px] rounded-[10px]">
+				<div className="w-[500px] h-[400px] overflow-auto text-[1rem] text-center bg-[#31363F] p-[10px] rounded-[10px]">
 					<h1 className="text-[40px]">Edit your skills</h1>
 					{skills.map((skill) => (
 						<>
