@@ -17,10 +17,10 @@ function Welcome() {
      				<li className="mr-5">About</li>
      				<li className="mr-5">Explore</li>
      				<li className="mr-5">
-     				<button className="bg-[#3C3D37] max-w-[auto] h-auto p-1 rounded">Signup</button>
+     				<button className="bg-[#31363F] max-w-[auto] h-auto p-1 rounded">Signup</button>
      				</li>
      				<li className="mr-5">
-     				<button className="bg-[#3C3D37] max-w-[auto] p-1 rounded"><Link to="/home">Login</Link></button>
+     				<button className="bg-[#31363F] max-w-[auto] p-1 rounded"><Link to="/home">Login</Link></button>
      				</li>
      			</ul>
 
