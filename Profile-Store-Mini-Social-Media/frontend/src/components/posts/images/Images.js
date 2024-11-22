@@ -67,7 +67,7 @@ function Images() {
 	// }
 
 	const targetImg = (e) => {
-		
+
 	}
 
 	function handleShare() {
@@ -170,7 +170,7 @@ function Images() {
 							// 		? "1px solid black"
 							// 		: "1px solid white",
 							// }}
-							className="max-w-full h-full  mt-[20px]"
+							className="max-w-full h-full  mt-[5px]"
 							key={img.image_id}
 						>
 							{loader2 ? (
@@ -197,13 +197,13 @@ function Images() {
 										color: isDarkMode ? "black" : "white",
 										borderTop: isDarkMode ? "1px solid black" : "",
 									}}
-									className="max-w-full h-auto mt-[20px]  p-[10px]"
+									className="max-w-full h-auto  p-[10px]"
 								>
 									<div
 										// style={{
 										// 	background: isDarkMode ? "#31363F" : "#87A2FF",
 										// }}
-										className="max-w-full h-[50px] flex justify-between p-[10px] mb-[20px]"
+										className="max-w-full h-[50px] flex justify-between  mb-[20px]"
 									>
 										<div className="max-w-[60px] h-auto ">
 										<Link to={`/home/user/photo/${img.profile_id}`}>
