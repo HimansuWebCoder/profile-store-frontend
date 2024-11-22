@@ -129,7 +129,7 @@ function Images() {
 					borderTop: isDarkMode ? "1px solid #222831" : "#222831",
 					borderBottom: isDarkMode ? "1px solid #222831" : "#222831",
 				}}
-				className="max-w-full p-2 h-auto z-15000 border-r border-1 border-l border-white-500  flex justify-around items-center mb-[10px]"
+				className="max-w-full p-2 h-auto z-15000  flex justify-around items-center mb-[10px]"
 			>
 				<h1 className="text-[1.4rem] font-bold" style={{ color: isDarkMode ? "black" : "white" }}>
 					Create Posts

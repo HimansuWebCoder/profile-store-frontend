@@ -22,12 +22,12 @@ function Layout({ mode, setMode }) {
 				// className="layout-block-box"
 			>
 				{/*<Profiles mode={mode} setMode={setMode} />*/}
-				<Link className="border-r border-l mr-5 p-1"
+				<Link className=" mr-5 p-1"
 					style={{
 						color: isDarkMode ? "red" : "white",
 						background: isDarkMode ? "white" : "#31363F",
-						borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
-						borderRight: isDarkMode ? "1px solid white" : "1px solid white",
+						// borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
+						// borderRight: isDarkMode ? "1px solid white" : "1px solid white",
 						textDecoration: "none",
 					}}
 					to="/home/profiles"
@@ -35,13 +35,13 @@ function Layout({ mode, setMode }) {
 					Profiles
 				</Link>
 				<Link
-				    className="border-l border-r p-1"
+				    className=" p-1"
 					style={{
 						color: isDarkMode ? "red" : "white",
 						background: isDarkMode ? "white" : "#31363F",
 						textDecoration: "none",
-						borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
-						borderRight: isDarkMode ? "1px solid white" : "1px solid white"
+						// borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
+						// borderRight: isDarkMode ? "1px solid white" : "1px solid white"
 					}}
 					to="/home/posts"
 				>
