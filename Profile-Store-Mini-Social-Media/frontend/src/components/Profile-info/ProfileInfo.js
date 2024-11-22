@@ -39,7 +39,7 @@ function ProfileInfo() {
 	}, [setProfileId, location]);
 
 	return (
-		<div className="w-full h-auto mt-2  text-center  text-[1.5rem] text-white break-words flex justify-center flex-col">
+		<div className="w-full h-auto mt-2  text-center  text-[1.5rem] bg-[#31363F]  text-white break-words flex justify-center flex-col">
 			<Link to={`/admin/profile-info/${profileId}/edit`}>
 				<img
 					className="max-w-[25px] m-auto "

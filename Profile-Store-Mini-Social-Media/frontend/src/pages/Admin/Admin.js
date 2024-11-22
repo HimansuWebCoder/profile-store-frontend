@@ -124,7 +124,7 @@ function Admin() {
 				</div>*/}
 				<About />
 
-				<div className="flex items-center justify-between bg-[#31363F] p-[5px] mt-[5px] mb-[5px]">
+				<div className="flex items-center justify-between bg-[#31363F] p-[5px] mt-[5px] border-b border-gray-500">
 					<h3 className="text-[1.5rem]">Your Posts</h3>
 					<Link to="/admin/create-post">
 						<img
@@ -149,7 +149,7 @@ function Admin() {
 
               
 
-           <div className="w-full m-auto flex justify-center">
+           <div className="w-full m-auto bg-[#31363F] flex justify-center">
          {
          	loading ? (
                <h1>Loading....</h1>

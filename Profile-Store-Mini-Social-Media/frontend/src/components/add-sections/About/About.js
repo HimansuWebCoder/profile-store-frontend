@@ -60,7 +60,7 @@ function About() {
 						/>
 					</Box>
 				) : (
-					<p className="text-white font-[Caveat] text-[2rem] break-words">
+					<p className="text-white bg-[#31363F]  text-[1.2rem] break-words">
 						{about}
 					</p>
 				)}

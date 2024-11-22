@@ -65,7 +65,7 @@ function Skills() {
 					/>
 				</Box>
 			) : (
-				<div className="h-[200px] overflow-auto mt-[20px] bg-[#31363F] p-[5px]">
+				<div className="h-[200px] overflow-auto bg-[#31363F] p-[5px]">
 					{skills.length === 0 ? (
 						<p>{error}</p>
 					) : (
