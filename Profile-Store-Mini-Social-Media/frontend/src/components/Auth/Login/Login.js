@@ -48,8 +48,8 @@ function submitHandler() {
             <input className="text-black w-[80%] m-auto p-2 rounded text-[1.2rem]"  type="text" value={loginInput} onChange={inputHandler} placeholder="Enter Your Email" /><br/>
 			 <h2 className="text-[1.5rem]">Password</h2>
             <input className="text-black w-[80%] m-auto p-2 rounded text-[1.2rem]" type="text" value={password} onChange={passwordHandler} placeholder="Enter Your Password"/><br/>
-             <div className="w-full   h-auto flex justify-between">
-	            <button className="text-white text-[1.2rem] bg-[#31363F] w-auto p-2 rounded  ml-[330px]" onClick={submitHandler}>Login</button>
+             <div className="w-full h-auto flex justify-between">
+	            <button className="text-white text-[1.2rem] bg-[#31363F] w-auto p-2 rounded  m-[auto]" onClick={submitHandler}>Login</button>
 		    	<div className="w-[20px] h-[20px] rounded-full border"></div>
 		    </div>
 		</div>
