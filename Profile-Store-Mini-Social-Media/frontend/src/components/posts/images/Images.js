@@ -120,7 +120,7 @@ function Images() {
 			  background: isDarkMode ? "white" : "#31363F", 
 			}}
 			// className="max-w-[400px] h-auto sm:max-w-[100%] sm:w-auto m-auto mt-[20px] p-[10px]"
-			className="w-full sm:max-w-[400px] h-auto m-auto mt-[20px] p-[10px]"
+			className="w-full sm:max-w-[400px] h-auto m-auto mt-[20px]"
 		>
 			<div
 				style={{
@@ -203,7 +203,7 @@ function Images() {
 										// style={{
 										// 	background: isDarkMode ? "#31363F" : "#87A2FF",
 										// }}
-										className="max-w-full h-[50px] flex justify-between  mb-[20px]"
+										className="max-w-full h-[50px] flex justify-between p-[10px] mb-[20px]"
 									>
 										<div className="max-w-[60px] h-auto ">
 										<Link to={`/home/user/photo/${img.profile_id}`}>
