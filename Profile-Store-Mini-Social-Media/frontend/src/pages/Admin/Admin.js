@@ -157,7 +157,7 @@ function Admin() {
          	loading ? (
                <h1>Loading....</h1>
          		) : (
-              <ImageList sx={{ maxWidth: 500, height: "auto", padding: "5px" }} cols={3} rowHeight={164}>
+              <ImageList sx={{ maxWidth: 500, height: 300 , padding: "5px" }} cols={3} rowHeight={164}>
 			      {images.length > 0 ? (
                 images.map(img => (
                    <ImageListItem key={img.id}>
