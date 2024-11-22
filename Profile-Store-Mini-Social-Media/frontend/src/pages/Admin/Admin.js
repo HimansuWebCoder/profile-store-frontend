@@ -75,10 +75,12 @@ function Admin() {
 			className="admin-container"
 		>
 			<div className="admin-sub-container">
-				<Link id="home-link" to="/home/posts">
-					<img id="home-route" src="/assets/images/home2.png" />
+			<div className="max-w-full border-gray-500 p-1 border-b">
+				<Link className="" to="/home/posts">
+					<img className="max-w-[25px]  mt-1 ml-1" src="/assets/images/home2.png" />
 				</Link>
-				<div className="sub-admin-container editProfilePhoto">
+			</div>
+				<div className="flex justify-end border-b border-gray-500 p-1">
 					<Link to={`/admin/file/${profilePhotoId}`}>
 						<img
 							className="max-w-[25px]"
@@ -107,7 +109,8 @@ function Admin() {
 						alt="profile image"
 						size="100px"
 						bg="#31363F"
-						className="profile-photo-logo-container"
+						// className="profile-photo-logo-container"
+						className="border aspect-square rounded-full max-w-[150px]"
 					/>
 				)}
 				<Outlet />
@@ -154,7 +157,7 @@ function Admin() {
          	loading ? (
                <h1>Loading....</h1>
          		) : (
-              <ImageList sx={{ maxWidth: 500, height: 300 }} cols={3} rowHeight={164}>
+              <ImageList sx={{ maxWidth: 500, height: "auto", padding: "5px" }} cols={3} rowHeight={164}>
 			      {images.length > 0 ? (
                 images.map(img => (
                    <ImageListItem key={img.id}>

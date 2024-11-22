@@ -31,10 +31,10 @@ function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
 
 	return (
 		<div
-			className="profile-photo-main-container"
+			className=" flex justify-center  rounded-tl-3xl rounded-br-3xl mt-2"
 			style={{ background: bg }}
 		>
-			<div className="profile-photo-container">
+			<div className="mb-[1px]">
 				<Link
 					style={{ textDecoration: "none" }}
 					id="admin-link-profile"
@@ -57,10 +57,10 @@ function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
 				      >
 				        <Box sx={style}>
 				        <img
-						className="max-w-[300px] h-auto rounded-[10px] aspect-square"
-						src={profilePhoto}
-						alt={alt}
-						// style={{ width: size, height: size }}
+									className="max-w-[300px] h-auto rounded-[10px] aspect-square"
+									src={profilePhoto}
+									alt={alt}
+						      // style={{ width: size, height: size }}
 					/>
 				        </Box>
 				      </Modal>
