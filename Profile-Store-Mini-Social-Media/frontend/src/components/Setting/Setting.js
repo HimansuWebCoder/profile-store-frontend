@@ -16,8 +16,8 @@ function ProfileSetting() {
 			{showSettingBox && (
 				<div className="w-[100%] max-w-screen-sm max-w-sm max-w-screen-sm p-2 mt-2 flex justify-center flex-col items-center border rounded-[5px] text-white bg-[#222831]">
 					<Mode /> 
-					<h3 className="sm:text-[1.5rem] text-[0.7rem] text-base">Feedback</h3>
-					<h3 className="sm:text-[1.5rem] text-[0.7rem]"><Link to="/">Logout</Link></h3>
+					<h3 className="sm:text-[1.5rem] text-[0.6rem] text-base">Feedback</h3>
+					<h3 className="sm:text-[1.5rem] text-[0.6rem]"><Link to="/">Logout</Link></h3>
 				</div>
 			)}
 		</div>

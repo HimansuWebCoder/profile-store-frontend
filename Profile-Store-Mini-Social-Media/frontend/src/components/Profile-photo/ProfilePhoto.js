@@ -57,7 +57,7 @@ function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
 				      >
 				        <Box sx={style}>
 				        <img
-						className="max-w-[300px] h-auto rounded-[10px]"
+						className="max-w-[300px] h-auto rounded-[10px] aspect-square"
 						src={profilePhoto}
 						alt={alt}
 						// style={{ width: size, height: size }}
