@@ -47,8 +47,8 @@ function CommentBox() {
 
 	return (
 		<div className="w-[100vw] h-[100vh] fixed top-0 left-0 flex justify-center p-[20px]">
-			<div className="max-w-[300px] h-[200px] m-auto mt-[300px] p-[10px] bg-[#1a1a1d] text-white overflow-y-auto rounded-[10px]">
-				<div className="w-full h-auto bg-[#1a1a1d] p-[10px] text-[1.5rem]">
+			<div className="max-w-[300px] h-[200px] m-auto mt-[300px] p-[10px] bg-[#31363F] text-white overflow-y-auto rounded-[10px]">
+				<div className="w-full h-auto bg-[#222831] p-[10px] text-[1.5rem]">
 					<Link className="text-white no-underline" to="/home/posts">
 						Cancel
 					</Link>
@@ -76,14 +76,16 @@ function CommentBox() {
 							))}
 						</ul>
 					)}
+					<div className="w-full flex justify-between">
 					<input
 						type="text"
 						value={postComments}
 						onChange={inputComent}
 						placeholder="send comment"
-						className="text-black"
+						className="text-black rounded-[10px]"
 					/>
-					<button onClick={addComment}>send</button>
+					<button className="ml-2" onClick={addComment}>send</button>
+					</div>
 				</div>
 			</div>
 		</div>
