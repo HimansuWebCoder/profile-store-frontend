@@ -124,7 +124,7 @@ function UserCard() {
 				</div>
 				) : (
 			<div style={{background: isDarkMode ? "#ECF9FF" : ""}} className="max-w-[500px]  rounded-xl h-auto  mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
-				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" onClick={handleOpen} className="max-w-[180px] rounded-full border border-white aspect-square" />
+				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" onClick={handleOpen} className="max-w-[180px] rounded-full border border-white mb-3 aspect-square" />
 				<h1 className="text-[2rem] w-[100%] bg-[#222831]">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-[#222831] mt-[5px]">{users?.user?.[0]?.headline}</h1>
 				<h1 style={{color: isDarkMode ? "black" : "",}} className="text-[2rem] w-[100%] mt-2 bg-[#222831]-500 text-white font-[Caveat] break-words">{users?.about?.[0]?.description}</h1>
