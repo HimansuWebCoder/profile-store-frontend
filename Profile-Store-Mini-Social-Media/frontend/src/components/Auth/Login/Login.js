@@ -8,6 +8,10 @@ function Login() {
 	const [input, setInput] = useState("");
 	const [ password, setPassword ] = useState("");
     const navigate = useNavigate();
+    const [ login, setLogin ] = useState("");
+
+
+   
 
 function submitHandler() {
 		fetch(`${apiUrl}/login`, {
@@ -38,9 +42,9 @@ function submitHandler() {
 	}
 
 	return (
-		<div className="max-w-[500px] m-auto mt-5 p-5 mb-5 h-auto bg-[#222831] flex justify-center flex-col text-center">
+		<div className="max-w-[500px] m-auto mt-5 p-2 mb-5 h-auto bg-[#222831] flex justify-center flex-col text-center">
 		<div className="w-full  h-5 flex justify-start">
-		    	<div className="w-[20px] h-[20px] rounded-full border"></div>
+		    	<div className="w-[20px] h-[20px] rounded-br-[50px] bg-white border"></div>
 		    </div>
 			<h1 className="text-white font-bold text-[2rem]">Login</h1>
 			<p className="text-white bg-[#31363F] p-2 mb-2">Test user login: Email: Papu@gmail.com    Password: 123</p>
@@ -50,7 +54,7 @@ function submitHandler() {
             <input className="text-black w-[80%] m-auto p-2 rounded text-[1.2rem]" type="text" value={password} onChange={passwordHandler} placeholder="Enter Your Password"/><br/>
              <div className="w-full h-auto flex justify-between">
 	            <button className="text-white text-[1.2rem] bg-[#31363F] w-auto p-2 rounded  m-[auto]" onClick={submitHandler}>Login</button>
-		    	<div className="w-[20px] h-[20px] rounded-full border"></div>
+		    	<div className="w-[20px] h-[20px] rounded-tl-[50px] bg-white border"></div>
 		    </div>
 		</div>
 	);

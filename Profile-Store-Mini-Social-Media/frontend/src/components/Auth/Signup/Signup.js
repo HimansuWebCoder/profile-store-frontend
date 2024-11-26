@@ -46,9 +46,9 @@ function submitHandler() {
 
 
 	return (
-		<div className="max-w-[500px] m-auto mt-5 p-5 h-auto bg-[#222831] rounded-[5px] flex justify-center flex-col text-center ">
-		    <div className="w-full  h-5 flex justify-end">
-		    	<div className="w-[20px] h-[20px] rounded-full border"></div>
+		<div className="max-w-[500px] m-auto mt-5  h-auto bg-[#222831] rounded-[5px] flex justify-center flex-col text-center ">
+		    <div className="w-full  h-5 flex justify-end ">
+		    	<div className="w-[20px] h-[20px] rounded-bl-[50px] bg-[#F4F6FF]"></div>
 		    </div>
 		    <h1 className="text-white font-bold text-[2rem]">Signup</h1>
 		    <h2 className="text-[1.5rem]">Name</h2>
@@ -57,9 +57,9 @@ function submitHandler() {
 	            <input className="text-black w-[80%] m-auto p-2 rounded text-[1.2rem]" type="text" value={signupInput} onChange={inputHandler} placeholder="Enter Your Email" /><br/>
 		    <h2 className="text-[1.5rem]">Password</h2>
 	            <input className="text-black w-[80%] m-auto p-2 rounded text-[1.2rem]" type="text" value={password} onChange={passwordHandler} placeholder="Enter your Password "/><br/>
-	            <div className="w-full   h-auto flex justify-between">
-		    	<div className="w-[20px] h-[20px] rounded-full border"></div>
-	            <button className="text-white text-[1.2rem] bg-[#31363F] w-auto p-2 rounded  mr-11" onClick={submitHandler}>submit</button>
+	            <div className="w-full   h-auto flex items-end justify-between ">
+		    	<div className="w-[20px] h-[20px] rounded-tr-[50px] bg-white border"></div>
+	            <button className="text-white text-[1.2rem] bg-[#31363F] w-auto p-2 rounded  mr-11 mb-3" onClick={submitHandler}>submit</button>
 		    </div>
 		</div>
 	);
