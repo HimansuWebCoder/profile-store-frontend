@@ -123,7 +123,7 @@ function UserCard() {
 				  <CircularProgress size={64} />
 				</div>
 				) : (
-			<div style={{background: isDarkMode ? "#ECF9FF" : ""}} className="max-w-[500px]  rounded-xl h-auto p-2 mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
+			<div style={{background: isDarkMode ? "#ECF9FF" : ""}} className="max-w-[500px]  rounded-xl h-auto  mx-auto text-white mt-5 flex justify-start items-center flex-col text-center">
 				<img src={users?.profilePhoto?.[0]?.image} alt="profile image" onClick={handleOpen} className="max-w-[180px] rounded-full border border-white aspect-square" />
 				<h1 className="text-[2rem] w-[100%] bg-[#222831]">{users?.user?.[0]?.name}</h1>
 				<h1 className="text-[1.5rem] w-[100%] bg-[#222831] mt-[5px]">{users?.user?.[0]?.headline}</h1>
