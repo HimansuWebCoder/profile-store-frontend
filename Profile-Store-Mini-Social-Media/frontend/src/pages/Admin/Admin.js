@@ -42,7 +42,7 @@ function Admin() {
 	 const handleClose = () => setOpen(false);
 
 	 const targetImg = (e) => {
-   	// console.log(e.target.src)
+   	console.log(e.target.src)
    	setShowImg(e.target.src);
    	setOpen(true);
    }
@@ -188,6 +188,7 @@ function Admin() {
                 images.map(img => (
                    <ImageListItem key={img.id}>
                    	<img 
+                   	onClick={targetImg}
                    	srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                     src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
                     alt="images"
