@@ -5,12 +5,26 @@ import ProfileInfo from "../../components/Profile-info/ProfileInfo";
 import About from "../../components/add-sections/About/About";
 import Skills from "../../components/add-sections/Skills/Skills";
 import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 import { apiUrl } from "../../utils/utils";
 import { ThemeContext } from "../../ThemeContext";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Modal from '@mui/material/Modal';
+import Box from "@mui/material/Box";
 import "./Admin.css";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  // maxWidth: "370px",
+  // bgcolor: 'background.paper',
+  // border: '1px solid #222831',
+  // borderRadius: "50px",
+  // boxShadow: 24,
+  p: 0
+};
 
 function Admin() {
 	const [profileImg, setProfileImg] = useState("");
@@ -18,8 +32,20 @@ function Admin() {
 	const [profilePhotoId, setProfilePhotoId] = useState("");
 	const [images, setImages] = useState([]);
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+   const [ showImg, setShowImg ] = useState("");
 	const navigate = useNavigate();
 	const location = useLocation();
+
+
+   const [open, setOpen] = useState(false);
+  	 const handleOpen = () => setOpen(true);
+	 const handleClose = () => setOpen(false);
+
+	 const targetImg = (e) => {
+   	// console.log(e.target.src)
+   	setShowImg(e.target.src);
+   	setOpen(true);
+   }
 
 	useEffect(() => {
 		const fetchProfileInfo = async () => {
@@ -176,6 +202,19 @@ function Admin() {
 			    </ImageList>
          		)
          }
+
+         <div>
+				      <Modal
+				        open={open}
+				        onClose={handleClose}
+				        aria-labelledby="modal-modal-title"
+				        aria-describedby="modal-modal-description"
+				      >
+				        <Box sx={style}>
+				        <img src={showImg} alt="profile image"  className="max-w-[300px]  border border-white aspect-square" />
+				        </Box>
+				      </Modal>
+				    </div>
 				
            </div>
 				<Skills />
