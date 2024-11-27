@@ -17,7 +17,7 @@ const style = {
   // border: '1px solid #222831',
   // borderRadius: "50px",
   // boxShadow: 24,
-  p: 4,
+  p: 0,
 };
 
 function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
