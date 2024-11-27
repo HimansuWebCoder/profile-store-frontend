@@ -35,10 +35,11 @@ function Images() {
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const [loader, setLoader] = useState(true);
 	const [loader2, setLoader2] = useState(true);
+	const [ showImg, setShowImg ] = useState("");
 	const location = useLocation();
 
 	 const [open, setOpen] = useState(false);
-   const handleOpen = () => setOpen(true);
+   // const handleOpen = () => setOpen(true);
 	 const handleClose = () => setOpen(false);
 
 	useEffect(() => {
@@ -67,7 +68,9 @@ function Images() {
 	// }
 
 	const targetImg = (e) => {
-
+       console.log(e.target.src);
+       setShowImg(e.target.src);
+       setOpen(true);
 	}
 
 	function handleShare() {
@@ -238,8 +241,8 @@ function Images() {
 						      >
 						        <Box sx={style}>
 						        <img
-											className="max-w-[300px] h-auto rounded-[10px] aspect-square"
-											src={postImages[index].image_url}
+											className="max-w-[300px] h-auto rounded-[10px] border  aspect-square"
+											src={showImg}
 											alt="post images"
 											// style={{ width: size, height: size }}
 										/>
@@ -248,7 +251,8 @@ function Images() {
 									{/*<hr className="border-1 border-white-500" />*/}
 									<div className="max-w-full h-auto">
 										<img
-										onClick={handleOpen}
+										// onClick={handleOpen}
+										onClick={targetImg}
 											className="w-full h-[300px]"
 											src={img.image_url}
 											alt="posted image"
