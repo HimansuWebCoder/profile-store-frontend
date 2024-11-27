@@ -21,7 +21,7 @@ const style = {
   // border: '1px solid #222831',
   // borderRadius: "50px",
   // boxShadow: 24,
-  p: 4,
+  p: 0
 };
 
 function UserCard() {
@@ -32,13 +32,20 @@ function UserCard() {
 	const [ users, setUsers ] = useState({});
 	const [userImage, setUserImage] = useState([]);
 	const [images, setImages] = useState([]);
+	const [ showImg, setShowImg ] = useState("");
 	const [ loading, setLoading ] = useState(true);
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
 	 const [open, setOpen] = useState(false);
   	 const handleOpen = () => setOpen(true);
 	 const handleClose = () => setOpen(false);
-    console.log("user id", id)
+    // console.log("user id", id)
+
+   const targetImg = (e) => {
+   	// console.log(e.target.src)
+   	setShowImg(e.target.src);
+   	setOpen(true);
+   }
 
 	useEffect(() => {
 		console.log("individual user id: ", id)
@@ -140,6 +147,7 @@ function UserCard() {
 			                userImage.map(img => (
 			                   <ImageListItem key={img.id}>
 			                   	<img 
+			                   	onClick={targetImg}
 			                   	srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
 			                    src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
 			                    alt="images"
@@ -165,7 +173,7 @@ function UserCard() {
 				        aria-describedby="modal-modal-description"
 				      >
 				        <Box sx={style}>
-				        <img src={users?.profilePhoto?.[0]?.image} alt="profile image" onClick={handleOpen} className="max-w-[300px] rounded-[10px] border border-white aspect-square" />
+				        <img src={showImg} alt="profile image"  className="max-w-[300px]  border border-white aspect-square" />
 				        </Box>
 				      </Modal>
 				    </div>

@@ -241,7 +241,7 @@ function Images() {
 						      >
 						        <Box sx={style}>
 						        <img
-											className="max-w-[350px] h-[450px] rounded-[10px] border  aspect-square"
+											className="max-w-[350px] h-[450px]  border  aspect-square"
 											src={showImg}
 											alt="post images"
 											// style={{ width: size, height: size }}
