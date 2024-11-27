@@ -186,12 +186,12 @@ function Admin() {
               <ImageList sx={{ maxWidth: 500, height: 300 , padding: "5px" }} cols={3} rowHeight={164}>
 			      {images.length > 0 ? (
                 images.map(img => (
-                   <ImageListItem key={img.id}>
+                   <ImageListItem className="w-[200px] h-[400px]" key={img.id}>
                    	<img 
                    	onClick={targetImg}
                    	srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                    src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
-                    alt="images"
+                     src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
+                     alt="images"
                     loading="lazy"
                    	 />
                    </ImageListItem>

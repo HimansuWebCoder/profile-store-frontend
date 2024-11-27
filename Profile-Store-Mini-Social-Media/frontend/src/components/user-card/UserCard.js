@@ -145,7 +145,7 @@ function UserCard() {
 			              <ImageList sx={{ maxWidth: 500, height: 300 }} cols={3} rowHeight={164}>
 						      {userImage.length > 0 ? (
 			                userImage.map(img => (
-			                   <ImageListItem key={img.id}>
+			                   <ImageListItem className="w-[200px] h-[400px]" key={img.id}>
 			                   	<img 
 			                   	onClick={targetImg}
 			                   	srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
