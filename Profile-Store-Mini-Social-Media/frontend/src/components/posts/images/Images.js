@@ -42,6 +42,16 @@ function Images() {
    // const handleOpen = () => setOpen(true);
 	 const handleClose = () => setOpen(false);
 
+	const targetImg = (e) => {
+       console.log(e.target.src);
+       setShowImg(e.target.src);
+       setOpen(true);
+	}
+
+	const targetImgId = (e) => {
+		console.log(e.target)
+	}
+
 	useEffect(() => {
 		fetch(`${apiUrl}/api/posts/images`, {
 			method: "get",
@@ -67,11 +77,6 @@ function Images() {
 	// 	navigator.share(shareData);
 	// }
 
-	const targetImg = (e) => {
-       console.log(e.target.src);
-       setShowImg(e.target.src);
-       setOpen(true);
-	}
 
 	function handleShare() {
 		if (navigator.share) {
@@ -218,7 +223,7 @@ function Images() {
 										<p style={{fontSize: "0.9rem"}}>{img.headline}</p>
 										</div>
 										<div>
-											<Link to={`/home/posts/${img.image_id}`}>
+											<Link onClick={targetImgId} to={`/home/posts/${img.image_id}`}>
 											{isDarkMode ? <img
 													className="max-w-[25px] "
 													src="/assets/images/dot2.png"
@@ -238,6 +243,7 @@ function Images() {
 						        onClose={handleClose}
 						        aria-labelledby="modal-modal-title"
 						        aria-describedby="modal-modal-description"
+						        className="opacity-10"
 						      >
 						        <Box sx={style}>
 						        <img

@@ -5,6 +5,12 @@ module.exports = {
     extend: {
       borderRadius: {
         '50px': '50px',
+      },
+      colors: {
+        transparent: 'transparent',
+      },
+      opacity: {
+        10: '0.15'
       }
     },
   },
