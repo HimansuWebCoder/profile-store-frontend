@@ -31,7 +31,7 @@ function About() {
 	return (
 		<div>
 			<div className="sub-admin-container flex flex-col">
-				<div className="flex justify-between items-center  bg-[#31363F] p-[5px] mt-[10px]">
+				<div className="flex justify-between items-start  p-2  bg-[#31363F] mt-[10px]">
 					<h3 className="text-[1.5rem]">About</h3>
 					<Link
 						className="cursor-pointer"
@@ -60,9 +60,11 @@ function About() {
 						/>
 					</Box>
 				) : (
-					<p className="text-white bg-[#31363F]  text-[1.2rem] break-words">
+				<div className="">
+					<p className="text-white bg-[#31363F] p-3 text-[1.2rem] break-words">
 						{about}
 					</p>
+				</div>
 				)}
 			</div>
 		</div>
