@@ -163,7 +163,7 @@ function Images() {
 				</Box>
 			) : (
 				<>
-					{postImages.map((img) => (
+					{postImages.map((img, index) => (
 						<div
 							// style={{
 							// 	border: isDarkMode
@@ -239,7 +239,7 @@ function Images() {
 						        <Box sx={style}>
 						        <img
 											className="max-w-[300px] h-auto rounded-[10px] aspect-square"
-											src={img.image_url}
+											src={postImages[index].image_url}
 											alt="post images"
 											// style={{ width: size, height: size }}
 										/>
