@@ -29,7 +29,13 @@ function EditImagePost() {
 		fetch(`${apiUrl}/images/${id}`, {
 			method: "get"
 		})
-		.then(res => res.json())
+		.then(res => {
+			if (!res.ok) {
+				throw new Error("Failed to Fetch")
+			}
+
+			return res.json()
+	      })
 		.then(img => {
 			console.log(img);
 			console.log("image public id:", img[0].public_id)

@@ -243,11 +243,11 @@ function Images() {
 						        onClose={handleClose}
 						        aria-labelledby="modal-modal-title"
 						        aria-describedby="modal-modal-description"
-						        className="opacity-10"
+						        className="opacity-30"
 						      >
 						        <Box sx={style}>
 						        <img
-											className="max-w-[350px] h-[450px]  border  aspect-square"
+											className="max-w-[350px] h-[450px]  border aspect-square"
 											src={showImg}
 											alt="post images"
 											// style={{ width: size, height: size }}
@@ -258,7 +258,7 @@ function Images() {
 									<div className="max-w-full h-auto">
 										<img
 										// onClick={handleOpen}
-										onClick={targetImg}
+										  onClick={targetImg}
 											className="w-full h-[300px]"
 											src={img.image_url}
 											alt="posted image"

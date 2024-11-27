@@ -192,7 +192,7 @@ function Admin() {
                    	srcSet={`${img.image_url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                      src={`${img.image_url}?w=164&h=164&fit=crop&auto=format`}
                      alt="images"
-                    loading="lazy"
+                     loading="lazy"
                    	 />
                    </ImageListItem>
                 	))
