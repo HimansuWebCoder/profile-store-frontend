@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { apiUrl } from "../../../utils/utils";
 import PopupEdit from "../../Popup-edit/PopupEdit";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./CreatePost.css";
 
 function CreatePost() {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [popupMessage, setPopupMessage] = useState(null);
+	const [loading, setLoading] = useState(false);
 
 	const handleFileChange = (e) => {
 		setSelectedFile(e.target.files[0]);
@@ -14,6 +17,8 @@ function CreatePost() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		setLoading(true)
 
 		if (!selectedFile) {
 			alert("Please select a file to upload");
@@ -34,6 +39,7 @@ function CreatePost() {
 				const data = await response.json();
 				console.log("File uploaded successfully:", data);
 				setPopupMessage(data.message);
+				setLoading(false)
 				// Redirect or handle success as needed
 			} else {
 				console.error("Failed to upload file");
@@ -66,10 +72,32 @@ function CreatePost() {
 							Back
 						</Link>
 					</button>
-					{popupMessage && (
-						<PopupEdit msg={popupMessage} redirect="/home/posts" />
-					)}
 				</form>
+				{
+				loading ? (
+                      <Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						margin: "auto",
+						width: "200px",
+						height: "auto",
+						position: "absolute",
+						top:'200px'
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
+					) : (
+                     popupMessage && (
+						<PopupEdit msg={popupMessage} redirect="/home/posts" />
+					)
+					)
+			}
 			</div>
 		</div>
 	);

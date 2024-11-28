@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PopupEdit from "../Popup-edit/PopupEdit";
 import { apiUrl } from "../../utils/utils";
+import Box from '@mui/material/Box';
+import CircularProgress from "@mui/material/CircularProgress";
 import "./Upload.css";
 
 function Upload() {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [popupMessage, setPopupMessage] = useState(null);
+	const [loader, setLoader] = useState(false);
 	const location = useLocation();
 	const navigate = useNavigate();
 
@@ -22,6 +25,8 @@ function Upload() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		setLoader(true)
 
 		if (!selectedFile) {
 			alert("Please select a file to upload");
@@ -47,6 +52,7 @@ function Upload() {
 				const data = await response.json();
 				console.log("File uploaded successfully:", data);
 				setPopupMessage(data.message);
+				setLoader(false)
 				// Redirect or handle success as needed
 			} else {
 				console.error("Failed to upload file");
@@ -79,10 +85,32 @@ function Upload() {
 							Back
 						</Link>
 					</button>
-					{popupMessage && (
-						<PopupEdit msg={popupMessage} redirect="/admin" />
-					)}
 				</form>
+				{
+				loader ? (
+                      <Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						margin: "auto",
+						width: "200px",
+						height: "auto",
+						position: "absolute",
+						top:'200px'
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
+					) : (
+                     popupMessage && (
+						<PopupEdit msg={popupMessage} redirect="/admin" />
+					)
+					)
+			}
 			</div>
 		</div>
 	);

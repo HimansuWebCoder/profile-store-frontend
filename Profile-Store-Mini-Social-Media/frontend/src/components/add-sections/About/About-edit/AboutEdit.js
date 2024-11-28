@@ -11,6 +11,7 @@ function AboutEdit() {
 	const [description, setDescription] = useState("");
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState(true);
+	const [loader, setLoader] = useState(false);
 	const [popupMessage, setPopupMessage] = useState(null);
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -32,6 +33,7 @@ function AboutEdit() {
 	}, [id]);
 
 	function editAboutHandler() {
+		setLoader(true)
 		fetch(`${apiUrl}/api/about/${id}`, {
 			method: "put",
 			headers: { "Content-Type": "application/json" },
@@ -42,6 +44,7 @@ function AboutEdit() {
 			.then((data) => {
 				// alert(data.message);
 				setPopupMessage(data.message);
+				setLoader(false)
 			});
 	}
 
@@ -88,7 +91,32 @@ function AboutEdit() {
 					</button>
 				</div>
 			)}
-			{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin" />}
+			{/*{popupMessage && <PopupEdit msg={popupMessage} redirect="/admin" />}*/}
+			{
+				loader ? (
+                      <Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						margin: "auto",
+						width: "200px",
+						height: "auto",
+						position: "absolute",
+						top:'200px'
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
+					) : (
+                     popupMessage && (
+						<PopupEdit msg={popupMessage} redirect="/admin" />
+					)
+					)
+			}
 		</div>
 	);
 }

@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import PopupEdit from "../../Popup-edit/PopupEdit";
 import { apiUrl } from "../../../utils/utils";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import "./EditImagePost.css";
 
 function EditImagePost() {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [popupMessage, setPopupMessage] = useState(null);
 	const [imgPublicId, setImgPublicId] = useState("");
+	const [loading, setLoading] = useState(false);
 	const location = useLocation();
 	const navigate = useNavigate();
 	// const imgPostId = location.pathname.split("/")[3];
@@ -28,7 +31,7 @@ function EditImagePost() {
 	useEffect(() => {
 		fetch(`${apiUrl}/images/${id}`, {
 			method: "get"
-		})
+		}) 
 		.then(res => {
 			if (!res.ok) {
 				throw new Error("Failed to Fetch")
@@ -49,6 +52,8 @@ function EditImagePost() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+         
+         setLoading(true);
 
 		if (!selectedFile) {
 			alert("Please select a file to upload");
@@ -71,6 +76,7 @@ function EditImagePost() {
 				console.log("File uploaded successfully:", data);
 				// setPopupMessage(data.message);
 				setPopupMessage("Post Updated successfully!");
+				setLoading(false)
 				// Redirect or handle success as needed
 			} else {
 				console.error("Failed to upload file");
@@ -103,11 +109,34 @@ function EditImagePost() {
 							Back
 						</Link>
 					</button>
-					{popupMessage && (
-						<PopupEdit msg={popupMessage} redirect="/home/posts" />
-					)}
+					
 				</form>
 			</div>
+			{
+				loading ? (
+                      <Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						margin: "auto",
+						width: "200px",
+						height: "auto",
+						position: "absolute",
+						top:'200px'
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
+					) : (
+                     popupMessage && (
+						<PopupEdit msg={popupMessage} redirect="/home/posts" />
+					)
+					)
+			}
 		</div>
 	);
 }

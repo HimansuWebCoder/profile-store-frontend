@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { apiUrl } from "../../../utils/utils";
+import CircularProgress from "@mui/material/CircularProgress";
+import PopupEdit from "../../Popup-edit/PopupEdit";
+import Box from "@mui/material/Box";
 import "./Login.css";
 
 function Login() {
 	const [ loginInput, setLoginInput ] = useState("");
 	const [input, setInput] = useState("");
 	const [ password, setPassword ] = useState("");
+	const [loader, setLoader] = useState(false);
+	const [popupMessage, setPopupMessage] = useState(null);
     const navigate = useNavigate();
     const [ login, setLogin ] = useState("");
 
@@ -14,6 +19,7 @@ function Login() {
    
 
 function submitHandler() {
+	setLoader(true)
 		fetch(`${apiUrl}/login`, {
 			    method: "post",
 				headers: {"Content-Type": "application/json"},
@@ -22,7 +28,9 @@ function submitHandler() {
 		})
 		.then((response) => {
            if (response.ok) {
-		        navigate("/home/profiles");
+		        // navigate("/home/profiles");
+           	setPopupMessage("Login Successfully!");
+           	setLoader(false)
 		      } else {
 		        console.error("Login failed");
 		        alert("email incorrect or Login failed")
@@ -56,6 +64,31 @@ function submitHandler() {
 	            <button className="text-white text-[1.2rem] bg-[#31363F] w-auto mb-2 p-2 rounded  m-[auto]" onClick={submitHandler}>Login</button>
 		    	<div className="w-[20px] h-[20px] rounded-tl-[50px] bg-white border"></div>
 		    </div>
+		    {
+				loader ? (
+                      <Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						margin: "auto",
+						width: "200px",
+						height: "auto",
+						position: "absolute",
+						top:'200px'
+					}}
+				>
+					<CircularProgress
+						sx={{
+							color: "primary", // Set the desired color here
+						}}
+					/>
+				</Box>
+					) : (
+                     popupMessage && (
+						<PopupEdit msg={popupMessage} redirect="/home/profiles" />
+					)
+					)
+			}
 		</div>
 	);
 }
