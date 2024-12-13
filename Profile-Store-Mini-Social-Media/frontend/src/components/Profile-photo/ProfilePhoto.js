@@ -28,7 +28,7 @@ function ProfilePhoto({ imgSrc, alt, size, bg, className }) {
 	 const [open, setOpen] = useState(false);
   	 const handleOpen = () => setOpen(true);
 	 const handleClose = () => setOpen(false);
-	const [loader, setLoader] = useState(false);
+
 
 	return (
 		<div

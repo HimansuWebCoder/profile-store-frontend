@@ -244,7 +244,7 @@ function Images() {
 						        onClose={handleClose}
 						        aria-labelledby="modal-modal-title"
 						        aria-describedby="modal-modal-description"
-						        className="opacity-30"
+						        // className="opacity-30"
 						      >
 						        <Box sx={style}>
 						        <img
