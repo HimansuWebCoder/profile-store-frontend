@@ -129,7 +129,7 @@ function Images() {
 			  background: isDarkMode ? "white" : "#31363F", 
 			}}
 			// className="max-w-[400px] h-auto sm:max-w-[100%] sm:w-auto m-auto mt-[20px] p-[10px]"
-			className="max-w-[800px] sm:max-w-[600px] h-auto m-auto pb-3 mt-[20px]"
+			className="max-w-[800px] sm:max-w-[500px] h-auto m-auto pb-3 mt-[20px]"
 		>
 			<div
 				style={{
