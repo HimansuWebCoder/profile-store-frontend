@@ -123,12 +123,13 @@ function Images() {
 
 	return (
 		<div
+		className="max-w-full"
 			style={{
 			  color: isDarkMode ? "black" : "white",
 			  background: isDarkMode ? "white" : "#31363F", 
 			}}
 			// className="max-w-[400px] h-auto sm:max-w-[100%] sm:w-auto m-auto mt-[20px] p-[10px]"
-			className="w-full sm:max-w-[400px] h-auto m-auto pb-3 mt-[20px]"
+			className="max-w-[800px] sm:max-w-[600px] h-auto m-auto pb-3 mt-[20px]"
 		>
 			<div
 				style={{
@@ -206,7 +207,7 @@ function Images() {
 										color: isDarkMode ? "black" : "white",
 										borderTop: isDarkMode ? "1px solid black" : "",
 									}}
-									className="max-w-full h-auto  p-[10px]"
+									className="max-w-full h-auto  p-[0px]"
 								>
 									<div
 										// style={{
@@ -260,7 +261,7 @@ function Images() {
 										<img
 										// onClick={handleOpen}
 										  onClick={targetImg}
-											className="w-full h-[300px]"
+											className="w-full h-auto"
 											src={img.image_url}
 											alt="posted image"
 										/>
