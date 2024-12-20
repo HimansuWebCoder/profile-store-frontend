@@ -22,10 +22,10 @@ function Layout({ mode, setMode }) {
 				// className="layout-block-box"
 			>
 				{/*<Profiles mode={mode} setMode={setMode} />*/}
-				<Link className=" mr-5 p-1"
+				<Link className=" mr-5 p-3 rounded w-[auto] h-[auto] bg-[#31363F] flex items-center text-center justify-center hover:bg-[#31363F]  hover:rounded-full active:bg-blue-500"
 					style={{
 						color: isDarkMode ? "red" : "white",
-						background: isDarkMode ? "white" : "#31363F",
+						// background: isDarkMode ? "white" : "#31363F",
 						// borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
 						// borderRight: isDarkMode ? "1px solid white" : "1px solid white",
 						textDecoration: "none",
@@ -35,10 +35,10 @@ function Layout({ mode, setMode }) {
 					Profiles
 				</Link>
 				<Link
-				    className=" p-1"
+				    className=" p-3 rounded bg-[#31363F]  w-16 h-16 flex items-center text-center justify-center hover:bg-[#31363F]  hover:rounded-full active:bg-blue-500"
 					style={{
 						color: isDarkMode ? "red" : "white",
-						background: isDarkMode ? "white" : "#31363F",
+						// background: isDarkMode ? "white" : "#31363F",
 						textDecoration: "none",
 						// borderLeft: isDarkMode ? "1px solid white" : "1px solid white",
 						// borderRight: isDarkMode ? "1px solid white" : "1px solid white"
