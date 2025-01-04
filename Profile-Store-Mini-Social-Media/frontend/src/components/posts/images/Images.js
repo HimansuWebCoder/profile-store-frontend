@@ -37,6 +37,9 @@ function Images() {
 	const [loader2, setLoader2] = useState(true);
 	const [ showImg, setShowImg ] = useState("");
 	const location = useLocation();
+	// const [comment, setShowComment] = useState([]);
+	const [comment, setShowComment] = useState({});
+	const [toggleComment, setToggleComment] = useState(false);
 
 	 const [open, setOpen] = useState(false);
    // const handleOpen = () => setOpen(true);
@@ -72,6 +75,22 @@ function Images() {
 			setLoader2(false);
 		}, 1000);
 	}, []);
+
+	function getComments(imageId) {
+		fetch(`${apiUrl}/api/posts/comments/${imageId}`, {
+			method: "get",
+			credentials: "include"
+		})
+			.then((res) => res.json())
+			.then((comments) => {
+				console.log(comments);
+				 setShowComment(comments);
+				console.log({comment})
+				 // setShowComment((prev) => ({ ...prev, [imageId]: comments }));
+         // setToggleComment((prev) => !prev);
+         // setToggleComment((prev) => ({ ...prev, [imageId]: !prev[imageId] }));
+			});
+	}
 
 	// function shareHandler() {
 	// 	navigator.share(shareData);
@@ -312,6 +331,17 @@ function Images() {
 												
 											</Link>
 											<h4>Comment</h4>
+											<p>{img.comment}</p>
+											<button onClick={() => getComments(img.image_id)}>show comments</button>
+											<Link onClick={() => getComments(img.image_id)} to={`/home/posts/comments/${img.image_id}`}>Get comments</Link>
+                      
+
+	                     <div>
+	                            {comment[img.image_id]?.map((c, i) => (
+							              <p key={i}>{c.comment}</p>  // Display the comment
+							            ))}
+	                        </div>
+					             							
 										</div>
 										<div className="flex justify-center flex-col items-center">
 										{

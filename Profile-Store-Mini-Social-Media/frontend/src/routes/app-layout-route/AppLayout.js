@@ -29,7 +29,7 @@ function AppLayout({ mode, setMode }) {
 						<Route path=":id" element={<EditPost />} />
 						<Route path="edit/:id" element={<EditImagePost />} />
 						<Route path="create-post" element={<CreatePost />} />
-						<Route path="comments" element={<CommentBox />} />
+						<Route path="comments/:id" element={<CommentBox />} />
 					</Route>
 				</Route>
 			</Routes>
