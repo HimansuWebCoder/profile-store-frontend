@@ -316,7 +316,7 @@ function Images() {
 											<h4>Like</h4>
 										</div>
 										<div className="flex justify-center flex-col items-center">
-											<Link to="/home/posts/comments">
+											<Link to={`/home/posts/comments/${img.image_id}`}>
 											{isDarkMode ? <img
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/comment2.png"
@@ -330,18 +330,17 @@ function Images() {
 										  }
 												
 											</Link>
-											<h4>Comment</h4>
-											<p>{img.comment}</p>
-											<button onClick={() => getComments(img.image_id)}>show comments</button>
-											<Link onClick={() => getComments(img.image_id)} to={`/home/posts/comments/${img.image_id}`}>Get comments</Link>
+											{/*<h4>Comment</h4>*/}
+											{/*<button onClick={() => getComments(img.image_id)}>show comments</button>*/}
+											<Link onClick={() => getComments(img.image_id)} to={`/home/posts/comments/${img.image_id}`}>comment</Link>
                       
 
-	                     <div>
+	                     {/*<div>
 	                            {comment[img.image_id]?.map((c, i) => (
 							              <p key={i}>{c.comment}</p>  // Display the comment
 							            ))}
 	                        </div>
-					             							
+					             		*/}					
 										</div>
 										<div className="flex justify-center flex-col items-center">
 										{

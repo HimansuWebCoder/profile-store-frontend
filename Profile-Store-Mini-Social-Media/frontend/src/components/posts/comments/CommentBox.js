@@ -12,7 +12,7 @@ function CommentBox(message) {
 	const navigate = useNavigate();
 	const imageId = location.pathname.split("/")[4];
 
-console.log("comment image id", imageId)
+// console.log("comment image id", imageId)
 
 	useEffect(() => {
 		fetch(`${apiUrl}/api/posts/comments/${imageId}`, {
@@ -58,6 +58,19 @@ console.log("comment image id", imageId)
 			body: JSON.stringify({ comment: postComments }),
 			credentials: "include"
 		})
+		.then((res) => res.json())
+			.then(() => {
+				fetch(`${apiUrl}/api/posts/comments/${imageId}`, {
+					method: "get",
+					credentials: "include"
+				})
+					.then((res) => res.json())
+					.then((commentsData) => {
+						setComments(commentsData);
+						setPostComments("");
+						console.log("all comments data", commentsData)
+					});
+			});
 	}
 
 	return (
@@ -90,7 +103,7 @@ console.log("comment image id", imageId)
 							{comments.map((comment) => (
 								<div className="w-auto h-auto mt-3 mb-3 border-b border-gray-500 flex" key={comment.id}>
 								<img className="w-[50px] h-[50px] rounded-full" src={comment.image} alt={comment.profile_email} />
-								<div>
+								<div className="ml-[10px]">
 									{/*<p>{comment.profile_email}</p>*/}
 									<p className="text-[0.8rem]">{comment.name}</p>
 									<p className="text-[0.7rem]">{comment.headline}</p>
