@@ -32,6 +32,8 @@ const shareData = {
 
 function Images() {
 	const [postImages, setPostImages] = useState([]);
+	const [likedPosts, setLikedPosts] = useState([]);
+	const [errorMessage, setErrorMessage] = useState('');
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const [loader, setLoader] = useState(true);
 	const [loader2, setLoader2] = useState(true);
@@ -40,6 +42,7 @@ function Images() {
 	// const [comment, setShowComment] = useState([]);
 	const [comment, setShowComment] = useState({});
 	const [toggleComment, setToggleComment] = useState(false);
+	// const [ like, setLike ] = useState(0);
 
 	 const [open, setOpen] = useState(false);
    // const handleOpen = () => setOpen(true);
@@ -120,24 +123,84 @@ function Images() {
 	// 		});
 	// }, []);
 
-	function likebtn(id) {
+	// function likebtn(id) {
 
-		fetch(`${apiUrl}/api/posts/likes`, {
+	// 	fetch(`${apiUrl}/api/posts/likes`, {
+	// 		method: "post",
+	// 		headers: { "Content-Type": "application/json" },
+	// 		body: JSON.stringify({ like: 1, image_id: id }),
+	// 		credentials: "include"
+	// 	})
+	// 	.then(() => {
+  //     // Refetch images to update likes_count from the database
+  //     fetch(`${apiUrl}/api/posts/images`, {
+  //       method: "get",
+  //       credentials: "include",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((images) => setPostImages(images));
+  //    });
+	// }
+
+	function fetchLikes(id) {
+		fetch(`${apiUrl}/likes/${id}`, {
+			method: "get",
+			credentials: "include"
+		})
+		.then(res => res.json())
+		.then(likes => {
+			// console.log("one user like count", likes)
+			console.log("likes", likes.length);
+			// setLike(likes.length);
+		})
+			}
+
+	function likebtn(id, index) {
+
+    if (likedPosts.includes(id)) {
+    setErrorMessage("You already liked this post!");
+    return; // Don't do anything if already liked
+  }
+		fetch(`${apiUrl}/likes/${id}`, {
 			method: "post",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ like: 1, image_id: id }),
+			body: JSON.stringify({ image_id: id }),
 			credentials: "include"
 		})
 		.then(() => {
       // Refetch images to update likes_count from the database
-      fetch(`${apiUrl}/api/posts/images`, {
+      fetch(`${apiUrl}/likes/${id}`, {
         method: "get",
         credentials: "include",
       })
         .then((res) => res.json())
-        .then((images) => setPostImages(images));
+        .then((likes) => {
+        	// console.log("likes", likes);
+        	// console.log("likes", likes.length);
+        	// setLike(likes.length);
+        	const updatedPosts = [...postImages];
+        	 updatedPosts[index].likes = likes.length;
+        	 setPostImages(updatedPosts);
+        	// fetchLikes(id)
+
+        } 
+        	);
      });
 	}
+
+	useEffect(() => {
+		fetch(`${apiUrl}/likes`, {
+			method: "get",
+			credentials: "include"
+		})
+		.then((res) => res.json())
+		.then(like => {
+			console.log("likes", like.length)
+			// setLike(like.length)
+		})
+	})
+
+
 
 
 	return (
@@ -297,12 +360,12 @@ function Images() {
 											<div className="flex justify-center items-center">
 											{
 												isDarkMode ? <img
-													onClick={() => likebtn(img.image_id)}
+													onClick={() => likebtn(img.image_id, index)}
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like2.png"
 													alt="like"
 												/> : <img
-													onClick={() => likebtn(img.image_id)}
+													onClick={() => likebtn(img.image_id, index)}
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like4.png"
 													alt="like"
@@ -310,7 +373,7 @@ function Images() {
 											}
 												
 												<p className="ml-[10px] text-[1.3rem] text-shadow-[1px_5px_1px_yellow]">
-													{img.likes_count}
+                           {img.likes || img.likes} {/* Display likes for this specific post */}
 												</p>
 											</div>
 											<h4>Like</h4>
