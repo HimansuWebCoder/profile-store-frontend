@@ -33,6 +33,7 @@ const shareData = {
 function Images() {
 	const [postImages, setPostImages] = useState([]);
 	const [likedPosts, setLikedPosts] = useState([]);
+	const [postDate, setPostDate] = useState('');
 	const [errorMessage, setErrorMessage] = useState('');
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 	const [loader, setLoader] = useState(true);
@@ -305,6 +306,7 @@ function Images() {
 										<div style={{width:"60%"}}>
 										<h3 style={{fontSize: "1rem"}}>{img.name}</h3>
 										<p style={{fontSize: "0.9rem"}}>{img.headline}</p>
+										<p style={{fontSize: "0.5rem"}}>Posted At:{img.created_at}</p>
 										</div>
 										<div>
 											<Link onClick={targetImgId} to={`/home/posts/${img.image_id}`}>
