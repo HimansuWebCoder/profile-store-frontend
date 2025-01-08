@@ -33,6 +33,7 @@ const shareData = {
 function Images() {
 	const [postImages, setPostImages] = useState([]);
 	const [likedPosts, setLikedPosts] = useState([]);
+	const [showComments, setShowComments] = useState(null);
 	const [postDate, setPostDate] = useState('');
 	const [errorMessage, setErrorMessage] = useState('');
 	const { isDarkMode, toggleTheme } = useContext(ThemeContext);
@@ -80,6 +81,18 @@ function Images() {
 		}, 1000);
 	}, []);
 
+	function commentHandler(image_id) {
+		fetch(`${apiUrl}/api/posts/images/${image_id}`, {
+			method: "get",
+			credentials: "include"
+		})
+		.then(res => res.json())
+		.then(images => {
+			setShowComments(showComments === image_id ? null : image_id);
+			console.log(images)
+		})
+	}
+
 	function getComments(imageId) {
 		fetch(`${apiUrl}/api/posts/comments/${imageId}`, {
 			method: "get",
@@ -87,9 +100,9 @@ function Images() {
 		})
 			.then((res) => res.json())
 			.then((comments) => {
-				console.log(comments);
+				 console.log(comments);
 				 setShowComment(comments);
-				console.log({comment})
+				 console.log({comment});
 				 // setShowComment((prev) => ({ ...prev, [imageId]: comments }));
          // setToggleComment((prev) => !prev);
          // setToggleComment((prev) => ({ ...prev, [imageId]: !prev[imageId] }));
@@ -154,40 +167,55 @@ function Images() {
 			console.log("likes", likes.length);
 			// setLike(likes.length);
 		})
-			}
+	}
 
-	function likebtn(id, index) {
+	// function likebtn(id, index) {
 
-    if (likedPosts.includes(id)) {
-    setErrorMessage("You already liked this post!");
-    return; // Don't do anything if already liked
-  }
-		fetch(`${apiUrl}/likes/${id}`, {
-			method: "post",
+  //   if (likedPosts.includes(id)) {
+  //   setErrorMessage("You already liked this post!");
+  //   return; // Don't do anything if already liked
+  // }
+	// 	fetch(`${apiUrl}/likes/${id}`, {
+	// 		method: "post",
+	// 		headers: { "Content-Type": "application/json" },
+	// 		body: JSON.stringify({ image_id: id }),
+	// 		credentials: "include"
+	// 	})
+	// 	.then(() => {
+  //     // Refetch images to update likes_count from the database
+  //     fetch(`${apiUrl}/likes/${id}`, {
+  //       method: "get",
+  //       credentials: "include",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((likes) => {
+  //       	// console.log("likes", likes);
+  //       	// console.log("likes", likes.length);
+  //       	// setLike(likes.length);
+  //       	const updatedPosts = [...postImages];
+  //       	 updatedPosts[index].likes = likes.length;
+  //       	 setPostImages(updatedPosts);
+  //       	// fetchLikes(id)
+
+  //       } 
+  //       	);
+  //    });
+	// }
+
+
+   function likebtn(id, index) {
+   	  if (likedPosts.includes(id)) {
+   	  	setErrorMessage("You already liked this post!");
+        return; // Don't do anything if already liked
+   	  }
+
+   	  fetch(`${apiUrl}/likes/${id}`, {
+   	  method: "post",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ image_id: id }),
 			credentials: "include"
-		})
-		.then(() => {
-      // Refetch images to update likes_count from the database
-      fetch(`${apiUrl}/likes/${id}`, {
-        method: "get",
-        credentials: "include",
-      })
-        .then((res) => res.json())
-        .then((likes) => {
-        	// console.log("likes", likes);
-        	// console.log("likes", likes.length);
-        	// setLike(likes.length);
-        	const updatedPosts = [...postImages];
-        	 updatedPosts[index].likes = likes.length;
-        	 setPostImages(updatedPosts);
-        	// fetchLikes(id)
-
-        } 
-        	);
-     });
-	}
+   	  })
+   }
 
 	useEffect(() => {
 		fetch(`${apiUrl}/likes`, {
@@ -362,12 +390,12 @@ function Images() {
 											<div className="flex justify-center items-center">
 											{
 												isDarkMode ? <img
-													onClick={() => likebtn(img.image_id, index)}
+													onClick={() => likebtn(img.id)}
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like2.png"
 													alt="like"
 												/> : <img
-													onClick={() => likebtn(img.image_id, index)}
+													onClick={() => likebtn(img.id)}
 													className="max-w-[30px] h-[30px]"
 													src="/assets/images/like4.png"
 													alt="like"
@@ -375,7 +403,7 @@ function Images() {
 											}
 												
 												<p className="ml-[10px] text-[1.3rem] text-shadow-[1px_5px_1px_yellow]">
-                           {img.likes || img.likes} {/* Display likes for this specific post */}
+												{img.likes_count}
 												</p>
 											</div>
 											<h4>Like</h4>
@@ -397,15 +425,15 @@ function Images() {
 											</Link>
 											{/*<h4>Comment</h4>*/}
 											{/*<button onClick={() => getComments(img.image_id)}>show comments</button>*/}
-											<Link onClick={() => getComments(img.image_id)} to={`/home/posts/comments/${img.image_id}`}>comment</Link>
-                      
-
-	                     {/*<div>
-	                            {comment[img.image_id]?.map((c, i) => (
-							              <p key={i}>{c.comment}</p>  // Display the comment
-							            ))}
-	                        </div>
-					             		*/}					
+											<Link onClick={() => getComments(img.id)} to={`/home/posts/comments/${img.id}`}>comment</Link>
+                      <button onClick={() => commentHandler(img.id)}>{showComments === img.id ? "Hide Comment": "Show Comment"}</button>
+                          {showComments === img.id && 
+                          <div className="flex flex-col">
+                           {/*<h1>{img.comment_names}</h1>*/}
+                           {img.comment_names.map((comment, index) => (
+                               <p key={index}>{comment}</p>
+                           	))}
+                          </div>}
 										</div>
 										<div className="flex justify-center flex-col items-center">
 										{
